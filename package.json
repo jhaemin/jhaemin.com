@@ -36,15 +36,16 @@
     "react-final-form": "6.5.3"
   },
   "devDependencies": {
-    "@types/react": "17.0.3",
     "@types/preview-email": "2.0.0",
+    "@types/react": "17.0.3",
     "eslint": "7.24.0",
     "husky": "6.0.0",
     "lint-staged": "10.5.4",
     "prettier": "2.2.1",
+    "prettier-plugin-prisma": "0.7.0",
     "pretty-quick": "3.1.0",
     "preview-email": "3.0.4",
-    "prettier-plugin-prisma": "0.7.0"
+    "sass": "1.32.11"
   },
   "private": true
 }
