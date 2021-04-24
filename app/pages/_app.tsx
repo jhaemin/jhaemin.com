@@ -6,9 +6,11 @@ import {
   AuthorizationError,
   ErrorFallbackProps,
   useQueryErrorResetBoundary,
-} from "blitz"
-import { ErrorBoundary } from "react-error-boundary"
-import LoginForm from "app/auth/components/LoginForm"
+  Head,
+} from 'blitz'
+import { ErrorBoundary } from 'react-error-boundary'
+import LoginForm from 'app/auth/components/LoginForm'
+import 'app/core/styles/global-style.scss'
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
@@ -20,6 +22,13 @@ export default function App({ Component, pageProps }: AppProps) {
       resetKeys={[router.asPath]}
       onReset={useQueryErrorResetBoundary().reset}
     >
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
+        />
+        <link rel="stylesheet" type="text/css" href="/styles/fonts.css" />
+      </Head>
       {getLayout(<Component {...pageProps} />)}
     </ErrorBoundary>
   )
