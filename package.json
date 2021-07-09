@@ -1,51 +1,19 @@
 {
   "name": "jhaemin.com-next",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "dev": "blitz dev",
-    "build": "blitz build",
-    "start": "blitz start",
-    "studio": "blitz prisma studio",
-    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "prepare": "husky install"
-  },
-  "prisma": {
-    "schema": "db/schema.prisma"
-  },
-  "prettier": {
-    "semi": false,
-    "printWidth": 100
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix"
-    ]
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "@prisma/client": "~2.21",
-    "blitz": "0.34.3",
-    "final-form": "4.20.2",
-    "prisma": "~2.21",
+    "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-error-boundary": "3.1.1",
-    "react-final-form": "6.5.3",
-    "typescript": "~4.2",
-    "zod": "1.11.16"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@types/preview-email": "2.0.0",
-    "@types/react": "17.0.4",
-    "eslint": "7.25.0",
-    "husky": "6.0.0",
-    "lint-staged": "10.5.4",
-    "prettier": "2.2.1",
-    "prettier-plugin-prisma": "0.8.0",
-    "pretty-quick": "3.1.0",
-    "preview-email": "3.0.4",
-    "sass": "1.32.11"
-  },
-  "private": true
+    "@types/react": "17.0.14",
+    "typescript": "4.3.5"
+  }
 }

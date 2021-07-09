@@ -2,11 +2,9 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl": "./",
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
-    "strictNullChecks": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -14,10 +12,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "jsx": "preserve"
   },
-  "exclude": ["node_modules", "**/*.e2e.ts", "cypress"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

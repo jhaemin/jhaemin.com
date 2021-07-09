@@ -1,173 +1,34 @@
-[![Blitz.js](https://raw.githubusercontent.com/blitz-js/art/master/github-cover-photo.png)](https://blitzjs.com)
-
-This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
-
-# **jhaemin.com-next**
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-Run your app in the development mode.
+First, run the development server:
 
-```
-blitz dev
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Environment Variables
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-Ensure the `.env.local` file has required environment variables:
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-```
-DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/jhaemin.com-next
-```
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-Ensure the `.env.test.local` file has required environment variables:
+## Learn More
 
-```
-DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/jhaemin.com-next_test
-```
+To learn more about Next.js, take a look at the following resources:
 
-## Tests
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Runs your tests using Jest.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-```
-yarn test
-```
+## Deploy on Vercel
 
-Blitz comes with a test setup using [Jest](https://jestjs.io/) and [react-testing-library](https://testing-library.com/).
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Commands
-
-Blitz comes with a powerful CLI that is designed to make development easy and fast. You can install it with `npm i -g blitz`
-
-```
-  blitz [COMMAND]
-
-  dev       Start a development server
-  build     Create a production build
-  start     Start a production server
-  export    Export your Blitz app as a static application
-  prisma    Run prisma commands
-  generate  Generate new files for your Blitz project
-  console   Run the Blitz console REPL
-  install   Install a recipe
-  help      Display help for blitz
-  test      Run project tests
-```
-
-You can read more about it on the [CLI Overview](https://blitzjs.com/docs/cli-overview) documentation.
-
-## What's included?
-
-Here is the starting structure of your app.
-
-```
-jhaemin.com-next
-├── app/
-│   ├── api/
-│   ├── auth/
-│   │   ├── components/
-│   │   │   ├── LoginForm.tsx
-│   │   │   └── SignupForm.tsx
-│   │   ├── mutations/
-│   │   │   ├── changePassword.ts
-│   │   │   ├── forgotPassword.test.ts
-│   │   │   ├── forgotPassword.ts
-│   │   │   ├── login.ts
-│   │   │   ├── logout.ts
-│   │   │   ├── resetPassword.test.ts
-│   │   │   ├── resetPassword.ts
-│   │   │   └── signup.ts
-│   │   ├── pages/
-│   │   │   ├── forgot-password.tsx
-│   │   │   ├── login.tsx
-│   │   │   ├── reset-password.tsx
-│   │   │   └── signup.tsx
-│   │   └── validations.ts
-│   ├── core/
-│   │   ├── components/
-│   │   │   ├── Form.tsx
-│   │   │   └── LabeledTextField.tsx
-│   │   ├── hooks/
-│   │   │   └── useCurrentUser.ts
-│   │   └── layouts/
-│   │       └── Layout.tsx
-│   ├── pages/
-│   │   ├── 404.tsx
-│   │   ├── _app.tsx
-│   │   ├── _document.tsx
-│   │   ├── index.test.tsx
-│   │   └── index.tsx
-│   └── users/
-│       └── queries/
-│           └── getCurrentUser.ts
-├── db/
-│   ├── index.ts
-│   ├── schema.prisma
-│   └── seeds.ts
-├── integrations/
-├── mailers/
-│   └── forgotPasswordMailer.ts
-├── public/
-│   ├── favicon.ico*
-│   └── logo.png
-├── test/
-│   ├── setup.ts
-│   └── utils.tsx
-├── README.md
-├── babel.config.js
-├── blitz.config.js
-├── jest.config.js
-├── package.json
-├── tsconfig.json
-├── types.d.ts
-├── types.ts
-└── yarn.lock
-```
-
-These files are:
-
-- The `app/` folder is a container for most of your project. This is where you’ll put any pages or API routes.
-
-- `db/` is where your database configuration goes. If you’re writing models or checking migrations, this is where to go.
-
-- `public/` is a folder where you will put any static assets. If you have images, files, or videos which you want to use in your app, this is where to put them.
-
-- `integrations/` is a folder to put all third-party integrations like with Stripe, Sentry, etc.
-
-- `test/` is a folder where you can put test utilities and integration tests.
-
-- `package.json` contains information about your dependencies and devDependencies. If you’re using a tool like `npm` or `yarn`, you won’t have to worry about this much.
-
-- `tsconfig.json` is our recommended setup for TypeScript.
-
-- `.babelrc.js`, `.env`, etc. ("dotfiles") are configuration files for various bits of JavaScript tooling.
-
-- `blitz.config.js` is for advanced custom configuration of Blitz. It extends [`next.config.js`](https://nextjs.org/docs/api-reference/next.config.js/introduction).
-
-- `jest.config.js` contains config for Jest tests. You can [customize it if needed](https://jestjs.io/docs/en/configuration).
-
-You can read more about it in the [File Structure](https://blitzjs.com/docs/file-structure) section of the documentation.
-
-### Tools included
-
-Blitz comes with a set of tools that corrects and formats your code, facilitating its future maintenance. You can modify their options and even uninstall them.
-
-- **ESLint**: It lints your code: searches for bad practices and tell you about it. You can customize it via the `.eslintrc.js`, and you can install (or even write) plugins to have it the way you like it. It already comes with the [`blitz`](https://github.com/blitz-js/blitz/tree/canary/packages/eslint-config) config, but you can remove it safely. [Learn More](https://eslint.org).
-- **Husky**: It adds [githooks](https://git-scm.com/docs/githooks), little pieces of code that get executed when certain Git events are triggerd. For example, `pre-commit` is triggered just before a commit is created. You can see the current hooks inside `.husky/`. If are having problems commiting and pushing, check out ther [troubleshooting](https://typicode.github.io/husky/#/?id=troubleshoot) guide. [Learn More](https://typicode.github.io/husky).
-- **Prettier**: It formats your code to look the same everywhere. You can configure it via the `.prettierrc` file. The `.prettierignore` contains the files that should be ignored by Prettier; useful when you have large files or when you want to keep a custom formatting. [Learn More](https://prettier.io).
-
-## Learn more
-
-Read the [Blitz.js Documentation](https://blitzjs.com/docs/getting-started) to learn more.
-
-The Blitz community is warm, safe, diverse, inclusive, and fun! Feel free to reach out to us in any of our communication channels.
-
-- [Website](https://blitzjs.com/)
-- [Discord](https://discord.blitzjs.com/)
-- [Report an issue](https://github.com/blitz-js/blitz/issues/new/choose)
-- [Forum discussions](https://github.com/blitz-js/blitz/discussions)
-- [How to Contribute](https://blitzjs.com/docs/contributing)
-- [Sponsor or donate](https://github.com/blitz-js/blitz#sponsors-and-donations)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
