@@ -1,0 +1,64 @@
+@use './fonts.css';
+@use './mixins' as *;
+
+:root {
+  --jhm-body-font-size: 16px;
+  --jhm-primary-background-color: #f3f3f5;
+  --jhm-secondary-background-color: #fff;
+  --jhm-primary-text-color: #222;
+  --jhm-secondary-text-color: #444;
+}
+
+.primary-background {
+  background-color: var(--jhm-primary-background-color);
+}
+
+.secondary-background {
+  background-color: var(--jhm-secondary-background-color);
+}
+
+.primary-text {
+  color: var(--jhm-primary-text-color);
+}
+
+.secondary-text {
+  color: var(--jhm-secondary-text-color);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Interop, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+  color: #333;
+  font-size: 18px;
+  background-color: var(--jhm-primary-background-color);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+}
