@@ -1,6 +1,6 @@
-import { FC } from 'react'
+import { NextPage } from 'next'
 import { LayoutName } from './layouts/LayoutWrapper'
 
-export type JFC = FC & {
+export type Page = NextPage & {
   layout?: LayoutName
 }
