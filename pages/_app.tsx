@@ -1,15 +1,12 @@
-import '@/styles/globals.scss'
+import LayoutWrapper from '@/layouts/LayoutWrapper'
+import '@/styles/global-styles.scss'
 import type { AppProps } from 'next/app'
-import Head from 'next/head'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <link rel="stylesheet" href="/fonts.css" />
-      </Head>
+    <LayoutWrapper>
       <Component {...pageProps} />
-    </>
+    </LayoutWrapper>
   )
 }
 export default MyApp
