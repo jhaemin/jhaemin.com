@@ -1,0 +1,112 @@
+@use '@/styles/jhm' as *;
+
+.introduction {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+}
+
+.portrait {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: $border-radius;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.subtitle {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.manifesto {
+  p {
+    @include paragraph;
+  }
+}
+
+.moreLink {
+  color: #5ba1d4;
+  font-weight: 500;
+}
+
+.moreIcon {
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+@include smaller-than(700px) {
+  .introduction {
+    grid-template-columns: 1fr;
+  }
+
+  .manifesto {
+    order: 1;
+  }
+
+  .portrait {
+    order: 0;
+  }
+}
+
+.projects {
+  margin-top: 100px;
+  display: grid;
+  gap: 50px;
+
+  .projectsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 0 -15px;
+
+    .projectItem {
+      letter-spacing: 0;
+      background-color: var(--jhm-tertiary-background-color);
+      border-radius: 5px;
+      display: grid;
+      grid-auto-rows: min-content;
+      gap: 8px;
+      padding: 15px;
+      transition: background-color $theme-change-duration ease,
+        box-shadow 300ms ease;
+
+      @include hover {
+        background-color: var(--jhm-active-background-color);
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12),
+          0 10px 15px rgba(0, 0, 0, 0.12);
+      }
+
+      // &:hover {
+      //   background-color: var(--jhm-primary-background-color);
+      //   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+      // }
+
+      .projectName {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .projectDescription {
+        color: var(--jhm-secondary-text-color);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+    }
+  }
+}
