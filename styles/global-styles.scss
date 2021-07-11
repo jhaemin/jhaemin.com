@@ -1,28 +1,69 @@
 @use './fonts.css';
-@use './mixins' as *;
+@use './jhm' as *;
 
 :root {
   --jhm-body-font-size: 16px;
-  --jhm-primary-background-color: #f3f3f5;
-  --jhm-secondary-background-color: #fff;
+  --jhm-primary-background-color: #fff;
+  --jhm-secondary-background-color: #f3f3f5;
+  --jhm-tertiary-background-color: #f8f8f9;
+  --jhm-active-background-color: #fff;
   --jhm-primary-text-color: #222;
-  --jhm-secondary-text-color: #444;
+  --jhm-secondary-text-color: #979797;
+  --jhm-point-color: #0099ff;
+
+  @include dark-mode {
+    --jhm-primary-background-color: #111;
+    --jhm-secondary-background-color: #222;
+    --jhm-tertiary-background-color: #1d1d1d;
+    --jhm-active-background-color: #333;
+    --jhm-primary-text-color: #cccccc;
+    --jhm-secondary-text-color: #979797;
+    --jhm-point-color: #1757ce;
+  }
 }
 
-.primary-background {
-  background-color: var(--jhm-primary-background-color);
+[data-page='design'] {
+  --jhm-primary-background-color: #e7decc;
+  --jhm-secondary-background-color: #cebfa6;
+  --jhm-tertiary-background-color: #dbcfb9;
+  --jhm-active-background-color: #333;
+  --jhm-primary-text-color: #58431d;
+  --jhm-secondary-text-color: #af915d;
+  --jhm-point-color: #c25812;
 }
 
-.secondary-background {
-  background-color: var(--jhm-secondary-background-color);
+@include dark-mode {
+  [data-page='design'] {
+    --jhm-primary-background-color: #463410;
+    --jhm-secondary-background-color: #614b26;
+    --jhm-tertiary-background-color: #614b26;
+    --jhm-active-background-color: #333;
+    --jhm-primary-text-color: #ebdec5;
+    --jhm-secondary-text-color: #af915d;
+    --jhm-point-color: #f3ba1e;
+  }
 }
 
-.primary-text {
-  color: var(--jhm-primary-text-color);
+[data-page='photography'] {
+  --jhm-primary-background-color: #dfe8f0;
+  --jhm-secondary-background-color: #c4d0dc;
+  --jhm-tertiary-background-color: #dbcfb9;
+  --jhm-active-background-color: #333;
+  --jhm-primary-text-color: #2a5073;
+  --jhm-secondary-text-color: #69849e;
+  --jhm-point-color: #0485ff;
 }
 
-.secondary-text {
-  color: var(--jhm-secondary-text-color);
+@include dark-mode {
+  [data-page='photography'] {
+    --jhm-primary-background-color: #213241;
+    --jhm-secondary-background-color: #3c4956;
+    --jhm-tertiary-background-color: #dbcfb9;
+    --jhm-active-background-color: #333;
+    --jhm-primary-text-color: #aac2d7;
+    --jhm-secondary-text-color: #596d80;
+    --jhm-point-color: #29fff1;
+  }
 }
 
 html,
@@ -31,6 +72,11 @@ body {
   margin: 0;
   font-family: Interop, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--jhm-secondary-background-color);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -38,10 +84,12 @@ body {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -o-font-smoothing: antialiased;
-  color: #333;
+  color: var(--jhm-primary-text-color);
   font-size: 18px;
-  background-color: var(--jhm-primary-background-color);
   letter-spacing: -0.01em;
+  transition: background-color $theme-change-duration ease,
+    color $theme-change-duration ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -61,4 +109,9 @@ h2,
 h3,
 h4 {
   line-height: 1.2;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
 }
