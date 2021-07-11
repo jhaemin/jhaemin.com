@@ -12,8 +12,6 @@ type LayoutWrapperProps = {
 }
 
 function LayoutWrapper(props: LayoutWrapperProps) {
-  console.log(props.children)
-
   const Layout =
     layouts[(props.children as any).type.layout as keyof typeof layouts]
 
