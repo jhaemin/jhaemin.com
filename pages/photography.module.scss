@@ -1,0 +1,42 @@
+@use '@/styles/jhm' as *;
+
+.photosContainer {
+  display: grid;
+  gap: 100px;
+}
+
+.photo {
+  text-align: center;
+  min-height: calc(100vh - 150px);
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $border-radius;
+    max-height: calc(100vh - 150px);
+
+    @include smaller-than(700px) {
+      border-radius: 0;
+    }
+  }
+
+  @include smaller-than(700px) {
+    margin: 0 -25px;
+  }
+
+  caption {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 14px;
+
+    .photoTitle {
+      font-size: inherit;
+    }
+
+    .info {
+      margin-top: 5px;
+      color: var(--jhm-secondary-text-color);
+    }
+  }
+}
