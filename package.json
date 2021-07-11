@@ -5,8 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start --port 7000",
+    "lint": "next lint",
+    "pm2:start": "if pm2 show jhaemin.com ; then npm run pm2:stop && npm run pm2:delete && npm run pm2:start ; else pm2 start npm --name 'jhaemin.com' -- run start ; fi",
+    "pm2:restart": "if pm2 show jhaemin.com ; then pm2 restart jhaemin.com ; else echo 'No pm2 instance for jhaemin.com client' ; fi",
+    "pm2:stop": "if pm2 show jhaemin.com ; then pm2 stop jhaemin.com ; else echo 'No pm2 instance for jhaemin.com client' ; fi",
+    "pm2:delete": "if pm2 show jhaemin.com ; then pm2 delete jhaemin.com ; else echo 'No pm2 instance for jhaemin.com client' ; fi",
+    "pm2:reboot": "rm -rf node_modules && npm install && npm run typecheck && next build && npm run pm2:start"
   },
   "dependencies": {
     "clsx": "^1.1.1",
