@@ -1,0 +1,23 @@
+@use '@/styles/jhm' as *;
+
+.designPage {
+  display: grid;
+  gap: 100px;
+}
+
+.paragraph {
+  @include paragraph;
+}
+
+.from {
+  font-size: 18px;
+  font-weight: 500;
+
+  a {
+    color: var(--jhm-point-color);
+
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+}
