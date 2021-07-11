@@ -1,8 +1,6 @@
 @mixin dark-mode {
   @media (prefers-color-scheme: dark) {
-    & {
-      @content;
-    }
+    @content;
   }
 }
 
@@ -15,5 +13,23 @@
 @mixin larger-than($width) {
   @media only screen and (min-width: $width) {
     @content;
+  }
+}
+
+@mixin paragraph {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  & + * {
+    margin-top: 1em;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
   }
 }
