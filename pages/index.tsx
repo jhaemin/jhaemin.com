@@ -1,5 +1,7 @@
 import Icon from '@/components/Icon'
+import jhmPortrait from '@/images/jhaemin_portrait.png'
 import { Page } from '@/types'
+import Image from 'next/image'
 import Link from 'next/link'
 import $ from './index.home.module.scss'
 
@@ -165,10 +167,9 @@ const Home: Page = () => {
         </div>
         <div>
           <div className={$.portrait}>
-            <img
-              src="/images/jhaemin_portrait.png"
-              alt="Jang Haemin Portrait"
-            />
+            <div className={$.imageWrapper}>
+              <Image src={jhmPortrait} alt="Jang Haemin Portrait" />
+            </div>
           </div>
         </div>
       </div>
