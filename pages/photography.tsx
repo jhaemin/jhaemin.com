@@ -89,7 +89,7 @@ const Photography: Page = () => {
       <div className={$.photosContainer}>
         {photos.map(({ file: src, img, title, caption }, i) => (
           <figure key={i} className={$.photo}>
-            <Image src={img} alt={title} />
+            <Image src={img} alt={title} priority />
             <figcaption>
               <h2 className={$.photoTitle}>{title}</h2>
               <p className={$.info}>{caption}</p>

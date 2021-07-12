@@ -168,7 +168,7 @@ const Home: Page = () => {
         <div>
           <div className={$.portrait}>
             <div className={$.imageWrapper}>
-              <Image src={jhmPortrait} alt="Jang Haemin Portrait" />
+              <Image src={jhmPortrait} alt="Jang Haemin Portrait" priority />
             </div>
           </div>
         </div>
