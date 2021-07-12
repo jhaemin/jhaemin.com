@@ -65,14 +65,10 @@ const Photography: Page = () => {
       <PageInfo title="Photography | Jang Haemin" />
 
       <div className={$.photosContainer}>
-        {photos.map(({ file: src, title, caption }, i) => (
-          <div key={i} className={$.photo}>
-            <img src={`/images/photography/${src}`} alt={title} />
-            <caption>
+            <figcaption>
               <h2 className={$.photoTitle}>{title}</h2>
               <p className={$.info}>{caption}</p>
-            </caption>
-          </div>
+            </figcaption>
         ))}
       </div>
     </div>
