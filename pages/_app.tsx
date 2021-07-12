@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <PageInfo
-        title="Jang Haemin"
+        title="Jang Haemin | 장해민"
         ogImage="https://jhaemin.com/og/jhaemin_open_graph_main.png"
       />
 
