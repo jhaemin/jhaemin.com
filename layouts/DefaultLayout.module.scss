@@ -86,8 +86,8 @@ $horizontal-gap: 25px;
   line-height: 1;
   font-weight: 800;
   display: inline-block;
-  transition: opacity $theme-change-duration ease,
-    color $theme-change-duration ease;
+  transition: filter $theme-change-duration ease,
+    opacity $theme-change-duration ease, color $theme-change-duration ease;
 
   & + & {
     margin-top: 8px;
