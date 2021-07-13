@@ -33,7 +33,7 @@ const projects: {
     name: 'Mandao',
     description:
       'Create a website without writing codes. Developed at Woowa Brothers Corp.',
-    href: 'https://docs.mandao.baemin.com',
+    href: 'https://www.youtube.com/watch?v=XDC4QH-4Xms',
   },
   {
     name: 'Interop',
@@ -167,9 +167,10 @@ const Home: Page = () => {
         </div>
         <div>
           <div className={$.portrait}>
-            <div className={$.imageWrapper}>
-              <Image src={jhmPortrait} alt="Jang Haemin Portrait" priority />
-            </div>
+            <img
+              src="/images/jhaemin_portrait.png"
+              alt="Jang Haemin Portrait"
+            />
           </div>
         </div>
       </div>
