@@ -154,7 +154,8 @@ const Home: Page = () => {
             ways express myself. Having a chance to consider the beauty might be
             a privilege of our frontend developers.
           </p>
-          <p>I love my family, friends and Seoul. Stay Safe.</p>
+          <p>I love my family, friends and Seoul.</p>
+          <p>Stay Safe.</p>
 
           {/* <p className={$.moreLink}>
             <Link href="/about">
