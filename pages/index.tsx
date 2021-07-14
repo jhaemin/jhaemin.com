@@ -92,6 +92,12 @@ const projects: {
     href: 'https://github.com/jhaemin/prismap',
   },
   {
+    name: 'Cassandra',
+    description:
+      'Box office prediction app for Mac. It precisely predicted the Luck-Key movie.',
+    href: 'https://github.com/payw-org/Cassandra',
+  },
+  {
     name: 'Squircle.js',
     description: 'Squircles for web.',
     href: 'https://github.com/jhaemin/squircle.js',
@@ -115,12 +121,6 @@ const projects: {
     name: 'where.land',
     description: 'A public websites shortcut.',
     href: 'https://github.com/jhaemin/where.land',
-  },
-  {
-    name: 'Cassandra',
-    description:
-      'Box office prediction app for Mac. It precisely predicted the Luck-Key movie.',
-    href: 'https://github.com/payw-org/Cassandra',
   },
   {
     name: 'Labyrinth',
