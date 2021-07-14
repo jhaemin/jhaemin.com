@@ -143,7 +143,13 @@ const Home: Page = () => {
           <p>
             I mostly spend time developing, designing and surfing the web while
             listening to{' '}
-            <span style={{ position: 'relative', top: '-0.06em' }}>
+            <span
+              style={{
+                position: 'relative',
+                top: '-0.06em',
+                marginLeft: '-0.06em',
+              }}
+            >
               <Icon name="logo_apple" />
             </span>
             Music or watching Netflix. Endless learning keeps me alive and never
