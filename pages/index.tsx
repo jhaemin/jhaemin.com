@@ -156,15 +156,6 @@ const Home: Page = () => {
           </p>
           <p>I love my family, friends and Seoul.</p>
           <p>Stay Safe.</p>
-
-          {/* <p className={$.moreLink}>
-            <Link href="/about">
-              <a>
-                Read more about me
-                <Icon className={$.moreIcon} name="chevron_right" />
-              </a>
-            </Link>
-          </p> */}
         </div>
         <div>
           <div className={$.portrait}>
