@@ -14,10 +14,10 @@ const sections: {
   name: string
   href: string
 }[] = [
-  // {
-  //   name: 'About',
-  //   href: '/about',
-  // },
+  {
+    name: 'About',
+    href: '/',
+  },
   {
     name: 'Design',
     href: '/design',
@@ -67,7 +67,7 @@ export default function DefaultLayout(props: DefaultLayoutProps) {
               <Link key={section.name} href={section.href}>
                 <a
                   className={clsx($.section, {
-                    [$.defocus]: !['/', section.href].includes(pathname),
+                    [$.defocus]: ![section.href].includes(pathname),
                     [$.active]: section.href === pathname,
                   })}
                 >
