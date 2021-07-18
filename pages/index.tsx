@@ -47,6 +47,11 @@ const projects: {
     href: 'https://github.com/jhaemin/game-of-life-3d',
   },
   {
+    name: 'Woowa Fonts',
+    description: 'A modern and interactive website for Woowa Bros fonts.',
+    href: 'https://github.com/jhaemin/fonts.woowa.io',
+  },
+  {
     name: 'Muyaho',
     description: 'Which means I’m excited.',
     href: 'https://github.com/jhaemin/muyaho',
@@ -98,11 +103,6 @@ const projects: {
     href: 'https://github.com/payw-org/Cassandra',
   },
   {
-    name: 'Squircle.js',
-    description: 'Squircles for web.',
-    href: 'https://github.com/jhaemin/squircle.js',
-  },
-  {
     name: 'webglue',
     description: 'Gather your favorite websites in one place.',
     href: 'https://github.com/payw-org/webglue.me-vue',
@@ -111,6 +111,11 @@ const projects: {
     name: 'WEBuffet',
     description: 'A Chrome extension that allows you to manipulate websites.',
     href: 'https://github.com/payw-org/webuffet',
+  },
+  {
+    name: 'Squircle.js',
+    description: 'Squircles for web.',
+    href: 'https://github.com/jhaemin/squircle.js',
   },
   {
     name: 'Saying',
