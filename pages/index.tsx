@@ -47,6 +47,11 @@ const projects: {
     href: 'https://github.com/jhaemin/game-of-life-3d',
   },
   {
+    name: 'Clowd',
+    description: 'A cloud powered by a crowd.',
+    href: 'https://github.com/team836',
+  },
+  {
     name: 'Woowa Fonts',
     description: 'A modern and interactive website for Woowa Bros fonts.',
     href: 'https://github.com/jhaemin/fonts.woowa.io',
