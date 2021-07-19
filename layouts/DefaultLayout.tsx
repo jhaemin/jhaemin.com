@@ -19,8 +19,8 @@ const sections: {
     href: '/',
   },
   {
-    name: 'Design',
-    href: '/design',
+    name: 'Articles',
+    href: '/articles',
   },
   {
     name: 'Photography',
