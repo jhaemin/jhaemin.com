@@ -57,6 +57,12 @@ const projects: {
     href: 'https://github.com/jhaemin/fonts.woowa.io',
   },
   {
+    name: 'Marko',
+    description:
+      'An HTML editor written in pure JavaScript with near-zero dependencies.',
+    href: '',
+  },
+  {
     name: 'Muyaho',
     description: 'Which means I’m excited.',
     href: 'https://github.com/jhaemin/muyaho',
