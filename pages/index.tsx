@@ -47,9 +47,10 @@ const projects: {
     href: 'https://github.com/jhaemin/game-of-life-3d',
   },
   {
-    name: 'Clowd',
-    description: 'A cloud powered by a crowd.',
-    href: 'https://github.com/team836',
+    name: 'PAYW',
+    description:
+      'An open source group where talented developers are operating.',
+    href: 'https://payw.org',
   },
   {
     name: 'Woowa Fonts',
@@ -73,10 +74,9 @@ const projects: {
     href: 'https://github.com/jhaemin/poltoday',
   },
   {
-    name: 'PAYW',
-    description:
-      'An open source group where talented developers are operating.',
-    href: 'https://payw.org',
+    name: 'Clowd',
+    description: 'A cloud powered by a crowd.',
+    href: 'https://github.com/team836',
   },
   {
     name: 'eodiro',
@@ -188,6 +188,8 @@ const Home: Page = () => {
           </div>
         </div>
       </div>
+
+      {/* TODO: Add open source section */}
 
       <div className={$.projects}>
         <h1 className={$.subtitle}>Projects</h1>
