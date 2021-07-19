@@ -22,7 +22,7 @@
   }
 }
 
-[data-page='design'] {
+[data-page='articles'] {
   --jhm-primary-background-color: #e7decc;
   --jhm-secondary-background-color: #cebfa6;
   --jhm-tertiary-background-color: #dbcfb9;
@@ -33,10 +33,10 @@
 }
 
 @include dark-mode {
-  [data-page='design'] {
-    --jhm-primary-background-color: #463410;
-    --jhm-secondary-background-color: #614b26;
-    --jhm-tertiary-background-color: #614b26;
+  [data-page='articles'] {
+    --jhm-primary-background-color: #36280a;
+    --jhm-secondary-background-color: #4d3916;
+    --jhm-tertiary-background-color: #36280a;
     --jhm-active-background-color: #333;
     --jhm-primary-text-color: #ebdec5;
     --jhm-secondary-text-color: #af915d;
@@ -56,9 +56,9 @@
 
 @include dark-mode {
   [data-page='photography'] {
-    --jhm-primary-background-color: #213241;
-    --jhm-secondary-background-color: #3c4956;
-    --jhm-tertiary-background-color: #213241;
+    --jhm-primary-background-color: #17232e;
+    --jhm-secondary-background-color: #273747;
+    --jhm-tertiary-background-color: #17232e;
     --jhm-active-background-color: #333;
     --jhm-primary-text-color: #aac2d7;
     --jhm-secondary-text-color: #596d80;
