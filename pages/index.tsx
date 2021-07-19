@@ -1,28 +1,7 @@
 import Icon from '@/components/Icon'
-import jhmPortrait from '@/images/jhaemin_portrait.png'
 import { Page } from '@/types'
-import Image from 'next/image'
 import Link from 'next/link'
 import $ from './index.home.module.scss'
-
-// export default function Home() {
-//   return (
-//     <div className={styles.home}>
-//       <h1 className={styles.name}>Jang Haemin</h1>
-
-//       {Array(10)
-//         .fill(1)
-//         .map((i) => (
-//           <div className={styles.piece} key={i}>
-//             <h2 className={styles.pieceName}>Mandao</h2>
-//             <p className={styles.pieceDescription}>
-//               Create websites without coding.
-//             </p>
-//           </div>
-//         ))}
-//     </div>
-//   )
-// }
 
 const projects: {
   name: string
