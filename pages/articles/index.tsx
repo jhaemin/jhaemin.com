@@ -1,6 +1,6 @@
 import PageInfo from '@/components/PageInfo'
 import { Page } from '@/types'
-import $ from './articles.module.scss'
+import $ from './index.articles.module.scss'
 
 const Design: Page = () => {
   return (
