@@ -16,6 +16,28 @@ function MyApp({ Component, pageProps }: AppProps) {
     )
   }, [router.pathname])
 
+  useEffect(() => {
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      console.log('dark mode')
+    }
+
+    const onChangeColorScheme = (e: MediaQueryListEvent) => {
+      const newColorScheme = e.matches ? 'dark' : 'light'
+      console.log(`${newColorScheme} mode`)
+    }
+
+    const matchMedia = window.matchMedia('(prefers-color-scheme: dark)')
+
+    matchMedia.addEventListener('change', onChangeColorScheme)
+
+    return () => {
+      matchMedia.removeEventListener('change', onChangeColorScheme)
+    }
+  }, [])
+
   return (
     <>
       <Head>
