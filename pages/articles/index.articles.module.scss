@@ -5,6 +5,14 @@
   gap: 100px;
 }
 
+.articleTitle {
+  font-size: 30px;
+
+  & + p {
+    margin-top: 30px;
+  }
+}
+
 .paragraph {
   @include paragraph;
 }
