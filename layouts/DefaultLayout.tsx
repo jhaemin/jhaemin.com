@@ -28,7 +28,7 @@ const sections: {
   },
 ]
 
-export default function DefaultLayout(props: DefaultLayoutProps) {
+const DefaultLayout = (props: DefaultLayoutProps) => {
   const { children } = props
   const { pathname } = useRouter()
 
@@ -83,3 +83,5 @@ export default function DefaultLayout(props: DefaultLayoutProps) {
     </div>
   )
 }
+
+export default DefaultLayout
