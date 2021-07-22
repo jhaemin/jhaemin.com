@@ -8,7 +8,7 @@ const Design: Page = () => {
       <PageInfo title="Design | Jang Haemin" />
       <div>
         <article>
-          <h1 className={$.articleTitle}>Frontend Designer</h1>
+          {/* <h1 className={$.articleTitle}>Frontend Designer</h1> */}
           <p className={$.paragraph}>
             When you’re somewhat good at only one thing, fairly that’s not
             enough to be remembered by the world. There are a lot of full-stack
