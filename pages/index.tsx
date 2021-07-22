@@ -40,7 +40,7 @@ const projects: {
     name: 'Marko',
     description:
       'An HTML editor written in pure JavaScript with near-zero dependencies.',
-    href: '',
+    href: 'https://github.com/jhaemin/marko',
   },
   {
     name: 'Muyaho',
