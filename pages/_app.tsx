@@ -4,10 +4,14 @@ import '@/styles/global-styles.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
+const faviconIcoHrefLight = '/favicon.ico'
+const faviconIcoHrefDark = '/favicon-dark.ico'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
+  const [faviconIcoHref, setFaviconIcoHref] = useState(faviconIcoHrefLight)
 
   useEffect(() => {
     document.documentElement.setAttribute(
@@ -17,16 +21,27 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.pathname])
 
   useEffect(() => {
+    const updateFaviconToLight = () => setFaviconIcoHref(faviconIcoHrefLight)
+    const updateFaviconToDark = () => setFaviconIcoHref(faviconIcoHrefDark)
+
     if (
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
     ) {
       console.log('dark mode')
+      updateFaviconToDark()
     }
 
     const onChangeColorScheme = (e: MediaQueryListEvent) => {
       const newColorScheme = e.matches ? 'dark' : 'light'
+
       console.log(`${newColorScheme} mode`)
+
+      if (newColorScheme === 'dark') {
+        updateFaviconToDark()
+      } else {
+        updateFaviconToLight()
+      }
     }
 
     const matchMedia = window.matchMedia('(prefers-color-scheme: dark)')
@@ -41,7 +56,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href={faviconIcoHref} />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
