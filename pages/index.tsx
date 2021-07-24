@@ -190,7 +190,7 @@ const projects: {
   },
   {
     name: 'ReScript Calculator',
-    description: 'Learning ReScript with a practical example, calculator.',
+    description: 'Learning ReScript with a practical example.',
     href: 'https://github.com/jhaemin/rescript-calculator',
   },
   {
