@@ -5,9 +5,7 @@ $horizontal-gap: 25px;
 .defaultLayout {
   max-width: 1200px;
   margin: auto;
-  margin-bottom: 50px;
   min-height: 100vh;
-  background-color: var(--jhm-primary-background-color);
   transition: background-color $theme-change-duration ease;
 }
 
@@ -28,6 +26,7 @@ $horizontal-gap: 25px;
 .defaultLayoutContent {
   max-width: 1000px;
   margin: auto;
+  background-color: var(--jhm-primary-background-color);
 }
 
 .firstRow {
@@ -113,4 +112,19 @@ $horizontal-gap: 25px;
   padding: 0 $horizontal-gap $padding-bottom;
   padding: 0 $horizontal-gap
     calc(env(safe-area-inset-bottom) + #{$padding-bottom});
+}
+
+.footer {
+  padding: 50px 0;
+  display: grid;
+  grid-auto-rows: min-content;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--jhm-secondary-text-color);
+
+  a {
+    text-decoration: underline;
+    color: var(--jhm-primary-text-color);
+  }
 }

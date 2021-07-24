@@ -80,6 +80,20 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
 
         <main className={$.sectionContent}>{children}</main>
       </div>
+
+      <footer className={$.footer}>
+        <p>
+          This website is an{' '}
+          <a
+            href="https://github.com/jhaemin/jhaemin.com-next"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            open source
+          </a>
+        </p>
+        <p>Copyright © 2021 Jang Haemin</p>
+      </footer>
     </div>
   )
 }
