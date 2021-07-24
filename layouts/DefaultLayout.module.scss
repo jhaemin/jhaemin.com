@@ -11,8 +11,12 @@
 .defaultLayoutContent {
   margin: auto;
   background-color: var(--jhm-primary-background-color);
-  padding: 0 var(--jhm-horizontal-content-inset) 100px;
+  padding: 50px 25px;
   border-radius: $border-radius;
+
+  @include larger-than(1000px) {
+    padding: 100px;
+  }
 }
 
 .firstRow {
@@ -39,16 +43,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding-top: 50px;
   margin-bottom: 100px;
-
-  @include larger-than(700px) {
-    padding-top: 100px;
-  }
-
-  @include smaller-than(1000px) {
-    padding-top: 50px;
-  }
 }
 
 .logoLink {
