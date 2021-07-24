@@ -36,7 +36,7 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
     <div className={clsx($.defaultLayout, pathname.replace('/', ''))}>
       <div className={$.sense} />
       <div className={$.defaultLayoutContent}>
-        <div className={$.header}>
+        <nav className={$.header}>
           <div className={$.firstRow}>
             <Link href="/">
               <a className={$.logoLink}>
@@ -76,9 +76,9 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
               </Link>
             ))}
           </div>
-        </div>
+        </nav>
 
-        <div className={$.sectionContent}>{children}</div>
+        <main className={$.sectionContent}>{children}</main>
       </div>
     </div>
   )
