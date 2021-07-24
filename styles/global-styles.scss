@@ -11,6 +11,12 @@
   --jhm-secondary-text-color: #808080;
   --jhm-point-color: #0099ff;
 
+  --jhm-horizontal-content-inset: 25px;
+
+  @include larger-than(1000px) {
+    --jhm-horizontal-content-inset: 100px;
+  }
+
   @include dark-mode {
     --jhm-primary-background-color: #111;
     --jhm-secondary-background-color: #222;

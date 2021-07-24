@@ -34,7 +34,6 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
 
   return (
     <div className={clsx($.defaultLayout, pathname.replace('/', ''))}>
-      <div className={$.sense} />
       <div className={$.defaultLayoutContent}>
         <nav className={$.header}>
           <div className={$.firstRow}>
