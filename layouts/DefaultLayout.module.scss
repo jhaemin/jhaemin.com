@@ -13,6 +13,7 @@
   background-color: var(--jhm-primary-background-color);
   padding: 50px 25px;
   border-radius: $border-radius;
+  transition: background-color $theme-change-duration ease;
 
   @include larger-than(1000px) {
     padding: 100px;
