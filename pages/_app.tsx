@@ -28,14 +28,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
     ) {
-      console.log('dark mode')
       updateFaviconToDark()
     }
 
     const onChangeColorScheme = (e: MediaQueryListEvent) => {
       const newColorScheme = e.matches ? 'dark' : 'light'
-
-      console.log(`${newColorScheme} mode`)
 
       if (newColorScheme === 'dark') {
         updateFaviconToDark()
