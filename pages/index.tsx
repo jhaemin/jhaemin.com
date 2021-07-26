@@ -14,7 +14,7 @@ import webuffetLogo from '@/assets/project-icons/webuffet.svg'
 import wherelandLogo from '@/assets/project-icons/whereland.svg'
 import woowafontsLogo from '@/assets/project-icons/woowafonts.svg'
 import Icon from '@/components/Icon'
-import { Page, SVGComponent } from '@/types'
+import { Page, SVGComponent } from '@/types/general'
 import Link from 'next/link'
 import $ from './index.home.module.scss'
 
@@ -77,6 +77,12 @@ const projects: {
       'A cloud powered by a crowd. It stores data in our personal computers storage instead of a single, centralized data center.',
     href: 'https://github.com/team836',
     Logo: clowdLogo,
+  },
+  {
+    name: 'Naver Auto Dark',
+    description:
+      'Automatically sync Naver homepage color scheme to your system preference.',
+    href: 'https://github.com/jhaemin/naver-auto-dark',
   },
   {
     name: 'eodiro',
