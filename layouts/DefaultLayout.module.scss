@@ -6,6 +6,15 @@
   min-height: 100vh;
   transition: background-color $theme-change-duration ease;
   padding-top: 50px;
+
+  @include smaller-than(700px) {
+    padding-top: 30px;
+  }
+
+  @include smaller-than(1200px) {
+    max-width: unset;
+    width: 100%;
+  }
 }
 
 .defaultLayoutContent {
