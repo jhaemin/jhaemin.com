@@ -7,7 +7,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model article {
-  id      Int    @id @default(autoincrement()) @db.UnsignedInt
-  content String @db.Text
+model Article {
+  id        Int       @id @default(autoincrement()) @db.UnsignedInt
+  title     String?   @db.VarChar(250)
+  content   String?   @db.Text
+  writtenAt DateTime? @db.Date
+}
+
+model PendingUser {
+  id       Int       @id @default(autoincrement()) @db.UnsignedInt
+  email    String    @unique @default("") @db.VarChar(500)
+  magicKey String?   @db.VarChar(200)
+  issuedAt DateTime? @db.DateTime(0)
+  joinedAt DateTime  @db.DateTime(0)
+}
+
+model User {
+  id       Int       @id @default(autoincrement()) @db.UnsignedInt
+  email    String    @unique @default("") @db.VarChar(500)
+  magicKey String?   @db.VarChar(200)
+  issuedAt DateTime? @db.DateTime(0)
+  joinedAt DateTime  @db.DateTime(0)
 }
