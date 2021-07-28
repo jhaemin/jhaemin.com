@@ -34,4 +34,9 @@ export const error = {
     code: 'AUTH_004',
     msg: 'Wrong email format',
   },
+  /** Unregistered email */
+  AUTH_005: {
+    code: 'AUTH_005',
+    msg: 'Unregistered email',
+  },
 }
