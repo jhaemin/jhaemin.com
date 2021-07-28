@@ -40,12 +40,27 @@ export const withSessionApi = (
   }, sessionOptions)
 }
 
-export const withSessionPage = (handler: JhmGetServerSideProps) =>
+export const withSessionPage = (
+  handler: JhmGetServerSideProps,
+  options?: {
+    noAccessWithSignedIn: boolean
+  }
+) =>
   withIronSession(async (context: JhmGetServerSidePropsContext) => {
     const sessionUserId = context.req.session.get('userId') as number
 
     if (sessionUserId) {
       context.req.userId = sessionUserId
+
+      if (options?.noAccessWithSignedIn) {
+        return {
+          redirect: {
+            permanent: false,
+            destination: '/',
+          },
+          props: {},
+        }
+      }
     }
 
     return handler(context)
