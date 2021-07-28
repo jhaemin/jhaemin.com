@@ -51,7 +51,8 @@ export const projects: {
   },
   {
     name: 'Woowa Fonts',
-    description: 'A modern and interactive website for Woowa Bros fonts.',
+    description:
+      'A modern and interactive website for Woowa Bros fonts using Svelte.',
     href: 'https://github.com/jhaemin/fonts.woowa.io',
     Logo: woowafontsLogo,
   },
@@ -71,7 +72,7 @@ export const projects: {
   {
     name: 'Clowd',
     description:
-      'A cloud powered by a crowd. It stores data in our personal computers storage instead of a single, centralized data center.',
+      'A cloud powered by a crowd. It stores data in our personal computers storage instead of a single, centralized data center. Developed at Purdue University.',
     href: 'https://github.com/team836',
     Logo: clowdLogo,
   },
@@ -115,7 +116,7 @@ export const projects: {
   {
     name: 'To Do List',
     description:
-      'A kanban-style butter smooth and performant To Do web application.',
+      'A kanban-style, butter smooth and performant To Do web application.',
     href: 'https://github.com/woowa-techcamp-2020/todo-14',
   },
   {
