@@ -11,7 +11,13 @@ export type Page<P = {}> = NextPage<P> & {
 
 export type SVGComponent = FunctionComponent<SVGProps<SVGElement>>
 
-export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'
+export enum HttpMethod {
+  GET = 'GET',
+  POST = 'POST',
+  PUT = 'PUT',
+  PATCH = 'PATCH',
+  DELETE = 'DELETE',
+}
 
 export interface JhmApiRequest extends NextApiRequest {
   session: Session
