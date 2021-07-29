@@ -8,7 +8,6 @@ const axiom = axios.create({
 axiom.interceptors.response.use(
   (response) => {
     if (response.data.err) {
-      console.info(response.data.err.code)
       window.alert(response.data.err.msg)
     }
 
