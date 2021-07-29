@@ -8,10 +8,11 @@ datasource db {
 }
 
 model Article {
-  id        Int       @id @default(autoincrement()) @db.UnsignedInt
-  title     String?   @db.VarChar(250)
-  content   String?   @db.Text
-  writtenAt DateTime? @db.Date
+  id        Int      @id @default(autoincrement()) @db.UnsignedInt
+  title     String   @default("") @db.VarChar(250)
+  key       String   @unique @default("") @db.VarChar(250)
+  content   String   @db.Text
+  writtenAt DateTime @db.Date
 }
 
 model PendingUser {
