@@ -15,7 +15,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html data-page={this.props.__NEXT_DATA__.page.replace(/\//g, '')}>
+      <Html data-page={this.props.__NEXT_DATA__.page.split('/')[1]}>
         <Head />
         <body>
           <Main />

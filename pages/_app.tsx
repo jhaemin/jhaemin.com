@@ -1,4 +1,5 @@
 import PageInfo from '@/components/PageInfo'
+import '@/components/ui/global/web-ui.scss'
 import LayoutWrapper from '@/layouts/LayoutWrapper'
 import '@/styles/global-styles.scss'
 import type { AppProps } from 'next/app'
@@ -16,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     document.documentElement.setAttribute(
       'data-page',
-      router.pathname.replace(/\//g, '')
+      router.pathname.split('/')[1]
     )
   }, [router.pathname])
 
