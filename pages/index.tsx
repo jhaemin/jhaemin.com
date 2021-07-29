@@ -45,7 +45,7 @@ const Home: Page = () => {
 
       {/* TODO: Add open source section */}
 
-      <div className={$.projects}>
+      <section className={clsx($.section, $.projects)}>
         <h1 className={$.subtitle}>Projects</h1>
         <div className={$.projectsList}>
           {projects.map(({ name, description, href, Logo }) => {
