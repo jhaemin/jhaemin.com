@@ -1,0 +1,17 @@
+@use '../variables/colors' as *;
+@use '../variables/sizes' as *;
+@use '@/styles/variables' as *;
+
+.web-ui-input-common {
+  border: none;
+  appearance: none;
+  background-color: $component-background;
+  height: $input-height;
+  border-radius: $border-radius;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 16px;
+  min-width: 0;
+  color: inherit;
+  outline: none;
+}
