@@ -1,8 +1,11 @@
 import Icon from '@/components/Icon'
 import { projects } from '@/constants/projects'
-import { Page, SVGComponent } from '@/types/general'
+import { Page } from '@/types/general'
+import { JhmGetServerSideProps } from '@/types/next'
+import { withSessionPage } from '@/utils/node/with-session'
+import clsx from 'clsx'
 import Link from 'next/link'
-import $ from './index.home.module.scss'
+import $ from './Home.module.scss'
 
 const Home: Page = () => {
   return (
@@ -11,7 +14,7 @@ const Home: Page = () => {
         <div className={$.manifesto}>
           <p>Hello, I’m Jang Haemin.</p>
           <p>
-            I mostly spend time developing, designing and surfing the web while
+            I mostly spend time designing, developing and surfing the web while
             listening to{' '}
             <span
               style={{
@@ -43,7 +46,9 @@ const Home: Page = () => {
         </div>
       </div>
 
-      {/* TODO: Add open source section */}
+      {/* <section className={clsx($.section, $.openSource)}>
+        <h1 className={$.subtitle}>Open Source</h1>
+      </section> */}
 
       <section className={clsx($.section, $.projects)}>
         <h1 className={$.subtitle}>Projects</h1>
@@ -68,9 +73,18 @@ const Home: Page = () => {
             )
           })}
         </div>
-      </div>
+      </section>
     </div>
   )
 }
 
 export default Home
+
+const handler: JhmGetServerSideProps = async ({ req, res }) => {
+  console.log(req.userId)
+
+  return {
+    props: {},
+  }
+}
+export const getServerSideProps = withSessionPage(handler)

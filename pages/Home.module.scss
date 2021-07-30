@@ -71,8 +71,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 10px;
-    $item-inset: 15px;
-    margin: 0 -$item-inset;
+    margin: 0 -$inset;
 
     .projectItem {
       letter-spacing: 0;
@@ -82,14 +81,9 @@
       grid-template-columns: 1fr min-content;
       gap: 10px;
       align-items: center;
-      padding: $item-inset;
-      transition: background-color 200ms ease, box-shadow 200ms ease;
+      padding: $inset;
 
-      @include hover {
-        background-color: var(--jhm-active-background-color);
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12),
-          0 10px 15px rgba(0, 0, 0, 0.12);
-      }
+      @include hoverable;
 
       .projectInfo {
         display: grid;
