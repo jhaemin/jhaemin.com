@@ -26,6 +26,10 @@ const sections: {
     name: 'Photography',
     href: '/photography',
   },
+  // {
+  //   name: 'Shop',
+  //   href: '/shop',
+  // },
 ]
 
 const DefaultLayout = (props: DefaultLayoutProps) => {
@@ -33,7 +37,7 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
   const { pathname } = useRouter()
 
   return (
-    <div className={clsx($.defaultLayout, pathname.replace('/', ''))}>
+    <div className={clsx($.defaultLayout)}>
       <div className={$.defaultLayoutContent}>
         <nav className={$.header}>
           <div className={$.firstRow}>
@@ -62,18 +66,25 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
           </div>
 
           <div className={$.sectionsContainer}>
-            {sections.map((section) => (
-              <Link key={section.name} href={section.href}>
-                <a
-                  className={clsx($.section, {
-                    [$.defocus]: ![section.href].includes(pathname),
-                    [$.active]: section.href === pathname,
-                  })}
-                >
-                  {section.name}
-                </a>
-              </Link>
-            ))}
+            {sections.map((section) => {
+              const matched =
+                section.href === '/'
+                  ? section.href === pathname
+                  : pathname.includes(section.href)
+
+              return (
+                <Link key={section.name} href={section.href}>
+                  <a
+                    className={clsx($.section, {
+                      [$.defocus]: !matched,
+                      [$.active]: matched,
+                    })}
+                  >
+                    {section.name}
+                  </a>
+                </Link>
+              )
+            })}
           </div>
         </nav>
 
