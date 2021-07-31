@@ -1,4 +1,4 @@
-import { Page } from '@/types'
+import { Page } from '@/types/general'
 
 const Custom404: Page = () => {
   return (
