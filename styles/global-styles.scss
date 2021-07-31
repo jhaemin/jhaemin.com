@@ -114,6 +114,8 @@ body {
   transition: background-color $theme-change-duration ease,
     color $theme-change-duration ease;
   -webkit-tap-highlight-color: transparent;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 a {
