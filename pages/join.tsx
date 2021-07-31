@@ -3,6 +3,7 @@ import Input from '@/components/ui/input/Input'
 import { error } from '@/constants/error'
 import { Page } from '@/types/general'
 import { isEmail } from '@/utils/both/regex'
+import { withSessionPage } from '@/utils/node/with-session'
 import axiom from '@/utils/web/axiom'
 import { bindTextInput } from '@/utils/web/react'
 import { useRouter } from 'next/router'
@@ -69,3 +70,7 @@ const JoinPage: Page = () => {
 }
 
 export default JoinPage
+
+export const getServerSideProps = withSessionPage(async () => ({ props: {} }), {
+  noAccessWithSignedIn: true,
+})
