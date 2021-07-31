@@ -1,0 +1,19 @@
+@use '@/styles/mixins' as *;
+
+.inputContainer {
+  display: grid;
+  gap: 10px;
+  max-width: 380px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.row1 {
+  @include smaller-than(400px) {
+    grid-template-columns: 1fr;
+  }
+}
