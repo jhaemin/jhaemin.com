@@ -1,0 +1,28 @@
+@use '@/styles/jhm' as *;
+
+.articlesList {
+  list-style: none;
+  padding: 0;
+}
+
+.articleItem {
+  @include hoverable;
+
+  $item-inset: 14px;
+
+  display: grid;
+  gap: 8px;
+  padding: $inset;
+  margin: 0 -$inset;
+}
+
+.articleWrittenAt {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--jhm-secondary-text-color);
+}
+
+.articleTitle {
+  font-size: 30px;
+  font-weight: 800;
+}
