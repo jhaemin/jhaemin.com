@@ -61,7 +61,7 @@ const handler = makeHandler(async (req, res) => {
   Mailer.sendMail({
     subject: 'Join jhaemin.com',
     to: email,
-    html: `${magicKey}`,
+    html: `Magic Key: <b>${magicKey}</b>`,
   })
 
   res.json({ err: null })
