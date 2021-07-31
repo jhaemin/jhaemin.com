@@ -23,21 +23,21 @@
 }
 
 [data-page='articles'] {
-  --jhm-primary-background-color: #e7decc;
-  --jhm-secondary-background-color: #cebfa6;
+  --jhm-primary-background-color: #f1eadd;
+  --jhm-secondary-background-color: #dacebb;
   --jhm-tertiary-background-color: #dbcfb9;
-  --jhm-active-background-color: #333;
+  --jhm-active-background-color: #faf6ef;
   --jhm-primary-text-color: #58431d;
-  --jhm-secondary-text-color: #af915d;
+  --jhm-secondary-text-color: #927341;
   --jhm-point-color: #c25812;
 }
 
 @include dark-mode {
   [data-page='articles'] {
-    --jhm-primary-background-color: #36280a;
-    --jhm-secondary-background-color: #4d3916;
+    --jhm-primary-background-color: #251b05;
+    --jhm-secondary-background-color: #382b12;
     --jhm-tertiary-background-color: #36280a;
-    --jhm-active-background-color: #333;
+    --jhm-active-background-color: #52452b;
     --jhm-primary-text-color: #ebdec5;
     --jhm-secondary-text-color: #af915d;
     --jhm-point-color: #f3ba1e;
@@ -56,8 +56,8 @@
 
 @include dark-mode {
   [data-page='photography'] {
-    --jhm-primary-background-color: #17232e;
-    --jhm-secondary-background-color: #273747;
+    --jhm-primary-background-color: #131e29;
+    --jhm-secondary-background-color: #202f3d;
     --jhm-tertiary-background-color: #17232e;
     --jhm-active-background-color: #333;
     --jhm-primary-text-color: #aac2d7;
