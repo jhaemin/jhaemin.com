@@ -42,8 +42,8 @@ const handler = makeHandler(async (req, res) => {
     prisma.user.create({
       data: {
         email: pendingUser.email,
-        magicKey: pendingUser.magicKey,
-        issuedAt: pendingUser.issuedAt,
+        magicKey: null,
+        issuedAt: null,
         joinedAt: pendingUser.joinedAt,
       },
     }),
