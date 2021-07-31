@@ -66,6 +66,30 @@
   }
 }
 
+:root {
+  $p: 16px;
+  $h1: 34px;
+  $h2: 26px;
+  $h3: 20px;
+  $h4: 16px;
+
+  --jhm-article-paragraph-font-size: #{$p};
+  --jhm-article-heading-1-font-size: #{$h1};
+  --jhm-article-heading-2-font-size: #{$h2};
+  --jhm-article-heading-3-font-size: #{$h3};
+  --jhm-article-heading-4-font-size: #{$h4};
+
+  $scale: 1.125;
+
+  @include larger-than(700px) {
+    --jhm-article-paragraph-font-size: #{$p * $scale};
+    --jhm-article-heading-1-font-size: #{$h1 * $scale};
+    --jhm-article-heading-2-font-size: #{$h2 * $scale};
+    --jhm-article-heading-3-font-size: #{$h3 * $scale};
+    --jhm-article-heading-4-font-size: #{$h4 * $scale};
+  }
+}
+
 html,
 body {
   padding: 0;
