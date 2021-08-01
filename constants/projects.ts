@@ -83,6 +83,11 @@ export const projects: {
     href: 'https://github.com/jhaemin/naver-auto-dark',
   },
   {
+    name: 'Multilinguist',
+    description: 'A Chrome extension that allows you to set language per site.',
+    href: 'https://github.com/jhaemin/multilinguist',
+  },
+  {
     name: 'eodiro',
     description:
       'A guidance service for Chung-Ang University used by thousands of students.',
