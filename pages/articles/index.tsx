@@ -1,33 +1,41 @@
+import CushionLink from '@/components/CushionLink'
 import PageInfo from '@/components/PageInfo'
-import { prisma } from '@/prisma'
+import Button from '@/components/ui/button/Button'
+import prisma from '@/prisma'
 import { Page } from '@/types/general'
+import { JhmGetServerSideProps } from '@/types/next'
+import { withSessionPage } from '@/utils/node/with-session'
 import { Article } from '@prisma/client'
 import dayjs from 'dayjs'
-import { GetServerSideProps } from 'next'
-import Link from 'next/link'
 import $ from './Articles.module.scss'
 
 type ArticlesMainPageProps = {
   articles: Omit<Article, 'id' | 'content'>[]
+  isAdmin: boolean
 }
 
-const ArticlesMainPage: Page<ArticlesMainPageProps> = ({ articles }) => {
+const ArticlesMainPage: Page<ArticlesMainPageProps> = ({
+  articles,
+  isAdmin,
+}) => {
   return (
     <div>
       <PageInfo title="Articles | Jang Haemin" />
 
+      {isAdmin && <Button className={$.newButton}>New</Button>}
+
       <ol className={$.articlesList}>
         {articles.map(({ title, key, writtenAt }) => (
-          <Link key={key} href={`/articles/${key}`}>
-            <a>
-              <li className={$.articleItem}>
+          <li key={key} className={$.articleListItem}>
+            <CushionLink href={`/articles/${key}`}>
+              <div className={$.articleItem}>
                 <span className={$.articleWrittenAt}>
                   {dayjs(writtenAt).format('YYYY. MM. DD')}
                 </span>
                 <span className={$.articleTitle}>{title}</span>
-              </li>
-            </a>
-          </Link>
+              </div>
+            </CushionLink>
+          </li>
         ))}
       </ol>
     </div>
@@ -36,22 +44,39 @@ const ArticlesMainPage: Page<ArticlesMainPageProps> = ({ articles }) => {
 
 export default ArticlesMainPage
 
-export const getServerSideProps: GetServerSideProps<ArticlesMainPageProps> =
-  async () => {
-    const articles = await prisma.article.findMany({
-      orderBy: {
-        writtenAt: 'desc',
-      },
-      select: {
-        title: true,
-        key: true,
-        writtenAt: true,
-      },
-    })
-
-    return {
-      props: {
-        articles,
-      },
-    }
+export const get: JhmGetServerSideProps<ArticlesMainPageProps> = async ({
+  req,
+}) => {
+  const props: ArticlesMainPageProps = {
+    articles: [],
+    isAdmin: false,
   }
+
+  props.articles = await prisma.article.findMany({
+    orderBy: {
+      writtenAt: 'desc',
+    },
+    select: {
+      title: true,
+      key: true,
+      writtenAt: true,
+    },
+  })
+
+  const user = await prisma.user.findUnique({
+    where: {
+      id: req.userId,
+    },
+    include: {
+      Admin: true,
+    },
+  })
+
+  props.isAdmin = !!user?.Admin
+
+  console.log(props)
+
+  return { props }
+}
+
+export const getServerSideProps = withSessionPage(get)

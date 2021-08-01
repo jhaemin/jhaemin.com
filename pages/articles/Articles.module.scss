@@ -5,15 +5,16 @@
   padding: 0;
 }
 
+$item-inset: 14px;
+
+.articleListItem {
+  margin: 0 #{-$item-inset};
+}
+
 .articleItem {
-  @include hoverable;
-
-  $item-inset: 14px;
-
   display: grid;
   gap: 8px;
   padding: $inset;
-  margin: 0 -$inset;
 }
 
 .articleWrittenAt {
@@ -25,4 +26,8 @@
 .articleTitle {
   font-size: 30px;
   font-weight: 800;
+}
+
+.newButton {
+  margin-bottom: 20px;
 }

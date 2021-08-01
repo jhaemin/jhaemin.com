@@ -71,7 +71,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 10px;
-    margin: 0 -$inset;
+    margin: 0 #{-$inset};
 
     .projectItem {
       letter-spacing: 0;
@@ -82,8 +82,6 @@
       gap: 10px;
       align-items: center;
       padding: $inset;
-
-      @include hoverable;
 
       .projectInfo {
         display: grid;

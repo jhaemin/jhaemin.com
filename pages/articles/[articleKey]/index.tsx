@@ -1,5 +1,5 @@
 import PageInfo from '@/components/PageInfo'
-import { prisma } from '@/prisma'
+import prisma from '@/prisma'
 import { Page } from '@/types/general'
 import { withSessionPage } from '@/utils/node/with-session'
 import { Article } from '@prisma/client'

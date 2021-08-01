@@ -1,10 +1,10 @@
+import CushionLink from '@/components/CushionLink'
 import Icon from '@/components/Icon'
 import { projects } from '@/constants/projects'
 import { Page } from '@/types/general'
 import { JhmGetServerSideProps } from '@/types/next'
 import { withSessionPage } from '@/utils/node/with-session'
 import clsx from 'clsx'
-import Link from 'next/link'
 import $ from './Home.module.scss'
 
 const Home: Page = () => {
@@ -59,8 +59,8 @@ const Home: Page = () => {
               : {}
 
             return (
-              <Link key={name} href={href}>
-                <a {...anchorAttr}>
+              <div key={name}>
+                <CushionLink href={href} newWindow={href.startsWith('http')}>
                   <div className={$.projectItem}>
                     <div className={$.projectInfo}>
                       <h2 className={$.projectName}>{name}</h2>
@@ -68,8 +68,8 @@ const Home: Page = () => {
                     </div>
                     {/* {Logo && <Logo />} */}
                   </div>
-                </a>
-              </Link>
+                </CushionLink>
+              </div>
             )
           })}
         </div>
