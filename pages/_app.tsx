@@ -2,9 +2,11 @@ import PageInfo from '@/components/PageInfo'
 import '@/components/ui/global/web-ui.scss'
 import LayoutWrapper from '@/layouts/LayoutWrapper'
 import '@/styles/global-styles.scss'
+import '@/styles/nprogress.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Router, { useRouter } from 'next/router'
+import nProgress from 'nprogress'
 import { useEffect, useState } from 'react'
 
 const faviconIcoHrefLight = '/favicon.ico'
@@ -49,6 +51,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     return () => {
       matchMedia.removeEventListener('change', onChangeColorScheme)
     }
+  }, [])
+
+  useEffect(() => {
+    nProgress.configure({ showSpinner: false })
+
+    Router.events.on('routeChangeStart', () => nProgress.start())
+    Router.events.on('routeChangeComplete', () => nProgress.done())
+    Router.events.on('routeChangeError', () => nProgress.done())
   }, [])
 
   return (
