@@ -4,27 +4,36 @@
   display: block;
   user-select: none;
   border-radius: $border-radius;
-  transition: background-color 150ms ease, box-shadow 150ms ease;
+  transition: background-color 200ms ease, box-shadow 200ms ease;
 
   @include hover {
     // background-color: var(--jhm-active-background-color);
     // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 10px 15px rgba(0, 0, 0, 0.12);
     box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.12);
+
+    @include dark-mode {
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.12);
+    }
   }
 
   .cushionCotton {
-    transition: transform 150ms ease;
+    transition: transform 200ms ease;
   }
 
   &:active {
     .cushionCotton {
-      transition: transform 100ms ease;
+      transition: transform 40ms ease;
       transform: scale(0.98);
     }
 
     box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.14);
+
+    @include dark-mode {
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.14);
+    }
+
     background-color: var(--jhm-secondary-background-color);
-    transition: background-color 50ms ease, box-shadow 50ms ease,
-      transform 50ms ease;
+    transition: background-color 40ms ease, box-shadow 40ms ease,
+      transform 40ms ease;
   }
 }
