@@ -1,6 +1,5 @@
 import CushionLink from '@/components/CushionLink'
 import PageInfo from '@/components/PageInfo'
-import Button from '@/components/ui/button/Button'
 import prisma from '@/prisma'
 import { Page } from '@/types/general'
 import { JhmGetServerSideProps } from '@/types/next'
@@ -11,18 +10,14 @@ import $ from './Articles.module.scss'
 
 type ArticlesMainPageProps = {
   articles: Omit<Article, 'id' | 'content'>[]
-  isAdmin: boolean
 }
 
-const ArticlesMainPage: Page<ArticlesMainPageProps> = ({
-  articles,
-  isAdmin,
-}) => {
+const ArticlesMainPage: Page<ArticlesMainPageProps> = ({ articles }) => {
   return (
     <div>
       <PageInfo title="Articles | Jang Haemin" />
 
-      {isAdmin && <Button className={$.newButton}>New</Button>}
+      {/* {isAdmin && <Button className={$.newButton}>New</Button>} */}
 
       <ol className={$.articlesList}>
         {articles.map(({ title, key, writtenAt }) => (
@@ -49,7 +44,6 @@ export const get: JhmGetServerSideProps<ArticlesMainPageProps> = async ({
 }) => {
   const props: ArticlesMainPageProps = {
     articles: [],
-    isAdmin: false,
   }
 
   props.articles = await prisma.article.findMany({
@@ -62,19 +56,6 @@ export const get: JhmGetServerSideProps<ArticlesMainPageProps> = async ({
       writtenAt: true,
     },
   })
-
-  const user = await prisma.user.findUnique({
-    where: {
-      id: req.userId,
-    },
-    include: {
-      Admin: true,
-    },
-  })
-
-  props.isAdmin = !!user?.Admin
-
-  console.log(props)
 
   return { props }
 }
