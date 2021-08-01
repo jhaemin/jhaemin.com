@@ -1,5 +1,5 @@
 import { error } from '@/constants/error'
-import { prisma } from '@/prisma'
+import prisma from '@/prisma'
 import Mailer from '@/utils/node/email'
 import generateMagicKey from '@/utils/node/generate-magic-key'
 import { makeHandler } from '@/utils/node/make-handler'
@@ -10,18 +10,16 @@ type LoginReqBody = {
   email: string
 }
 
-const loginReqBody: ApiDataSkeleton = {
+const loginReqSkeleton: ApiDataSkeleton<LoginReqBody> = {
   email: 'string',
 }
 
 const handler = makeHandler(async (req, res) => {
   const body = req.body as LoginReqBody
 
-  validate(req.body, loginReqBody, res)
+  validate(req.body, loginReqSkeleton, res)
 
   const { email } = body
-
-  console.log(email)
 
   const user = await prisma.user.findUnique({
     where: {

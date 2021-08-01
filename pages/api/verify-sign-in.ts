@@ -1,5 +1,5 @@
 import { error } from '@/constants/error'
-import { prisma } from '@/prisma'
+import prisma from '@/prisma'
 import { makeHandler } from '@/utils/node/make-handler'
 import { ApiDataSkeleton, validate } from '@/utils/node/validate'
 import { withSessionApi } from '@/utils/node/with-session'
@@ -9,13 +9,13 @@ export type VerifySignInReqBody = {
   magicKey: string
 }
 
-export const verifySignInReqBody: ApiDataSkeleton = {
+export const verifySignInReqSkeleton: ApiDataSkeleton<VerifySignInReqBody> = {
   email: 'string',
   magicKey: 'string',
 }
 
 const handler = makeHandler(async (req, res) => {
-  validate(req.body, verifySignInReqBody, res)
+  validate(req.body, verifySignInReqSkeleton, res)
 
   const body = req.body as VerifySignInReqBody
   const { email, magicKey } = body
@@ -44,9 +44,7 @@ const handler = makeHandler(async (req, res) => {
     },
   })
 
-  req.session.set('userId', {
-    id: user.id,
-  })
+  req.session.set('userId', user.id)
 
   await req.session.save()
 

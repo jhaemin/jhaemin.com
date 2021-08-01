@@ -6,7 +6,10 @@ export type DetailedApiDataType = {
   type: ApiDataType
   required: boolean
 }
-export type ApiDataSkeleton = Record<string, ApiDataType | DetailedApiDataType>
+export type ApiDataSkeleton<T extends Record<string, any>> = Record<
+  keyof T,
+  ApiDataType | DetailedApiDataType
+>
 
 const isDetailedApiDataType = (
   data: ApiDataType | DetailedApiDataType
@@ -14,7 +17,7 @@ const isDetailedApiDataType = (
 
 export const validate = (
   data: any,
-  skeleton: ApiDataSkeleton,
+  skeleton: ApiDataSkeleton<Record<string, any>>,
   res: JhmApiResponse
 ) => {
   const fixedlyTypedSkeleton = Object.keys(skeleton).map((key) => {

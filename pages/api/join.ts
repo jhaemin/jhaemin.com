@@ -1,5 +1,5 @@
 import { error } from '@/constants/error'
-import { prisma } from '@/prisma'
+import prisma from '@/prisma'
 import { isEmail } from '@/utils/both/regex'
 import Mailer from '@/utils/node/email'
 import generateMagicKey from '@/utils/node/generate-magic-key'
@@ -10,7 +10,7 @@ export type JoinReqBody = {
   email: string
 }
 
-const joinReqBody: ApiDataSkeleton = {
+const joinReqBody: ApiDataSkeleton<JoinReqBody> = {
   email: 'string',
 }
 
