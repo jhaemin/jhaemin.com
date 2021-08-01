@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsc --noEmit && next build",
     "start": "next start --port 7000",
     "lint": "next lint",
     "pm2:start": "if pm2 show jhaemin.com ; then npm run pm2:stop && npm run pm2:delete && npm run pm2:start ; else pm2 start npm --name 'jhaemin.com' -- run start ; fi",
