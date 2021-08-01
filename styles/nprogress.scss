@@ -1,3 +1,5 @@
+@use '@/styles/jhm' as *;
+
 :root {
   --progress-bar-color: var(--jhm-primary-text-color);
 }
@@ -17,6 +19,8 @@
 
   width: 100%;
   height: 2px;
+
+  transition: background-color $theme-change-duration ease;
 }
 
 /* Fancy blur effect */
