@@ -29,4 +29,10 @@ model User {
   magicKey String?   @db.VarChar(200)
   issuedAt DateTime? @db.DateTime(0)
   joinedAt DateTime  @db.DateTime(0)
+  Admin    Admin?
+}
+
+model Admin {
+  userId Int  @unique @db.UnsignedInt
+  User   User @relation(fields: [userId], references: [id])
 }
