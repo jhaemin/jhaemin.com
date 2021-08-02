@@ -81,8 +81,6 @@ const Home: Page = () => {
 export default Home
 
 const handler: JhmGetServerSideProps = async ({ req, res }) => {
-  console.log(req.userId)
-
   return {
     props: {},
   }
