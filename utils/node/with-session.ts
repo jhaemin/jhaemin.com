@@ -5,6 +5,7 @@ import {
   JhmGetServerSidePropsContext,
 } from '@/types/next'
 import { Handler, SessionOptions, withIronSession } from 'next-iron-session'
+import { ParsedUrlQuery } from 'querystring'
 
 export const sessionOptions: SessionOptions = {
   password: process.env.SESSION_PASSWORD as string,
@@ -18,35 +19,41 @@ type JhmSessionOptions = {
   requireAuth?: boolean
 }
 
-export const withSessionApi = (
-  handler: Handler<JhmApiRequest, JhmApiResponse>,
+export const withSessionApi = <Payload>(
+  handler: Handler<JhmApiRequest, JhmApiResponse<Payload>>,
   /** Custom options */
   options?: JhmSessionOptions
 ) => {
-  return withIronSession(async (req: JhmApiRequest, res: JhmApiResponse) => {
-    const sessionUser = req.session.get('userId') as number
+  return withIronSession(
+    async (req: JhmApiRequest, res: JhmApiResponse<Payload>) => {
+      const sessionUser = req.session.get('userId') as number
 
-    if (sessionUser) {
-      req.userId = sessionUser
-    }
+      if (sessionUser) {
+        req.userId = sessionUser
+      }
 
-    if (options?.requireAuth && !req.userId) {
-      return res.json({
-        err: error.AUTH_000,
-      })
-    }
+      if (options?.requireAuth && !req.userId) {
+        return res.json({
+          err: error.AUTH_000,
+        })
+      }
 
-    return handler(req, res)
-  }, sessionOptions)
+      return handler(req, res)
+    },
+    sessionOptions
+  )
 }
 
-export const withSessionPage = (
-  handler: JhmGetServerSideProps,
+export const withSessionPage = <
+  P extends { [key: string]: any } = { [key: string]: any },
+  Q extends ParsedUrlQuery = ParsedUrlQuery
+>(
+  handler: JhmGetServerSideProps<P, Q>,
   options?: {
     noAccessWithSignedIn: boolean
   }
 ) =>
-  withIronSession(async (context: JhmGetServerSidePropsContext) => {
+  withIronSession(async (context: JhmGetServerSidePropsContext<Q>) => {
     const sessionUserId = context.req.session.get('userId') as number
 
     if (sessionUserId) {
