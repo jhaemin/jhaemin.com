@@ -9,13 +9,16 @@ export enum HttpStatus {
   INTERNAL_SERVER_ERROR = 500,
 }
 
-type Handler = (req: JhmApiRequest, res: JhmApiResponse) => void
+type Handler<Payload> = (
+  req: JhmApiRequest,
+  res: JhmApiResponse<Payload>
+) => void
 
-export const makeHandler = (
-  handler: Handler,
+export const makeHandler = <Payload>(
+  handler: Handler<Payload>,
   method: HttpMethod = HttpMethod.POST
 ) => {
-  return (req: JhmApiRequest, res: JhmApiResponse) => {
+  return (req: JhmApiRequest, res: JhmApiResponse<Payload>) => {
     if (req.method === (method as unknown as string)) {
       return handler(req, res)
     } else {
