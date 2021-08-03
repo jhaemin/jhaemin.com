@@ -1,5 +1,4 @@
 import { LayoutName } from '@/layouts/LayoutWrapper'
-import { User } from '@prisma/client'
 import { NextApiRequest, NextApiResponse, NextPage } from 'next'
 import { Session } from 'next-iron-session'
 import { FunctionComponent, SVGProps } from 'react'
@@ -24,12 +23,13 @@ export interface JhmApiRequest extends NextApiRequest {
   userId?: number
 }
 
-export type ResponseData = null | {
+export type ResponseData<Payload> = null | {
   err: null | {
     code: string
     msg: string
   }
-  payload?: Record<string, any>
+  payload?: Payload
 }
 
-export interface JhmApiResponse extends NextApiResponse<ResponseData> {}
+export interface JhmApiResponse<Payload extends Record<string, any>>
+  extends NextApiResponse<ResponseData<Payload>> {}
