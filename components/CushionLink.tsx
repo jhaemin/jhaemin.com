@@ -36,7 +36,7 @@ const CushionLink: React.FC<CushionLinkProps> = (props) => {
               router.push(href, as)
             }
           }
-        }, 200)
+        }, 250)
       }}
     >
       <div className={$.cushionCotton}>{children}</div>
