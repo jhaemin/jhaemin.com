@@ -21,7 +21,7 @@
   margin: auto;
   background-color: var(--jhm-primary-background-color);
   padding: 50px 25px;
-  border-radius: $border-radius;
+  border-radius: var(--jhm-border-radius);
   transition: background-color $theme-change-duration ease;
 
   @include larger-than(1000px) {

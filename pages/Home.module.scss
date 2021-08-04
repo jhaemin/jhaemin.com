@@ -10,7 +10,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  border-radius: $border-radius;
+  border-radius: var(--jhm-border-radius);
 
   &::before {
     content: '';
@@ -76,7 +76,7 @@
     .projectItem {
       letter-spacing: 0;
       // background-color: var(--jhm-tertiary-background-color);
-      border-radius: $border-radius;
+      border-radius: var(--jhm-border-radius);
       display: grid;
       grid-template-columns: 1fr min-content;
       gap: 10px;

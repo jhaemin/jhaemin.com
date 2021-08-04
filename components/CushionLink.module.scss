@@ -3,7 +3,7 @@
 .cushionLink {
   display: block;
   user-select: none;
-  border-radius: $border-radius;
+  border-radius: var(--jhm-border-radius);
   transition: background-color 200ms ease, box-shadow 200ms ease;
 
   @include hover {

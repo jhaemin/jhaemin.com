@@ -7,7 +7,7 @@
   appearance: none;
   background-color: $component-background;
   height: $input-height;
-  border-radius: $border-radius;
+  border-radius: var(--jhm-border-radius);
   padding: 0 14px;
   font: inherit;
   font-size: 16px;
