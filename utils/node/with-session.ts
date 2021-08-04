@@ -1,4 +1,5 @@
 import { error } from '@/constants/error'
+import prisma from '@/prisma'
 import { JhmApiRequest, JhmApiResponse } from '@/types/general'
 import {
   JhmGetServerSideProps,
@@ -17,6 +18,7 @@ export const sessionOptions: SessionOptions = {
 
 type JhmSessionOptions = {
   requireAuth?: boolean
+  onlyAdmin?: boolean
 }
 
 export const withSessionApi = <Payload>(
@@ -38,6 +40,20 @@ export const withSessionApi = <Payload>(
         })
       }
 
+      if (options?.onlyAdmin) {
+        const admin = await prisma.admin.findUnique({
+          where: {
+            userId: req.userId,
+          },
+        })
+
+        if (!admin) {
+          return res.json({
+            err: error.AUTH_000,
+          })
+        }
+      }
+
       return handler(req, res)
     },
     sessionOptions
@@ -50,7 +66,8 @@ export const withSessionPage = <
 >(
   handler: JhmGetServerSideProps<P, Q>,
   options?: {
-    noAccessWithSignedIn: boolean
+    noAccessWithSignedIn?: boolean
+    onlyAdmin?: boolean
   }
 ) =>
   withIronSession(async (context: JhmGetServerSidePropsContext<Q>) => {
@@ -66,6 +83,24 @@ export const withSessionPage = <
             destination: '/',
           },
           props: {},
+        }
+      }
+
+      if (options?.onlyAdmin) {
+        const admin = await prisma.admin.findUnique({
+          where: {
+            userId: sessionUserId,
+          },
+        })
+
+        if (!admin) {
+          return {
+            redirect: {
+              permanent: false,
+              destination: '/',
+            },
+            props: {},
+          }
         }
       }
     }
