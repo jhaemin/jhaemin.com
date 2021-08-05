@@ -4,7 +4,7 @@ import { ParsedUrlQuery } from 'querystring'
 
 export type JhmGetServerSidePropsContext<
   Q extends ParsedUrlQuery = ParsedUrlQuery
-> = GetServerSidePropsContext & {
+> = GetServerSidePropsContext<Q> & {
   req: GetServerSidePropsContext['req'] & {
     session: Session
     userId?: number
