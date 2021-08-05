@@ -1,0 +1,17 @@
+.editorTextArea {
+  font: inherit;
+  font-size: 16px;
+  color: inherit;
+  resize: none;
+  width: 100%;
+  height: 500px;
+  border: none;
+  background: var(--jhm-secondary-background-color);
+  padding: 16px;
+  outline: none;
+  border-radius: var(--jhm-border-radius);
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px var(--jhm-tertiary-background-color);
+  }
+}
