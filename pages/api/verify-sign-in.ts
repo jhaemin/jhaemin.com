@@ -1,6 +1,6 @@
 import { error } from '@/constants/error'
 import prisma from '@/prisma'
-import { makeHandler } from '@/utils/node/make-handler'
+import { makeApiHandler } from '@/utils/node/make-handler'
 import { ApiDataSkeleton, validate } from '@/utils/node/validate'
 import { withSessionApi } from '@/utils/node/with-session'
 
@@ -14,7 +14,7 @@ export const verifySignInReqSkeleton: ApiDataSkeleton<VerifySignInReqBody> = {
   magicKey: 'string',
 }
 
-const handler = makeHandler(async (req, res) => {
+const handler = makeApiHandler(async (req, res) => {
   validate(req.body, verifySignInReqSkeleton, res)
 
   const body = req.body as VerifySignInReqBody

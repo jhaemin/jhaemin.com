@@ -3,7 +3,7 @@ import prisma from '@/prisma'
 import { isEmail } from '@/utils/both/regex'
 import Mailer from '@/utils/node/email'
 import generateMagicKey from '@/utils/node/generate-magic-key'
-import { makeHandler } from '@/utils/node/make-handler'
+import { makeApiHandler } from '@/utils/node/make-handler'
 import { ApiDataSkeleton, validate } from '@/utils/node/validate'
 
 export type JoinReqBody = {
@@ -14,7 +14,7 @@ const joinReqBody: ApiDataSkeleton<JoinReqBody> = {
   email: 'string',
 }
 
-const handler = makeHandler(async (req, res) => {
+const handler = makeApiHandler(async (req, res) => {
   validate(req.body, joinReqBody, res)
 
   const body = req.body as JoinReqBody

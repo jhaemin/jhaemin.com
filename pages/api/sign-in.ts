@@ -2,7 +2,7 @@ import { error } from '@/constants/error'
 import prisma from '@/prisma'
 import Mailer from '@/utils/node/email'
 import generateMagicKey from '@/utils/node/generate-magic-key'
-import { makeHandler } from '@/utils/node/make-handler'
+import { makeApiHandler } from '@/utils/node/make-handler'
 import { ApiDataSkeleton, validate } from '@/utils/node/validate'
 import { withSessionApi } from '@/utils/node/with-session'
 
@@ -14,7 +14,7 @@ const loginReqSkeleton: ApiDataSkeleton<LoginReqBody> = {
   email: 'string',
 }
 
-const handler = makeHandler(async (req, res) => {
+const handler = makeApiHandler(async (req, res) => {
   const body = req.body as LoginReqBody
 
   validate(req.body, loginReqSkeleton, res)
