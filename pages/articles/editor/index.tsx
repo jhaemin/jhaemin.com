@@ -1,8 +1,10 @@
+import marked from '@/modules/web/jhm-marked'
 import prisma from '@/prisma'
 import { Page } from '@/types/general'
 import { withSessionPage } from '@/utils/node/with-session'
 import { Article } from '@prisma/client'
-import { useEffect, useRef } from 'react'
+import { debounce } from 'lodash'
+import { ChangeEventHandler, useEffect, useRef, useState } from 'react'
 import $ from './ArticleEditor.module.scss'
 
 export type ArticleEditorProps = {
@@ -13,6 +15,7 @@ const ArticleEditor: Page<ArticleEditorProps> = ({ article }) => {
   const articleIdRef = useRef(article?.id)
   const articleContentRef = useRef('')
   const textAreaRef = useRef<HTMLTextAreaElement>(null!)
+  const [parsed, setParsed] = useState('')
 
   useEffect(() => {
     if (article) {
@@ -22,7 +25,15 @@ const ArticleEditor: Page<ArticleEditorProps> = ({ article }) => {
 
   return (
     <div>
-      <textarea ref={textAreaRef} className={$.editorTextArea} />
+      <textarea
+        ref={textAreaRef}
+        className={$.editorTextArea}
+        onChange={debounce<ChangeEventHandler<HTMLTextAreaElement>>((e) => {
+          setParsed(marked.parse(e.target.value))
+        }, 300)}
+      />
+
+      <div dangerouslySetInnerHTML={{ __html: parsed }} />
     </div>
   )
 }
