@@ -1,0 +1,124 @@
+// Paragraph
+
+.paragraph {
+  font-weight: 400;
+  font-size: var(--jhm-article-paragraph-font-size);
+  line-height: 1.6;
+}
+
+.paragraph + * {
+  margin-top: 20px;
+}
+
+// Heading
+
+.heading {
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.heading1 {
+  font-weight: 800;
+  font-size: var(--jhm-article-heading-1-font-size);
+}
+
+* + .heading1 {
+  margin-top: 80px !important;
+}
+
+.heading1 + * {
+  margin-top: 60px;
+}
+
+.heading2 {
+  font-weight: 700;
+  font-size: var(--jhm-article-heading-2-font-size);
+}
+
+* + .heading2 {
+  margin-top: 60px !important;
+}
+
+.heading2 + * {
+  margin-top: 24px;
+}
+
+.heading3 {
+  font-weight: 700;
+  font-size: var(--jhm-article-heading-3-font-size);
+}
+
+// Code
+
+.codeSpan {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: 0 6px;
+  // white-space: nowrap;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: var(--jhm-secondary-background-color);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 4px;
+  }
+}
+
+// Blockquote
+
+.blockquote {
+  border-left: 2px solid var(--jhm-primary-text-color);
+  padding: 4px 16px;
+  font-style: italic;
+
+  .paragraph {
+    font-weight: 600;
+  }
+}
+
+.blockquote + * {
+  margin-top: 20px;
+}
+
+// Horizontal Rule (HR)
+
+.horizontalRule {
+  border: none;
+  height: 1px;
+  background-color: var(--jhm-secondary-background-color);
+}
+
+* + .horizontalRule {
+  margin-top: 60px !important;
+}
+
+.horizontalRule + * {
+  margin-top: 60px;
+}
+
+// Link
+
+.link {
+  color: var(--jhm-point-color);
+}
+
+// List
+
+.list {
+  padding-left: 20px;
+  font-size: var(--jhm-article-paragraph-font-size);
+
+  li + li {
+    margin-top: 10px;
+  }
+}
+
+.list + * {
+  margin-top: 20px;
+}
