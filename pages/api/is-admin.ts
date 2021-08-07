@@ -1,4 +1,5 @@
 import prisma from '@/prisma'
+import { HttpMethod } from '@/types/general'
 import { makeApiHandler } from '@/utils/node/make-handler'
 import { withSessionApi } from '@/utils/node/with-session'
 
@@ -25,6 +26,6 @@ const handler = makeApiHandler<IsAdminResPayload>(async (req, res) => {
     err: null,
     payload,
   })
-})
+}, HttpMethod.GET)
 
 export default withSessionApi(handler)
