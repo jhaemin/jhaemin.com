@@ -84,9 +84,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <SWRConfig
         value={{
           fetcher: async (url) => {
-            const data = await axiom.get(url)
+            const res = await axiom.get(url)
 
-            return data
+            return res.data
           },
         }}
       >
