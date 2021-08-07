@@ -3,11 +3,13 @@ import '@/components/ui/global/web-ui.scss'
 import LayoutWrapper from '@/layouts/LayoutWrapper'
 import '@/styles/global-styles.scss'
 import '@/styles/nprogress.scss'
+import axiom from '@/utils/web/axiom'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Router, { useRouter } from 'next/router'
 import nProgress from 'nprogress'
 import { useEffect, useState } from 'react'
+import { SWRConfig } from 'swr'
 
 const faviconIcoHrefLight = '/favicon.ico'
 const faviconIcoHrefDark = '/favicon-dark.ico'
@@ -79,9 +81,19 @@ function MyApp({ Component, pageProps }: AppProps) {
         ogImage="https://jhaemin.com/og/jhaemin_open_graph_main.png"
       />
 
-      <LayoutWrapper>
-        <Component {...pageProps} />
-      </LayoutWrapper>
+      <SWRConfig
+        value={{
+          fetcher: async (url) => {
+            const data = await axiom.get(url)
+
+            return data
+          },
+        }}
+      >
+        <LayoutWrapper>
+          <Component {...pageProps} />
+        </LayoutWrapper>
+      </SWRConfig>
     </>
   )
 }
