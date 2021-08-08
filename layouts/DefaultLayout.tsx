@@ -73,16 +73,18 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
                   : pathname.includes(section.href)
 
               return (
-                <Link key={section.name} href={section.href}>
-                  <a
-                    className={clsx($.section, {
-                      [$.defocus]: !matched,
-                      [$.active]: matched,
-                    })}
-                  >
-                    {section.name}
-                  </a>
-                </Link>
+                // <Link key={section.name} href={section.href}>
+                <a
+                  key={section.name}
+                  href={section.href}
+                  className={clsx($.section, {
+                    [$.defocus]: !matched,
+                    [$.active]: matched,
+                  })}
+                >
+                  {section.name}
+                </a>
+                // </Link>
               )
             })}
           </div>
