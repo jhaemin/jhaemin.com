@@ -10,6 +10,7 @@ import Router, { useRouter } from 'next/router'
 import nProgress from 'nprogress'
 import { useEffect, useState } from 'react'
 import { SWRConfig } from 'swr'
+import 'tailwindcss/tailwind.css'
 
 const faviconIcoHrefLight = '/favicon.ico'
 const faviconIcoHrefDark = '/favicon-dark.ico'
