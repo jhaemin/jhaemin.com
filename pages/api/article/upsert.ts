@@ -35,8 +35,8 @@ const handler = makeApiHandler<UpsertArticlePayload>(async (req, res) => {
     articleId: id,
     articleKey: key,
     title,
-    content,
   } = req.body as UpsertArticleReqBody
+  const content = (req.body as UpsertArticleReqBody).content.trim()
   const now = new Date()
 
   const article = await prisma.article.upsert({
