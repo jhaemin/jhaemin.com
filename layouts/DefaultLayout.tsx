@@ -1,7 +1,6 @@
 import Icon from '@/components/Icon'
 import JhmLogo from '@/components/JhmLogo'
 import clsx from 'clsx'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
 import $ from './DefaultLayout.module.scss'
@@ -41,11 +40,11 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
       <div className={$.defaultLayoutContent}>
         <nav className={$.header}>
           <div className={$.firstRow}>
-            <Link href="/">
-              <a className={$.logoLink}>
-                <JhmLogo className={$.logo} />
-              </a>
-            </Link>
+            {/* <Link href="/"> */}
+            <a href="/" className={$.logoLink}>
+              <JhmLogo className={$.logo} />
+            </a>
+            {/* </Link> */}
 
             <div className={$.socialLinks}>
               <a
