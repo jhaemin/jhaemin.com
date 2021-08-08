@@ -94,6 +94,10 @@
   --jhm-border-radius: 4px;
 }
 
+:root {
+  --jhm-main-view-max-width: 1150px;
+}
+
 html,
 body {
   padding: 0;

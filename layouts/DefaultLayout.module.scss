@@ -1,7 +1,7 @@
 @use '@/styles/jhm' as  *;
 
 .defaultLayout {
-  max-width: 1150px;
+  max-width: var(--jhm-main-view-max-width);
   margin: auto;
   min-height: 100vh;
   transition: background-color $theme-change-duration ease;
