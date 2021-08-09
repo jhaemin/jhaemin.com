@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "tsc --noEmit && next build",
+    "build": "npm run typecheck && next build",
     "start": "next start --port 7000",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
     "pm2:start": "if pm2 show jhaemin.com ; then npm run pm2:stop && npm run pm2:delete && npm run pm2:start ; else pm2 start npm --name 'jhaemin.com' -- run start ; fi",
     "pm2:restart": "if pm2 show jhaemin.com ; then pm2 restart jhaemin.com ; else echo 'No pm2 instance for jhaemin.com client' ; fi",
     "pm2:stop": "if pm2 show jhaemin.com ; then pm2 stop jhaemin.com ; else echo 'No pm2 instance for jhaemin.com client' ; fi",
