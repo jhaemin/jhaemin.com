@@ -1,4 +1,6 @@
 @use './common';
 
-@use '../input/input';
-@use '../button/button';
+@use '../input/Input';
+@use '../button/Button';
+
+@use '../flex/Flex';

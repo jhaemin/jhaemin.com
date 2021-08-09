@@ -1,0 +1,47 @@
+@use '../variables/names' as *;
+
+$flex-prefix: #{$prefix}-flex;
+
+.#{$flex-prefix} {
+  display: flex;
+
+  & > * {
+    margin-right: var(--web-ui-flex-gap-column, 0px);
+    margin-bottom: var(--web-ui-flex-gap-row, 0px);
+  }
+
+  margin-right: calc(var(--web-ui-flex-gap-column, 0px) * -1);
+  margin-bottom: calc(var(--web-ui-flex-gap-row, 0px) * -1);
+
+  &.#{$flex-prefix}-evenly-fill > * {
+    flex: 1;
+  }
+}
+
+// Align Items
+$align-items-properties: center, flex-start, flex-end, stretch;
+
+@each $property in $align-items-properties {
+  .#{$flex-prefix}-align-items-#{$property} {
+    align-items: $property;
+  }
+}
+
+// Justify Content
+$justify-content-properties: center, flex-start, flex-end, space-around,
+  space-between, space-evenly;
+
+@each $property in $justify-content-properties {
+  .#{$flex-prefix}-justify-content-#{$property} {
+    justify-content: $property;
+  }
+}
+
+// Direction
+$direction-properties: row, column;
+
+@each $property in $direction-properties {
+  .#{$flex-prefix}-direction-#{$property} {
+    flex-direction: $property;
+  }
+}
