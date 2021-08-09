@@ -18,7 +18,7 @@ const isDetailedApiDataType = (
 export const validate = (
   data: any,
   skeleton: ApiDataSkeleton<Record<string, any>>,
-  res: JhmApiResponse
+  res: JhmApiResponse<any>
 ) => {
   const fixedlyTypedSkeleton = Object.keys(skeleton).map((key) => {
     const skeletonValue = skeleton[key]

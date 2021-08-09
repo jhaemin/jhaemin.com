@@ -31,5 +31,6 @@ export type ResponseData<Payload> = null | {
   payload?: Payload
 }
 
-export interface JhmApiResponse<Payload extends Record<string, any>>
-  extends NextApiResponse<ResponseData<Payload>> {}
+export interface JhmApiResponse<
+  Payload extends Record<string, any> | undefined = undefined
+> extends NextApiResponse<ResponseData<Payload>> {}
