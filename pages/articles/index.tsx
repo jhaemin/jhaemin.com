@@ -97,8 +97,6 @@ export const get: JhmGetServerSideProps<ArticlesMainPageProps> = async ({
     where.NOT = [{ publishedAt: null }]
   }
 
-  console.log(where)
-
   props.articles = await prisma.article.findMany({
     where,
     orderBy: {
