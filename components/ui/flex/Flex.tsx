@@ -38,26 +38,28 @@ const Flex: React.FC<FlexProps> = (props) => {
   } = props
 
   return (
-    <div
-      {...restProps}
-      className={clsx(
-        'web-ui-flex',
-        {
-          [`web-ui-flex-align-items-${alignItems}`]: !!alignItems,
-          [`web-ui-flex-justify-content-${justifyContent}`]: !!justifyContent,
-          [`web-ui-flex-direction-${direction}`]: !!direction,
-          [`web-ui-flex-evenly-fill`]: evenlyFill,
-        },
-        restProps.className
-      )}
-      style={{
-        ['--web-ui-flex-gap-column' as any]: numToPx(
-          (gap as any)?.column ?? gap
-        ),
-        ['--web-ui-flex-gap-row' as any]: numToPx((gap as any)?.row ?? gap),
-      }}
-    >
-      {children}
+    <div className="web-ui-flex-wrapper">
+      <div
+        {...restProps}
+        className={clsx(
+          'web-ui-flex',
+          {
+            [`web-ui-flex-align-items-${alignItems}`]: !!alignItems,
+            [`web-ui-flex-justify-content-${justifyContent}`]: !!justifyContent,
+            [`web-ui-flex-direction-${direction}`]: !!direction,
+            [`web-ui-flex-evenly-fill`]: evenlyFill,
+          },
+          restProps.className
+        )}
+        style={{
+          ['--web-ui-flex-gap-column' as any]: numToPx(
+            (gap as any)?.column ?? gap
+          ),
+          ['--web-ui-flex-gap-row' as any]: numToPx((gap as any)?.row ?? gap),
+        }}
+      >
+        {children}
+      </div>
     </div>
   )
 }
