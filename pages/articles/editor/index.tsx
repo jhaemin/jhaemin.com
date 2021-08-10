@@ -2,10 +2,16 @@ import Button from '@/components/ui/button/Button'
 import Flex from '@/components/ui/flex/Flex'
 import useIsAdmin from '@/hooks/use-is-admin'
 import marked from '@/modules/web/jhm-marked'
+import {
+  UpsertArticlePayload,
+  UpsertArticleReqBody,
+} from '@/pages/api/article/upsert'
 import prisma from '@/prisma'
-import { Page } from '@/types/general'
+import { Page, ResponseData } from '@/types/general'
 import { withSessionPage } from '@/utils/node/with-session'
+import axiom from '@/utils/web/axiom'
 import { Article } from '@prisma/client'
+import { paramCase } from 'change-case'
 import clsx from 'clsx'
 import { debounce } from 'lodash'
 import { ChangeEventHandler, useEffect, useRef, useState } from 'react'
@@ -45,7 +51,49 @@ const ArticleEditor: Page<ArticleEditorProps> = ({ article }) => {
     >
       <div className="mb-5">
         <Flex alignItems="center" justifyContent="flex-start" gap={10}>
-          <Button>Save</Button>
+          <Button
+            onClick={async () => {
+              const firstLine = articleContentRef.current.split('\n')[0]
+
+              if (!firstLine.startsWith('# ')) {
+                window.alert('No title')
+                return
+              }
+
+              const title = firstLine.replace(/^# /g, '')
+              const articleKey = paramCase(title)
+
+              const data: UpsertArticleReqBody = {
+                articleId: articleIdRef.current ?? 0,
+                title,
+                articleKey,
+                // content: articleContentRef.current,
+                content: articleContentRef.current,
+              }
+              const res = await axiom.post<ResponseData<UpsertArticlePayload>>(
+                'article/upsert',
+                data
+              )
+
+              if (!res.data || res.data?.err) return
+
+              if (!articleIdRef.current) {
+                window.alert('Uploaded')
+              } else {
+                window.alert('Updated')
+              }
+
+              articleIdRef.current = res.data.payload?.articleId
+
+              window.history.replaceState(
+                null,
+                document.title,
+                `editor?articleId=${res.data.payload?.articleId}`
+              )
+            }}
+          >
+            Save
+          </Button>
           <Button
             className={$.previewButton}
             onClick={() => {
