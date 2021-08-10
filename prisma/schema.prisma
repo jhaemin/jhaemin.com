@@ -14,6 +14,7 @@ model Article {
   content     String    @db.Text
   writtenAt   DateTime  @db.Date
   publishedAt DateTime? @db.Date
+  isDeleted   Boolean   @default(false)
 }
 
 model PendingUser {
