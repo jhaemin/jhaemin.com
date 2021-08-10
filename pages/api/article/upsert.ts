@@ -4,7 +4,7 @@ import { makeApiHandler } from '@/utils/node/make-handler'
 import { ApiDataSkeleton, validate } from '@/utils/node/validate'
 import { withSessionApi } from '@/utils/node/with-session'
 
-export type UpsertArticleReqBody = {
+export type UpsertArticleReqData = {
   articleId: number
   articleKey: string
   title: string
@@ -15,7 +15,7 @@ export type UpsertArticlePayload = {
   articleId: number
 }
 
-const upsertArticleSkeleton: ApiDataSkeleton<UpsertArticleReqBody> = {
+const upsertArticleSkeleton: ApiDataSkeleton<UpsertArticleReqData> = {
   articleId: 'number',
   articleKey: 'string',
   title: 'string',
@@ -35,8 +35,8 @@ const handler = makeApiHandler<UpsertArticlePayload>(async (req, res) => {
     articleId: id,
     articleKey: key,
     title,
-  } = req.body as UpsertArticleReqBody
-  const content = (req.body as UpsertArticleReqBody).content.trim()
+  } = req.body as UpsertArticleReqData
+  const content = (req.body as UpsertArticleReqData).content.trim()
   const now = new Date()
 
   const article = await prisma.article.upsert({
