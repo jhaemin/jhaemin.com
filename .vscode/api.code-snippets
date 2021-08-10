@@ -1,0 +1,60 @@
+{
+  "API with only request data": {
+    "scope": "typescript",
+    "prefix": "apireq",
+    "body": [
+      "import { makeApiHandler } from '@/utils/node/make-handler'",
+      "import { ApiDataSkeleton, validate } from '@/utils/node/validate'",
+      "",
+      "export type ${1:ApiName}ReqData = {$2}",
+      "",
+      "export const ${1:ApiName}ReqDataSkeleton: ApiDataSkeleton<${1:ApiName}ReqData> = {$3}",
+      "",
+      "const handler = makeApiHandler(async (req, res) => {",
+      "  validate(req.body, ${1:ApiName}ReqDataSkeleton, res)",
+      "",
+      "  $0",
+      "})",
+      "",
+      "export default handler",
+      ""
+    ]
+  },
+  "API with only response data": {
+    "scope": "typescript",
+    "prefix": "apires",
+    "body": [
+      "export type ${1:ApiName}Payload = {$2}",
+      "",
+      "const handler = makeApiHandler<${1:ApiName}Payload>(async (req, res) => {",
+      "  $0",
+      "})",
+      "",
+      "export default handler",
+      ""
+    ]
+  },
+  "API with both request data and response data": {
+    "scope": "typescript",
+    "prefix": "apiboth",
+    "body": [
+      "import { makeApiHandler } from '@/utils/node/make-handler'",
+      "import { ApiDataSkeleton, validate } from '@/utils/node/validate'",
+      "",
+      "export type ${1:ApiName}ReqData = {$2}",
+      "",
+      "export const ${1:ApiName}ReqDataSkeleton: ApiDataSkeleton<${1:ApiName}ReqData> = {$3}",
+      "",
+      "export type ${1:ApiName}Payload = {$4}",
+      "",
+      "const handler = makeApiHandler<${1:ApiName}Payload>(async (req, res) => {",
+      "  validate(req.body, ${1:ApiName}ReqDataSkeleton, res)",
+      "",
+      "  $0",
+      "})",
+      "",
+      "export default handler",
+      ""
+    ]
+  }
+}
