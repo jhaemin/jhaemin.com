@@ -14,7 +14,7 @@ type Handler<Payload> = (
   res: JhmApiResponse<Payload>
 ) => void
 
-export const makeApiHandler = <Payload>(
+export const makeApiHandler = <Payload = any>(
   handler: Handler<Payload>,
   method: HttpMethod = HttpMethod.POST
 ) => {
