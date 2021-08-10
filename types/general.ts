@@ -23,7 +23,7 @@ export interface JhmApiRequest extends NextApiRequest {
   userId?: number
 }
 
-export type ResponseData<Payload> = null | {
+export type ResponseData<Payload = undefined> = null | {
   err: null | {
     code: string
     msg: string
