@@ -39,4 +39,9 @@ export const error = {
     code: 'AUTH_005',
     msg: 'Unregistered email',
   },
+  /** Article not found */
+  ARTICLE_000: {
+    code: 'ARTICLE_001',
+    msg: 'Article not found',
+  },
 }
