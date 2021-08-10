@@ -6,16 +6,29 @@ import prisma from '@/prisma'
 import { Page } from '@/types/general'
 import { JhmGetServerSideProps } from '@/types/next'
 import { withSessionPage } from '@/utils/node/with-session'
-import { Article } from '@prisma/client'
+import { Article, Prisma } from '@prisma/client'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import $ from './Articles.module.scss'
 
+type ArticleWithoutContent = Omit<Article, 'content' | 'isDeleted'>
+
 type ArticlesMainPageProps = {
-  articles: Omit<Article, 'id' | 'content'>[]
+  articles: ArticleWithoutContent[]
 }
 
 const ArticlesMainPage: Page<ArticlesMainPageProps> = ({ articles }) => {
+  const publishedArticles: ArticleWithoutContent[] = []
+  const unPublishedArticles: ArticleWithoutContent[] = []
+
+  articles.forEach((article) => {
+    if (article.publishedAt) {
+      publishedArticles.push(article)
+    } else {
+      unPublishedArticles.push(article)
+    }
+  })
+
   return (
     <div>
       <PageInfo title="Articles | Jang Haemin" />
@@ -30,13 +43,28 @@ const ArticlesMainPage: Page<ArticlesMainPageProps> = ({ articles }) => {
         </Link>
       </OnlyAdmin>
 
+      <OnlyAdmin>
+        <ol className={$.articlesList}>
+          {unPublishedArticles.map(({ id, title, key }) => (
+            <li key={key} className={$.articleListItem}>
+              <CushionLink href={`/articles/editor?articleId=${id}`}>
+                <div className={$.articleItem}>
+                  <span className={$.articleWrittenAt}>Unpublished</span>
+                  <span className={$.articleTitle}>{title}</span>
+                </div>
+              </CushionLink>
+            </li>
+          ))}
+        </ol>
+      </OnlyAdmin>
+
       <ol className={$.articlesList}>
-        {articles.map(({ title, key, writtenAt }) => (
+        {publishedArticles.map(({ title, key, publishedAt }) => (
           <li key={key} className={$.articleListItem}>
             <CushionLink href={`/articles/${key}`}>
               <div className={$.articleItem}>
                 <span className={$.articleWrittenAt}>
-                  {dayjs(writtenAt).format('YYYY. MM. DD')}
+                  {dayjs(publishedAt).format('YYYY. MM. DD')}
                 </span>
                 <span className={$.articleTitle}>{title}</span>
               </div>
@@ -56,15 +84,32 @@ export const get: JhmGetServerSideProps<ArticlesMainPageProps> = async ({
   const props: ArticlesMainPageProps = {
     articles: [],
   }
+  const where: Prisma.ArticleWhereInput = {
+    isDeleted: false,
+  }
+  const admin = await prisma.admin.findUnique({
+    where: {
+      userId: req.userId,
+    },
+  })
+
+  if (!admin) {
+    where.NOT = [{ publishedAt: null }]
+  }
+
+  console.log(where)
 
   props.articles = await prisma.article.findMany({
+    where,
     orderBy: {
       writtenAt: 'desc',
     },
     select: {
+      id: true,
       title: true,
       key: true,
       writtenAt: true,
+      publishedAt: true,
     },
   })
 
