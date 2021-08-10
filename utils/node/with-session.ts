@@ -43,7 +43,7 @@ export const withSessionApi = <Payload>(
       if (options?.onlyAdmin) {
         const admin = await prisma.admin.findUnique({
           where: {
-            userId: req.userId,
+            userId: req.userId ?? -1,
           },
         })
 
@@ -89,7 +89,7 @@ export const withSessionPage = <
       if (options?.onlyAdmin) {
         const admin = await prisma.admin.findUnique({
           where: {
-            userId: sessionUserId,
+            userId: sessionUserId ?? -1,
           },
         })
 

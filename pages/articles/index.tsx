@@ -89,7 +89,7 @@ export const get: JhmGetServerSideProps<ArticlesMainPageProps> = async ({
   }
   const admin = await prisma.admin.findUnique({
     where: {
-      userId: req.userId,
+      userId: req.userId ?? -1,
     },
   })
 
