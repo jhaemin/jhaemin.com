@@ -5,8 +5,8 @@ export type ApiError = {
 
 export const error = {
   /** Wrong request data format */
-  REQ_001: {
-    code: 'REQ_001',
+  REQ_000: {
+    code: 'REQ_000',
     msg: 'Wrong request data format',
   },
   /** Unauthorized */

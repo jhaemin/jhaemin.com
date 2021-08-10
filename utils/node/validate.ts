@@ -36,18 +36,18 @@ export const validate = (
   })
 
   if (typeof data !== 'object') {
-    return res.json({ err: error.REQ_001 })
+    return res.json({ err: error.REQ_000 })
   }
 
   fixedlyTypedSkeleton.forEach(({ name, type, required }) => {
     const value = data[name]
 
     if (required && (value === undefined || value === null)) {
-      return res.json({ err: error.REQ_001 })
+      return res.json({ err: error.REQ_000 })
     }
 
     if (value && typeof value !== type) {
-      return res.json({ err: error.REQ_001 })
+      return res.json({ err: error.REQ_000 })
     }
   })
 }
