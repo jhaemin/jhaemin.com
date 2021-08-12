@@ -144,6 +144,10 @@ const ArticleEditor: Page<ArticleEditorProps> = ({ article }) => {
           {articleId && (
             <Button
               onClick={async () => {
+                if (!window.confirm('Really?')) {
+                  return
+                }
+
                 const data: DeleteArticleReqData = {
                   articleId,
                 }
