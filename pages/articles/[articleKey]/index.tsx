@@ -1,9 +1,13 @@
+import OnlyAdmin from '@/components/OnlyAdmin'
 import PageInfo from '@/components/PageInfo'
+import Button from '@/components/ui/button/Button'
+import Flex from '@/components/ui/flex/Flex'
 import marked from '@/modules/web/jhm-marked'
 import prisma from '@/prisma'
 import { Page } from '@/types/general'
 import { withSessionPage } from '@/utils/node/with-session'
 import { Article } from '@prisma/client'
+import Link from 'next/link'
 import $ from './ArticleView.module.scss'
 
 export type ArticlePageProps = {
@@ -19,12 +23,26 @@ const ArticlePage: Page<ArticlePageProps> = ({ article }) => {
     <div>
       <PageInfo title={article.title} />
 
-      <article
-        className={$.article}
-        dangerouslySetInnerHTML={{
-          __html: marked.parse(article.content),
-        }}
-      />
+      <Flex direction="column" gap={40}>
+        <OnlyAdmin>
+          <div>
+            <Link href={`/articles/editor?articleId=${article.id}`}>
+              <a>
+                <Button>Edit</Button>
+              </a>
+            </Link>
+          </div>
+        </OnlyAdmin>
+
+        <div>
+          <article
+            className={$.article}
+            dangerouslySetInnerHTML={{
+              __html: marked.parse(article.content),
+            }}
+          />
+        </div>
+      </Flex>
     </div>
   )
 }
