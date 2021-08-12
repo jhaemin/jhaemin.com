@@ -34,11 +34,15 @@ export default ArticlePage
 export const getServerSideProps = withSessionPage(async ({ query }) => {
   const articleKey = query.articleKey as string
 
-  const article = await prisma.article.findUnique({
+  let article = await prisma.article.findUnique({
     where: {
       key: articleKey,
     },
   })
+
+  if (!article?.publishedAt) {
+    article = null
+  }
 
   return {
     props: {
