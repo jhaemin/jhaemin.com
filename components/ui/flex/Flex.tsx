@@ -24,7 +24,8 @@ export type FlexProps = DetailedHTMLProps<
   evenlyFill?: boolean
 }
 
-const numToPx = (value?: number) => (value ? `${value}px` : null)
+const numToPx = (value?: number | string) =>
+  !value ? null : typeof value === 'number' ? `${value}px` : value
 
 const Flex: React.FC<FlexProps> = (props) => {
   const {
