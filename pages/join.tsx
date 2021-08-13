@@ -6,6 +6,7 @@ import { isEmail } from '@/utils/both/regex'
 import { withSessionPage } from '@/utils/node/with-session'
 import axiom from '@/utils/web/axiom'
 import { bindTextInput } from '@/utils/web/react'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 import $ from './join.module.scss'
@@ -47,25 +48,34 @@ const JoinPage: Page = () => {
   }, [email, magicKey, router])
 
   return (
-    <div className={$.inputContainer}>
-      <Input
-        type="email"
-        placeholder="Email"
-        {...bindTextInput(email, setEmail)}
-      />
-      <Button onClick={join}>Join</Button>
+    <>
+      <div className="mb-4">
+        <Link href="/sign-in">
+          <a>
+            <Button>Sign In</Button>
+          </a>
+        </Link>
+      </div>
+      <div className={$.inputContainer}>
+        <Input
+          type="email"
+          placeholder="Email"
+          {...bindTextInput(email, setEmail)}
+        />
+        <Button onClick={join}>Join</Button>
 
-      {sentMagicKey && (
-        <>
-          <Input
-            type="text"
-            placeholder="Magic key"
-            {...bindTextInput(magicKey, setMagicKey)}
-          />
-          <Button onClick={verify}>Verify</Button>
-        </>
-      )}
-    </div>
+        {sentMagicKey && (
+          <>
+            <Input
+              type="text"
+              placeholder="Magic key"
+              {...bindTextInput(magicKey, setMagicKey)}
+            />
+            <Button onClick={verify}>Verify</Button>
+          </>
+        )}
+      </div>
+    </>
   )
 }
 
