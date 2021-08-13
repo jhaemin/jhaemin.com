@@ -104,6 +104,9 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
           </a>
         </p>
         <p>Copyright © 2021 Jang Haemin</p>
+        <p>
+          Experimental: <a href="/sign-in">Sign In</a>
+        </p>
       </footer>
     </div>
   )
