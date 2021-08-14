@@ -1,5 +1,6 @@
 import Button from '@/components/ui/button/Button'
 import Input from '@/components/ui/input/Input'
+import apiPaths from '@/modules/both/api-paths'
 import { Page } from '@/types/general'
 import { withSessionPage } from '@/utils/node/with-session'
 import axiom from '@/utils/web/axiom'
@@ -33,7 +34,7 @@ const SignInPage: Page = () => {
           />
           <Button
             onClick={async () => {
-              const res = await axiom.post('sign-in', {
+              const res = await axiom.post(apiPaths.signIn, {
                 email,
               })
 
@@ -54,7 +55,7 @@ const SignInPage: Page = () => {
           />
           <Button
             onClick={async () => {
-              const res = await axiom.post('verify-sign-in', {
+              const res = await axiom.post(apiPaths.verifySignIn, {
                 email,
                 magicKey,
               })

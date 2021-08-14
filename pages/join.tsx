@@ -1,6 +1,7 @@
 import Button from '@/components/ui/button/Button'
 import Input from '@/components/ui/input/Input'
 import { error } from '@/constants/error'
+import apiPaths from '@/modules/both/api-paths'
 import { Page } from '@/types/general'
 import { isEmail } from '@/utils/both/regex'
 import { withSessionPage } from '@/utils/node/with-session'
@@ -23,7 +24,7 @@ const JoinPage: Page = () => {
       return
     }
 
-    const res = await axiom.post('join', {
+    const res = await axiom.post(apiPaths.join, {
       email,
     })
 
@@ -35,7 +36,7 @@ const JoinPage: Page = () => {
   }, [email])
 
   const verify = useCallback(async () => {
-    const res = await axiom.post('verify-join', {
+    const res = await axiom.post(apiPaths.verifyJoin, {
       email,
       magicKey,
     })
