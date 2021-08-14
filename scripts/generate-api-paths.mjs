@@ -1,4 +1,6 @@
+import chalk from 'chalk'
 import { camelCase, pascalCase } from 'change-case'
+import chokidar from 'chokidar'
 import fs from 'fs'
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
@@ -14,6 +16,8 @@ const apiDirectory = path.resolve(__dirname, '../pages/api')
 const apis = []
 
 function analyze(directory) {
+  apis.splice(0, apis.length)
+
   fs.readdirSync(directory).forEach((file) => {
     file = path.join(directory, file)
 
@@ -43,14 +47,22 @@ function analyze(directory) {
   })
 }
 
-analyze(apiDirectory)
+chokidar
+  .watch(apiDirectory, {
+    ignoreInitial: true,
+  })
+  .on('all', () => {
+    analyze(apiDirectory)
 
-fs.writeFileSync(
-  path.resolve(__dirname, '../modules/both/api-paths.ts'),
-  `const apiPaths = {
+    fs.writeFileSync(
+      path.resolve(__dirname, '../modules/both/api-paths.ts'),
+      `const apiPaths = {
   ${apis.map(({ name, urlPath }) => `${name}: '${urlPath}'`).join(',\n  ')}
 }
 
 export default apiPaths
 `
-)
+    )
+
+    console.log(`${chalk.yellow('gen')}   - Generated API paths`)
+  })
