@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm-run-all --parallel gen next:dev",
+    "next:dev": "next dev",
+    "gen": "npm-run-all gen:apipaths",
+    "gen:apipaths": "node scripts/generate-api-paths.mjs",
     "build": "npm run typecheck && next build",
     "start": "next start --port 7000",
     "lint": "next lint",
