@@ -1,4 +1,7 @@
 const apiPaths = {
+  articleDelete: 'article/delete',
+  articlePublish: 'article/publish',
+  articleUpsert: 'article/upsert',
   authIsAdmin: 'auth/is-admin',
   authUser: 'auth/user',
   join: 'join',

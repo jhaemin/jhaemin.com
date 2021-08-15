@@ -16,8 +16,6 @@ const apiDirectory = path.resolve(__dirname, '../pages/api')
 const apis = []
 
 function analyze(directory) {
-  apis.splice(0, apis.length)
-
   fs.readdirSync(directory).forEach((file) => {
     file = path.join(directory, file)
 
@@ -47,22 +45,20 @@ function analyze(directory) {
   })
 }
 
-chokidar
-  .watch(apiDirectory, {
-    ignoreInitial: true,
-  })
-  .on('all', () => {
-    analyze(apiDirectory)
+chokidar.watch(apiDirectory).on('all', () => {
+  apis.splice(0, apis.length)
 
-    fs.writeFileSync(
-      path.resolve(__dirname, '../modules/both/api-paths.ts'),
-      `const apiPaths = {
+  analyze(apiDirectory)
+
+  fs.writeFileSync(
+    path.resolve(__dirname, '../modules/both/api-paths.ts'),
+    `const apiPaths = {
   ${apis.map(({ name, urlPath }) => `${name}: '${urlPath}'`).join(',\n  ')}
 }
 
 export default apiPaths
 `
-    )
+  )
 
-    console.log(`${chalk.yellow('gen')}   - Generated API paths`)
-  })
+  console.log(`${chalk.yellow('gen')}   - Generated API paths`)
+})
