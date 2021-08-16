@@ -1,5 +1,8 @@
 import axios from 'axios'
 
+/**
+ * Use for jhaemin.com APIs
+ */
 const axiom = axios.create({
   baseURL: '/api/',
   timeout: 4000,
