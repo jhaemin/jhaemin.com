@@ -36,6 +36,12 @@ export const projects: {
     Logo: interopLogo,
   },
   {
+    name: 'React F7 Icons',
+    description:
+      'A React SVG components library of Framework7 Icons with better usability.',
+    href: 'https://github.com/jhaemin/react-f7-icons',
+  },
+  {
     name: 'Game of Life 3D',
     description:
       'An implementation of game of life powered by Rust, WebAssembly, and Three.js.',
