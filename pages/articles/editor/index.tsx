@@ -1,6 +1,7 @@
 import Button from '@/components/ui/button/Button'
 import Flex from '@/components/ui/flex/Flex'
 import useIsAdmin from '@/hooks/use-is-admin'
+import apiPaths from '@/modules/both/api-paths'
 import marked from '@/modules/web/jhm-marked'
 import { DeleteArticleReqData } from '@/pages/api/article/delete'
 import { PublishArticleReqData } from '@/pages/api/article/publish'
@@ -89,7 +90,7 @@ const ArticleEditor: Page<ArticleEditorProps> = ({ article }) => {
                 }
                 const res = await axiom.post<
                   ResponseData<UpsertArticlePayload>
-                >('article/upsert', data)
+                >(apiPaths.articleUpsert, data)
 
                 if (!res.data || res.data?.err) return
 
@@ -118,7 +119,7 @@ const ArticleEditor: Page<ArticleEditorProps> = ({ article }) => {
                   }
 
                   const res = await axiom.post<ResponseData>(
-                    'article/publish',
+                    apiPaths.articlePublish,
                     data
                   )
 
@@ -153,7 +154,7 @@ const ArticleEditor: Page<ArticleEditorProps> = ({ article }) => {
                 }
 
                 const res = await axiom.post<ResponseData>(
-                  'article/delete',
+                  apiPaths.articleDelete,
                   data
                 )
 
