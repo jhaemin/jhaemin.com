@@ -24,6 +24,8 @@
     "scope": "typescript",
     "prefix": "apires",
     "body": [
+      "import { makeApiHandler } from '@/utils/node/make-handler'",
+      "",
       "export type ${1:ApiName}Payload = {$2}",
       "",
       "const handler = makeApiHandler<${1:ApiName}Payload>(async (req, res) => {",
