@@ -1,5 +1,6 @@
 import { error } from '@/constants/error'
 import prisma from '@/prisma'
+import { isProd } from '@/utils/both/is'
 import Mailer from '@/utils/node/email'
 import generateMagicKey from '@/utils/node/generate-magic-key'
 import { makeApiHandler } from '@/utils/node/make-handler'
@@ -46,11 +47,13 @@ const handler = makeApiHandler(async (req, res) => {
     },
   })
 
-  Mailer.sendMail({
-    subject: 'Sign in to jhaemin.com',
-    to: email,
-    html: `Magic Key: <b>${magicKey}</b>`,
-  })
+  if (isProd) {
+    Mailer.sendMail({
+      subject: 'Sign in to jhaemin.com',
+      to: email,
+      html: `Magic Key: <b>${magicKey}</b>`,
+    })
+  }
 
   res.json({ err: null })
 })
