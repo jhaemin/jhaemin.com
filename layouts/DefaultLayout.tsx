@@ -1,6 +1,8 @@
 import Icon from '@/components/Icon'
 import JhmLogo from '@/components/JhmLogo'
+import useUser from '@/hooks/use-user'
 import clsx from 'clsx'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
 import $ from './DefaultLayout.module.scss'
@@ -34,6 +36,7 @@ const sections: {
 const DefaultLayout = (props: DefaultLayoutProps) => {
   const { children } = props
   const { pathname } = useRouter()
+  const user = useUser()
 
   return (
     <div className={clsx($.defaultLayout)}>
@@ -104,9 +107,20 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
           </a>
         </p>
         <p>Copyright © 2021 Jang Haemin</p>
-        <p>
-          Experimental: <a href="/sign-in">Sign In</a>
-        </p>
+        {user ? (
+          <>
+            <p>Signed in as {user.email}</p>
+            <p>
+              <Link href="/sign-out">
+                <a>Sign Out</a>
+              </Link>
+            </p>
+          </>
+        ) : (
+          <p>
+            Experimental: <a href="/sign-in">Sign In</a>
+          </p>
+        )}
       </footer>
     </div>
   )
