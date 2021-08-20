@@ -30,7 +30,7 @@ const CushionLink: React.FC<CushionLinkProps> = (props) => {
 
         setTimeout(() => {
           if (href) {
-            if (newWindow) {
+            if (e.metaKey || e.ctrlKey || newWindow) {
               window.open(href.toString(), '_blank')?.focus()
             } else {
               router.push(href, as)
