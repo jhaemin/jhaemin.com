@@ -125,6 +125,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   word-break: keep-all;
   overflow-wrap: break-word;
+  min-height: calc(100vh + 1px);
 }
 
 a {
