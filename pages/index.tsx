@@ -5,7 +5,7 @@ import { Page } from '@/types/general'
 import { JhmGetServerSideProps } from '@/types/next'
 import { withSessionPage } from '@/utils/node/with-session'
 import clsx from 'clsx'
-import $ from './Home.module.scss'
+import $ from './home.module.scss'
 
 const Home: Page = () => {
   return (
