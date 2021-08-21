@@ -8,7 +8,7 @@ import { Page } from '@/types/general'
 import { withSessionPage } from '@/utils/node/with-session'
 import { Article } from '@prisma/client'
 import Link from 'next/link'
-import $ from './ArticleView.module.scss'
+import $ from './article.module.scss'
 
 export type ArticlePageProps = {
   article: Article | null

@@ -9,7 +9,7 @@ import { withSessionPage } from '@/utils/node/with-session'
 import { Article, Prisma } from '@prisma/client'
 import dayjs from 'dayjs'
 import Link from 'next/link'
-import $ from './Articles.module.scss'
+import $ from './articles.module.scss'
 
 type ArticleWithoutContent = Omit<Article, 'content' | 'isDeleted'>
 

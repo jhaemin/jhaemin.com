@@ -19,7 +19,7 @@ import clsx from 'clsx'
 import { debounce } from 'lodash'
 import { useRouter } from 'next/router'
 import { ChangeEventHandler, useEffect, useRef, useState } from 'react'
-import $ from './ArticleEditor.module.scss'
+import $ from './editor.module.scss'
 
 export type ArticleEditorProps = {
   article: Article | null
