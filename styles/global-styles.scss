@@ -66,6 +66,28 @@
   }
 }
 
+[data-page='shop'] {
+  --jhm-primary-background-color: #ecf5e9;
+  --jhm-secondary-background-color: #c9dcc4;
+  --jhm-tertiary-background-color: #e4f0df;
+  --jhm-active-background-color: #333;
+  --jhm-primary-text-color: #2c732a;
+  --jhm-secondary-text-color: #6f9e69;
+  --jhm-point-color: #2eff04;
+}
+
+@include dark-mode {
+  [data-page='shop'] {
+    --jhm-primary-background-color: #132913;
+    --jhm-secondary-background-color: #203d21;
+    --jhm-tertiary-background-color: #132913;
+    --jhm-active-background-color: #333;
+    --jhm-primary-text-color: #aad7b2;
+    --jhm-secondary-text-color: #59805e;
+    --jhm-point-color: #29ff3b;
+  }
+}
+
 :root {
   $p: 16px;
   $h1: 34px;
