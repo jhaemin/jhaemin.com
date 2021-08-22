@@ -38,3 +38,32 @@ model Admin {
   userId Int  @unique @db.UnsignedInt
   User   User @relation(fields: [userId], references: [id])
 }
+
+model Product {
+  id    Int     @id @default(autoincrement()) @db.UnsignedInt
+  name  String  @default("") @db.VarChar(100)
+  price Int
+  stock Int     @default(0) @db.SmallInt
+  Order Order[]
+}
+
+model Order {
+  id                Int                 @id @default(autoincrement()) @db.UnsignedInt
+  productId         Int                 @db.UnsignedInt
+  status            String              @default("") @db.VarChar(50)
+  orderedAt         Int?
+  Product           Product             @relation(fields: [productId], references: [id])
+  OrderStatusChange OrderStatusChange[]
+
+  @@index([productId], name: "productId")
+}
+
+model OrderStatusChange {
+  id      Int    @id @default(autoincrement()) @db.UnsignedInt
+  orderId Int?   @db.UnsignedInt
+  from    String @default("") @db.VarChar(50)
+  to      String @default("") @db.VarChar(50)
+  Order   Order? @relation(fields: [orderId], references: [id])
+
+  @@index([orderId], name: "orderId")
+}
