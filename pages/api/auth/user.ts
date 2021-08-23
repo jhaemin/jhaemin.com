@@ -12,7 +12,6 @@ const handler = makeApiHandler<GetUserPayload>(async (req, res) => {
   const { userId } = req
 
   if (!userId) {
-    console.log('here')
     return res.json({
       err: null,
       payload: null,
