@@ -7,14 +7,12 @@ import axiom from '@/utils/web/axiom'
 import { bindTextInput } from '@/utils/web/react'
 import clsx from 'clsx'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { useState } from 'react'
 import $ from './sign-in.module.scss'
 
 const SignInPage: Page = () => {
   const [email, setEmail] = useState('')
   const [magicKey, setMagicKey] = useState('')
-  const router = useRouter()
 
   return (
     <>
@@ -64,7 +62,7 @@ const SignInPage: Page = () => {
 
               window.alert('Success')
 
-              router.push('/')
+              window.location.href = '/'
             }}
           >
             Sign In

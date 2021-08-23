@@ -111,9 +111,7 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
           <>
             <p>Signed in as {user.email}</p>
             <p>
-              <Link href="/sign-out">
-                <a>Sign Out</a>
-              </Link>
+              <a href="/sign-out">Sign Out</a>
             </p>
           </>
         ) : (
