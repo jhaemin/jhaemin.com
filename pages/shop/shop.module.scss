@@ -1,0 +1,38 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.product {
+  .imageWrapper {
+    position: relative;
+    border-radius: var(--jhm-border-radius);
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .name {
+    line-height: 1.2;
+    margin-top: 10px;
+  }
+
+  .price {
+    line-height: 1;
+    margin-top: 10px;
+  }
+}
