@@ -1238,6 +1238,9 @@ export type IconProps = {
   size?: number
 }
 
+/**
+ * @deprecated Use framework7-icons-plus instead.
+ */
 const Icon = React.forwardRef<HTMLElement, IconProps>(
   ({ name, size, className }, ref) => (
     <i

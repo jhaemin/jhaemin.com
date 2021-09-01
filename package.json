@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "npm-run-all --parallel gen next:dev",
-    "next:dev": "next dev",
+    "next:dev": "next dev --port 0311",
     "gen": "npm-run-all gen:apipaths",
     "gen:apipaths": "node scripts/generate-api-paths.mjs",
     "build": "npm run typecheck && next build",
@@ -25,6 +25,7 @@
     "change-case": "^4.1.2",
     "clsx": "^1.1.1",
     "dayjs": "^1.10.6",
+    "framework7-icons-plus": "^1.5.0",
     "lodash": "^4.17.21",
     "marked": "^3.0.2",
     "nanoid": "^3.1.25",

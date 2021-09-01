@@ -1,8 +1,7 @@
-import Icon from '@/components/Icon'
 import JhmLogo from '@/components/JhmLogo'
 import useUser from '@/hooks/use-user'
 import clsx from 'clsx'
-import Link from 'next/link'
+import { LogoGithub, LogoLinkedin } from 'framework7-icons-plus/react'
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
 import $ from './DefaultLayout.module.scss'
@@ -55,14 +54,14 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Icon name="logo_github" />
+                <LogoGithub />
               </a>
               <a
                 href="https://www.linkedin.com/in/haemin-jang-b1038a1a0"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Icon name="logo_linkedin" />
+                <LogoLinkedin />
               </a>
             </div>
           </div>
