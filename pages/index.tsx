@@ -1,10 +1,10 @@
 import CushionLink from '@/components/CushionLink'
-import Icon from '@/components/Icon'
 import { projects } from '@/constants/projects'
 import { Page } from '@/types/general'
 import { JhmGetServerSideProps } from '@/types/next'
 import { withSessionPage } from '@/utils/node/with-session'
 import clsx from 'clsx'
+import { LogoApple } from 'framework7-icons-plus/react'
 import $ from './home.module.scss'
 
 const Home: Page = () => {
@@ -16,17 +16,15 @@ const Home: Page = () => {
           <p>
             I mostly spend time designing, developing and surfing the web while
             listening to{' '}
-            <span
-              style={{
-                position: 'relative',
-                top: '-0.06em',
-                marginLeft: '-0.06em',
-              }}
-            >
-              <Icon name="logo_apple" />
-            </span>
-            Music or watching Netflix. Endless learning keeps me alive and never
-            hangs me down to the past.
+            <span style={{ display: 'inline-flex', alignItems: 'baseline' }}>
+              <span style={{ display: 'none' }}>Apple</span>
+              <LogoApple
+                style={{ position: 'relative', top: '0.08em', left: '-0.08em' }}
+              />{' '}
+              Music
+            </span>{' '}
+            or watching Netflix. Endless learning keeps me alive and never hangs
+            me down to the past.
           </p>
           <p>
             Programming isn’t just about writing great codes, but one of the
