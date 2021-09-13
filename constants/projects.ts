@@ -36,10 +36,14 @@ export const projects: {
     Logo: interopLogo,
   },
   {
-    name: 'React F7 Icons',
-    description:
-      'A React SVG components library of Framework7 Icons with better usability.',
-    href: 'https://github.com/jhaemin/react-f7-icons',
+    name: 'Framework7 Icons+',
+    description: 'A forked version of Framework7 Icons with additional icons.',
+    href: 'https://github.com/jhaemin/framework7-icons-plus',
+  },
+  {
+    name: 'minmax.js',
+    description: 'A simple combination of Math.min and Math.max.',
+    href: 'https://github.com/jhaemin/minmax.js',
   },
   {
     name: 'Game of Life 3D',
