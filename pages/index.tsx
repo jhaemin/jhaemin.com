@@ -19,7 +19,11 @@ const Home: Page = () => {
             <span style={{ display: 'inline-flex', alignItems: 'baseline' }}>
               <span style={{ display: 'none' }}>Apple</span>
               <LogoApple
-                style={{ position: 'relative', top: '0.08em', left: '-0.08em' }}
+                style={{
+                  position: 'relative',
+                  top: '0.08em',
+                  marginLeft: '-0.08em',
+                }}
               />{' '}
               Music
             </span>{' '}
