@@ -43,10 +43,14 @@
 }
 
 .socialLinks {
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-size: 27px;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+
+  > *:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 .header {
