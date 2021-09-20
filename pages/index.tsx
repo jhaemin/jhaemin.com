@@ -31,9 +31,9 @@ const Home: Page = () => {
             me down to the past.
           </p>
           <p>
-            Programming isn’t just about writing great codes, but one of the
-            ways express myself. Having a chance to consider the beauty might be
-            a privilege of our frontend developers.
+            For me, programming isn’t just about writing great codes, but one of
+            the ways express myself. Having a chance to consider the beauty
+            might be a privilege of our frontend developers.
           </p>
           <p>I love my family, friends and Seoul.</p>
           <p>Stay Safe.</p>
