@@ -21,8 +21,8 @@ const Home: Page = () => {
               <LogoApple
                 style={{
                   position: 'relative',
-                  top: '0.08em',
                   marginLeft: '-0.08em',
+                  transform: 'translateY(0.074em)',
                 }}
               />{' '}
               Music
