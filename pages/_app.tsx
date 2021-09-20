@@ -1,8 +1,5 @@
 import PageInfo from '@/components/PageInfo'
-import '@/components/ui/global/web-ui.scss'
 import LayoutWrapper from '@/layouts/LayoutWrapper'
-import '@/styles/global-styles.scss'
-import '@/styles/nprogress.scss'
 import axiom from '@/utils/web/axiom'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -11,6 +8,11 @@ import nProgress from 'nprogress'
 import { useEffect, useState } from 'react'
 import { SWRConfig } from 'swr'
 import 'tailwindcss/tailwind.css'
+// Import with relative path(..) instead of absolute path(@)
+// to keep the import order after the tailwindcss
+import '../components/ui/global/web-ui.scss'
+import '../styles/global-styles.scss'
+import '../styles/nprogress.scss'
 
 const faviconIcoHrefLight = '/favicon.ico'
 const faviconIcoHrefDark = '/favicon-dark.ico'
