@@ -33,3 +33,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Secure Enclave
+secure-enclave
+!secure-enclave/.keep
