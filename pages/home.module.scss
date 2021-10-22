@@ -29,8 +29,9 @@
 }
 
 .subtitle {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
+  margin-bottom: 30px;
 }
 
 .manifesto {
@@ -63,9 +64,59 @@
   margin-top: 100px;
 }
 
+.education-and-work {
+  display: flex;
+
+  & > * {
+    flex: 1;
+    min-width: 0;
+  }
+
+  $threshold: 600px;
+
+  @include larger-than($threshold + 1px) {
+    & > *:not(:first-child) {
+      margin-left: 50px;
+    }
+  }
+
+  @include smaller-than($threshold) {
+    flex-direction: column;
+  }
+}
+
+.cau {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.bachelor,
+.year {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--jhm-secondary-text-color);
+  margin-top: 8px;
+}
+
+.work-title {
+  font-size: 18px;
+  font-weight: 600;
+
+  .range {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--jhm-secondary-text-color);
+    margin-top: 8px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
+}
+
 .projects {
   display: grid;
-  gap: 50px;
 
   .projectsList {
     display: grid;

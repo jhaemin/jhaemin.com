@@ -12,7 +12,8 @@ const Home: Page = () => {
     <div className={$.home}>
       <div className={$.introduction}>
         <div className={$.manifesto}>
-          <p>Hello, I’m Jang Haemin.</p>
+          <p>Hello, my name is Jang Haemin.</p>
+          <p>I’m a frontend engineer.</p>
           <p>
             I mostly spend time designing, developing and surfing the web while
             listening to{' '}
@@ -32,8 +33,7 @@ const Home: Page = () => {
           </p>
           <p>
             For me, programming isn’t just about writing great codes, but one of
-            the ways express myself. Having a chance to consider the beauty
-            might be a privilege of our frontend developers.
+            the ways express myself and improve our lives.
           </p>
           <p>I love my family, friends and Seoul.</p>
           <p>Stay Safe.</p>
@@ -46,6 +46,33 @@ const Home: Page = () => {
             />
           </div>
         </div>
+      </div>
+
+      <div className={$['education-and-work']}>
+        <section className={clsx($.section, $.openSource)}>
+          <h1 className={$.subtitle}>Experience</h1>
+
+          <div>
+            <p className={$['work-title']}>
+              Woowa Brothers Corp.
+              <span className={$['range']}>2021-current</span>
+            </p>
+            <p className={$['work-title']}>
+              Carmore (TeamO2) Internship
+              <span className={$['range']}>2019</span>
+            </p>
+          </div>
+        </section>
+
+        <section className={clsx($.section, $.openSource)}>
+          <h1 className={$.subtitle}>Education</h1>
+
+          <div>
+            <p className={$.cau}>Chung-Ang University</p>
+            <p className={$.bachelor}>Bachelor’s degree, Computer Science</p>
+            <p className={$['year']}>2015-2021</p>
+          </div>
+        </section>
       </div>
 
       {/* <section className={clsx($.section, $.openSource)}>
