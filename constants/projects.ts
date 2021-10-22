@@ -48,7 +48,7 @@ export const projects: {
   {
     name: 'Game of Life 3D',
     description:
-      'An implementation of game of life powered by Rust, WebAssembly, and Three.js.',
+      'An implementation of Conway’s Game of Life powered by Rust, WebAssembly, and Three.js.',
     href: 'https://github.com/jhaemin/game-of-life-3d',
     Logo: gol3dLogo,
   },
