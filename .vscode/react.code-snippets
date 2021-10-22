@@ -1,0 +1,7 @@
+{
+  "API with only request data": {
+    "scope": "typescriptreact",
+    "prefix": "$$",
+    "body": ["$['$0']"]
+  }
+}
