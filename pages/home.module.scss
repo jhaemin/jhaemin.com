@@ -85,9 +85,13 @@
   }
 }
 
-.cau {
+.edu-title {
   font-size: 18px;
   font-weight: 600;
+
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
 }
 
 .bachelor,

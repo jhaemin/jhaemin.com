@@ -68,9 +68,13 @@ const Home: Page = () => {
           <h1 className={$.subtitle}>Education</h1>
 
           <div>
-            <p className={$.cau}>Chung-Ang University</p>
+            <p className={$['edu-title']}>Chung-Ang University</p>
             <p className={$.bachelor}>Bachelor’s degree, Computer Science</p>
             <p className={$['year']}>2015-2021</p>
+
+            <p className={$['edu-title']}>Purdue University</p>
+            <p className={$.bachelor}>K-SW Square Winter Program</p>
+            <p className={$['year']}>2020</p>
           </div>
         </section>
       </div>
