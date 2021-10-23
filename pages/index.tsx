@@ -4,14 +4,14 @@ import { Page } from '@/types/general'
 import { JhmGetServerSideProps } from '@/types/next'
 import { withSessionPage } from '@/utils/node/with-session'
 import clsx from 'clsx'
-import { LogoApple } from 'framework7-icons-plus/react'
-import $ from './home.module.scss'
+import { ArrowUpRight, LogoApple } from 'framework7-icons-plus/react'
+import styles from './home.module.scss'
 
 const Home: Page = () => {
   return (
-    <div className={$.home}>
-      <div className={$.introduction}>
-        <div className={$.manifesto}>
+    <div className={styles.home}>
+      <div className={styles.introduction}>
+        <div className={styles.manifesto}>
           <p>Hello, my name is Jang Haemin.</p>
           <p>I’m a frontend engineer.</p>
           <p>
@@ -39,7 +39,7 @@ const Home: Page = () => {
           <p>Stay Safe.</p>
         </div>
         <div>
-          <div className={$.portrait}>
+          <div className={styles.portrait}>
             <img
               src="/images/jhaemin_portrait.png"
               alt="Jang Haemin Portrait"
@@ -48,33 +48,49 @@ const Home: Page = () => {
         </div>
       </div>
 
-      <div className={$['education-and-work']}>
-        <section className={clsx($.section, $.openSource)}>
-          <h1 className={$.subtitle}>Experience</h1>
+      <div className={styles.educationAndWork}>
+        <section className={clsx(styles.section, styles.openSource)}>
+          <h1 className={styles.subtitle}>Experience</h1>
 
           <div>
-            <p className={$['work-title']}>
-              Woowa Brothers Corp.
-              <span className={$['range']}>2021-current</span>
-            </p>
-            <p className={$['work-title']}>
-              Carmore (TeamO2) Internship
-              <span className={$['range']}>2019</span>
-            </p>
+            <div className={styles.sectionItem}>
+              <p className={styles.sectionItemTitle}>Woowa Brothers Corp.</p>
+              <p className={styles.sectionItemDescription}>2021-current</p>
+            </div>
+
+            <div className={styles.sectionItem}>
+              <p className={styles.sectionItemTitle}>Woowahan Tech Camp 3rd</p>
+              <p className={styles.sectionItemDescription}>2020</p>
+            </div>
+
+            <div className={styles.sectionItem}>
+              <p className={styles.sectionItemTitle}>
+                Carmore (TeamO2) Internship
+              </p>
+              <p className={styles.sectionItemDescription}>2019</p>
+            </div>
           </div>
         </section>
 
-        <section className={clsx($.section, $.openSource)}>
-          <h1 className={$.subtitle}>Education</h1>
+        <section className={clsx(styles.section, styles.openSource)}>
+          <h1 className={styles.subtitle}>Education</h1>
 
           <div>
-            <p className={$['edu-title']}>Chung-Ang University</p>
-            <p className={$.bachelor}>Bachelor’s degree, Computer Science</p>
-            <p className={$['year']}>2015-2021</p>
+            <div className={styles.sectionItem}>
+              <p className={styles.sectionItemTitle}>Chung-Ang University</p>
+              <p className={styles.sectionItemDescription}>
+                Bachelor’s degree, Computer Science
+              </p>
+              <p className={styles.sectionItemDescription}>2015-2021</p>
+            </div>
 
-            <p className={$['edu-title']}>Purdue University</p>
-            <p className={$.bachelor}>K-SW Square Winter Program</p>
-            <p className={$['year']}>2020</p>
+            <div className={styles.sectionItem}>
+              <p className={styles.sectionItemTitle}>Purdue University</p>
+              <p className={styles.sectionItemDescription}>
+                K-SW Square Winter Program
+              </p>
+              <p className={styles.sectionItemDescription}>2020</p>
+            </div>
           </div>
         </section>
       </div>
@@ -83,9 +99,9 @@ const Home: Page = () => {
         <h1 className={$.subtitle}>Open Source</h1>
       </section> */}
 
-      <section className={clsx($.section, $.projects)}>
-        <h1 className={$.subtitle}>Projects</h1>
-        <div className={$.projectsList}>
+      <section className={clsx(styles.section, styles.projects)}>
+        <h1 className={styles.subtitle}>Projects</h1>
+        <div className={styles.projectsList}>
           {projects.map(({ name, description, href, Logo }) => {
             const anchorAttr = href.startsWith('http')
               ? { target: '_blank', rel: 'noreferrer' }
@@ -94,10 +110,12 @@ const Home: Page = () => {
             return (
               <div key={name}>
                 <CushionLink href={href} newWindow={href.startsWith('http')}>
-                  <div className={$.projectItem}>
-                    <div className={$.projectInfo}>
-                      <h2 className={$.projectName}>{name}</h2>
-                      <p className={$.projectDescription}>{description}</p>
+                  <div className={styles.projectItem}>
+                    <div className={styles.projectInfo}>
+                      <h2 className={styles.projectName}>
+                        {name} <ArrowUpRight />
+                      </h2>
+                      <p className={styles.projectDescription}>{description}</p>
                     </div>
                     {/* {Logo && <Logo />} */}
                   </div>
