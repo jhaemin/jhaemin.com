@@ -2,7 +2,7 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
+    "source.sortImports": true,
     "source.fixAll": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
