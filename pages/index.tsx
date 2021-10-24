@@ -55,7 +55,7 @@ const Home: Page = () => {
           <div>
             <div className={styles.sectionItem}>
               <p className={styles.sectionItemTitle}>Woowa Brothers Corp.</p>
-              <p className={styles.sectionItemDescription}>2021-current</p>
+              <p className={styles.sectionItemDescription}>2020-current</p>
             </div>
 
             <div className={styles.sectionItem}>
