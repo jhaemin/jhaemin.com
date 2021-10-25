@@ -41,7 +41,7 @@ const Home: Page = () => {
         <div>
           <div className={styles.portrait}>
             <img
-              src="/images/jhaemin_portrait.png"
+              src="/images/jhaemin_portrait.jpg"
               alt="Jang Haemin Portrait"
             />
           </div>
