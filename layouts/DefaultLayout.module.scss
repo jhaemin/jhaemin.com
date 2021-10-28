@@ -28,6 +28,10 @@
   @include larger-than(1000px) {
     padding: 100px;
   }
+
+  @include smaller-than(1200px) {
+    border-radius: 0;
+  }
 }
 
 .firstRow {
