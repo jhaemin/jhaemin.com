@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { LogoGithub, LogoLinkedin } from 'framework7-icons-plus/react'
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
-import $ from './DefaultLayout.module.scss'
+import styles from './DefaultLayout.module.scss'
 
 type DefaultLayoutProps = {
   children: ReactNode
@@ -38,17 +38,17 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
   const user = useUser()
 
   return (
-    <div className={clsx($.defaultLayout)}>
-      <div className={$.defaultLayoutContent}>
-        <nav className={$.header}>
-          <div className={$.firstRow}>
+    <div className={clsx(styles.defaultLayout)}>
+      <div className={styles.defaultLayoutContent}>
+        <nav className={styles.header}>
+          <div className={styles.firstRow}>
             {/* <Link href="/"> */}
-            <a href="/" className={$.logoLink}>
-              <JhmLogo className={$.logo} />
+            <a href="/" className={styles.logoLink}>
+              <JhmLogo className={styles.logo} />
             </a>
             {/* </Link> */}
 
-            <div className={$.socialLinks}>
+            <div className={styles.socialLinks}>
               <a
                 href="https://github.com/jhaemin"
                 target="_blank"
@@ -66,7 +66,7 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
             </div>
           </div>
 
-          <div className={$.sectionsContainer}>
+          <div className={styles.sectionsContainer}>
             {sections.map((section) => {
               const matched =
                 section.href === '/'
@@ -78,9 +78,9 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
                 <a
                   key={section.name}
                   href={section.href}
-                  className={clsx($.section, {
-                    [$.defocus]: !matched,
-                    [$.active]: matched,
+                  className={clsx(styles.section, {
+                    [styles.defocus]: !matched,
+                    [styles.active]: matched,
                   })}
                 >
                   {section.name}
@@ -91,10 +91,10 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
           </div>
         </nav>
 
-        <main className={$.sectionContent}>{children}</main>
+        <main className={styles.sectionContent}>{children}</main>
       </div>
 
-      <footer className={$.footer}>
+      <footer className={styles.footer}>
         <p>
           This website is an{' '}
           <a
