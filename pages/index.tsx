@@ -36,7 +36,7 @@ const Home: Page = () => {
             the ways express myself and improve our lives.
           </p>
           <p>I love my family, friends and Seoul.</p>
-          <p>Stay Safe.</p>
+          <p>Stay safe.</p>
         </div>
         <div>
           <div className={styles.portrait}>
