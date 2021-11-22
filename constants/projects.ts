@@ -36,6 +36,16 @@ export const projects: {
     Logo: interopLogo,
   },
   {
+    name: 'React Draggg',
+    description: 'Make your React elements draggable.',
+    href: 'https://github.com/jhaemin/react-draggg',
+  },
+  {
+    name: 'Advanced Utility Types',
+    description: 'Use TypeScript like a pro.',
+    href: 'https://github.com/jhaemin/react-draggg',
+  },
+  {
     name: 'Framework7 Icons+',
     description: 'A forked version of Framework7 Icons with additional icons.',
     href: 'https://github.com/jhaemin/framework7-icons-plus',
