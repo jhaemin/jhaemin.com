@@ -13,6 +13,7 @@ type DefaultLayoutProps = {
 const sections: {
   name: string
   href: string
+  newTab?: true
 }[] = [
   {
     name: 'About',
@@ -20,7 +21,8 @@ const sections: {
   },
   {
     name: 'Articles',
-    href: '/articles',
+    href: 'https://blog.jhaemin.com',
+    newTab: true,
   },
   {
     name: 'Photography',
@@ -82,6 +84,8 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
                     [styles.defocus]: !matched,
                     [styles.active]: matched,
                   })}
+                  target={section.newTab ? '_blank' : undefined}
+                  rel="noreferrer"
                 >
                   {section.name}
                 </a>
