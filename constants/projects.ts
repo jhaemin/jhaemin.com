@@ -240,7 +240,8 @@ export const projects: {
   },
   {
     name: 'jsoup+',
-    description: 'jsoup, extended. For the purpose of research and study.',
+    description:
+      'Extended version of jsoup with new features inspired by modern web development.',
     href: 'https://github.com/payw-org/jsoup-plus',
   },
 ]
