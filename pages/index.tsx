@@ -17,8 +17,8 @@ const Home: Page = () => {
           <p>
             I mostly spend time designing, developing and surfing the web while
             listening to{' '}
-            <span style={{ display: 'inline-flex', alignItems: 'baseline' }}>
-              <span style={{ display: 'none' }}>Apple</span>
+            <span className="apple-music">
+              <span className="apple-music-text">Apple</span>
               <LogoApple className="logo-apple" /> Music
             </span>{' '}
             or watching Netflix. Endless learning keeps me alive and never hangs
@@ -120,6 +120,15 @@ const Home: Page = () => {
       </section>
 
       <style jsx>{`
+        div :global(.apple-music) {
+          display: inline-flex;
+          align-items: baseline;
+        }
+
+        div :global(.apple-music-text) {
+          display: none;
+        }
+
         div :global(.logo-apple) {
           position: relative;
           margin-left: -0.08em;
