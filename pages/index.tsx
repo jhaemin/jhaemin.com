@@ -19,14 +19,7 @@ const Home: Page = () => {
             listening to{' '}
             <span style={{ display: 'inline-flex', alignItems: 'baseline' }}>
               <span style={{ display: 'none' }}>Apple</span>
-              <LogoApple
-                style={{
-                  position: 'relative',
-                  marginLeft: '-0.08em',
-                  transform: 'translateY(0.074em)',
-                }}
-              />{' '}
-              Music
+              <LogoApple className="logo-apple" /> Music
             </span>{' '}
             or watching Netflix. Endless learning keeps me alive and never hangs
             me down to the past.
@@ -125,6 +118,14 @@ const Home: Page = () => {
           })}
         </div>
       </section>
+
+      <style jsx>{`
+        div :global(.logo-apple) {
+          position: relative;
+          margin-left: -0.08em;
+          transform: translateY(0.074em);
+        }
+      `}</style>
     </div>
   )
 }
