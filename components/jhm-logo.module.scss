@@ -1,0 +1,5 @@
+@use '@/styles/jhm' as *;
+
+.path {
+  transition: fill $theme-change-duration ease;
+}
