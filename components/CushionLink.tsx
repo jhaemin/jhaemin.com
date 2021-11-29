@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { LinkProps } from 'next/link'
 import { useRouter } from 'next/router'
 import { AnchorHTMLAttributes } from 'react'
-import $ from './CushionLink.module.scss'
+import $ from './cushion-link.module.scss'
 
 export type CushionLinkProps = LinkProps &
   AnchorHTMLAttributes<HTMLAnchorElement> & {
@@ -23,7 +23,7 @@ const CushionLink: React.FC<CushionLinkProps> = (props) => {
     <a
       {...additionalAnchorAttr}
       {...restProps}
-      className={clsx($.cushionLink, className)}
+      className={clsx($['cushion-link'], className)}
       href={href.toString()}
       onClick={(e) => {
         e.preventDefault()
@@ -39,7 +39,7 @@ const CushionLink: React.FC<CushionLinkProps> = (props) => {
         }, 250)
       }}
     >
-      <div className={$.cushionCotton}>{children}</div>
+      <div className={$['cushion-cotton']}>{children}</div>
     </a>
   )
 }

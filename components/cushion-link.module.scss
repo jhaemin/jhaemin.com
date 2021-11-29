@@ -1,6 +1,6 @@
 @use '@/styles/jhm' as *;
 
-.cushionLink {
+.cushion-link {
   display: block;
   user-select: none;
   border-radius: var(--jhm-border-radius);
@@ -16,12 +16,12 @@
     }
   }
 
-  .cushionCotton {
+  .cushion-cotton {
     transition: transform 200ms ease;
   }
 
   &:active {
-    .cushionCotton {
+    .cushion-cotton {
       transition: transform 40ms ease;
       transform: scale(0.98);
     }
