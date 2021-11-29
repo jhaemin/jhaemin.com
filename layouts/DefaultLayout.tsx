@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { LogoGithub, LogoLinkedin } from 'framework7-icons-plus/react'
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
-import styles from './DefaultLayout.module.scss'
+import $ from './default-layout.module.scss'
 
 type DefaultLayoutProps = {
   children: ReactNode
@@ -40,17 +40,17 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
   const user = useUser()
 
   return (
-    <div className={clsx(styles.defaultLayout)}>
-      <div className={styles.defaultLayoutContent}>
-        <nav className={styles.header}>
-          <div className={styles.firstRow}>
+    <div className={clsx($['wrapper'])}>
+      <div className={$['content']}>
+        <nav className={$['header']}>
+          <div className={$['first-row']}>
             {/* <Link href="/"> */}
-            <a href="/" className={styles.logoLink}>
-              <JhmLogo className={styles.logo} />
+            <a href="/" className={$['logo-link']}>
+              <JhmLogo className={$['logo']} />
             </a>
             {/* </Link> */}
 
-            <div className={styles.socialLinks}>
+            <div className={$['social-links']}>
               <a
                 href="https://github.com/jhaemin"
                 target="_blank"
@@ -68,7 +68,7 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
             </div>
           </div>
 
-          <div className={styles.sectionsContainer}>
+          <div className={$['sections-container']}>
             {sections.map((section) => {
               const matched =
                 section.href === '/'
@@ -80,9 +80,9 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
                 <a
                   key={section.name}
                   href={section.href}
-                  className={clsx(styles.section, {
-                    [styles.defocus]: !matched,
-                    [styles.active]: matched,
+                  className={clsx($['section'], {
+                    [$['defocus']]: !matched,
+                    [$['active']]: matched,
                   })}
                   target={section.newTab ? '_blank' : undefined}
                   rel="noreferrer"
@@ -95,10 +95,10 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
           </div>
         </nav>
 
-        <main className={styles.sectionContent}>{children}</main>
+        <main className={$['section-content']}>{children}</main>
       </div>
 
-      <footer className={styles.footer}>
+      <footer className={$['footer']}>
         <p>
           This website is an{' '}
           <a

@@ -1,6 +1,6 @@
 @use '@/styles/jhm' as  *;
 
-.defaultLayout {
+.wrapper {
   max-width: var(--jhm-main-view-max-width);
   margin: auto;
   min-height: 100vh;
@@ -18,7 +18,7 @@
   }
 }
 
-.defaultLayoutContent {
+.content {
   margin: auto;
   background-color: var(--jhm-primary-background-color);
   padding: 50px 25px;
@@ -34,7 +34,7 @@
   }
 }
 
-.firstRow {
+.first-row {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -46,7 +46,7 @@
   }
 }
 
-.socialLinks {
+.social-links {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -65,7 +65,7 @@
   margin-bottom: 100px;
 }
 
-.logoLink {
+.logo-link {
   display: flex;
 }
 
@@ -74,7 +74,7 @@
   width: auto;
 }
 
-.sectionsContainer {
+.sections-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -107,7 +107,7 @@
   }
 }
 
-.sectionContent {
+.section-content {
 }
 
 .footer {
