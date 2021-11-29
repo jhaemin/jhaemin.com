@@ -5,21 +5,21 @@ import { JhmGetServerSideProps } from '@/types/next'
 import { withSessionPage } from '@/utils/node/with-session'
 import clsx from 'clsx'
 import { ArrowUpRight, LogoApple } from 'framework7-icons-plus/react'
-import styles from './home.module.scss'
+import $ from './home.module.scss'
 
 const Home: Page = () => {
   return (
-    <div className={styles.home}>
-      <div className={styles.introduction}>
-        <div className={styles.manifesto}>
+    <div className={$['wrapper']}>
+      <div className={$['introduction']}>
+        <div className={$['manifesto']}>
           <p>Hello, my name is Jang Haemin.</p>
           <p>I’m a frontend engineer.</p>
           <p>
             I mostly spend time designing, developing and surfing the web while
             listening to{' '}
-            <span className="apple-music">
-              <span className="apple-music-text">Apple</span>
-              <LogoApple className="logo-apple" /> Music
+            <span className={$['apple-music']}>
+              <span className={$['apple-music-text']}>Apple</span>
+              <LogoApple className={$['logo-apple']} /> Music
             </span>{' '}
             or watching Netflix. Endless learning keeps me alive and never hangs
             me down to the past.
@@ -32,7 +32,7 @@ const Home: Page = () => {
           <p>Stay safe.</p>
         </div>
         <div>
-          <div className={styles.portrait}>
+          <div className={$['portrait']}>
             <img
               src="/images/jhaemin_portrait.jpg"
               alt="Jang Haemin Portrait"
@@ -41,60 +41,60 @@ const Home: Page = () => {
         </div>
       </div>
 
-      <div className={styles.educationAndWork}>
-        <section className={clsx(styles.section, styles.openSource)}>
-          <h1 className={styles.subtitle}>Experience</h1>
+      <div className={$['education-and-work']}>
+        <section className={clsx($['section'], $['open-source'])}>
+          <h1 className={$['subtitle']}>Experience</h1>
 
           <div>
-            <div className={styles.sectionItem}>
-              <p className={styles.sectionItemTitle}>Woowa Brothers Corp.</p>
-              <p className={styles.sectionItemDescription}>2020-current</p>
+            <div className={$['section-item']}>
+              <p className={$['section-item-title']}>Woowa Brothers Corp.</p>
+              <p className={$['section-item-description']}>2020-current</p>
             </div>
 
-            <div className={styles.sectionItem}>
-              <p className={styles.sectionItemTitle}>Woowahan Tech Camp 3rd</p>
-              <p className={styles.sectionItemDescription}>2020</p>
+            <div className={$['section-item']}>
+              <p className={$['section-item-title']}>Woowahan Tech Camp 3rd</p>
+              <p className={$['section-item-description']}>2020</p>
             </div>
 
-            <div className={styles.sectionItem}>
-              <p className={styles.sectionItemTitle}>
+            <div className={$['section-item']}>
+              <p className={$['section-item-title']}>
                 Carmore (TeamO2) Internship
               </p>
-              <p className={styles.sectionItemDescription}>2019</p>
+              <p className={$['section-item-description']}>2019</p>
             </div>
           </div>
         </section>
 
-        <section className={clsx(styles.section, styles.openSource)}>
-          <h1 className={styles.subtitle}>Education</h1>
+        <section className={clsx($['section'], $['open-source'])}>
+          <h1 className={$['subtitle']}>Education</h1>
 
           <div>
-            <div className={styles.sectionItem}>
-              <p className={styles.sectionItemTitle}>Chung-Ang University</p>
-              <p className={styles.sectionItemDescription}>
+            <div className={$['section-item']}>
+              <p className={$['section-item-title']}>Chung-Ang University</p>
+              <p className={$['section-item-description']}>
                 Bachelor’s degree, Computer Science
               </p>
-              <p className={styles.sectionItemDescription}>2015-2021</p>
+              <p className={$['section-item-description']}>2015-2021</p>
             </div>
 
-            <div className={styles.sectionItem}>
-              <p className={styles.sectionItemTitle}>Purdue University</p>
-              <p className={styles.sectionItemDescription}>
+            <div className={$['section-item']}>
+              <p className={$['section-item-title']}>Purdue University</p>
+              <p className={$['section-item-description']}>
                 K-SW Square Winter Program
               </p>
-              <p className={styles.sectionItemDescription}>2020</p>
+              <p className={$['section-item-description']}>2020</p>
             </div>
           </div>
         </section>
       </div>
 
-      {/* <section className={clsx($.section, $.openSource)}>
-        <h1 className={$.subtitle}>Open Source</h1>
+      {/* <section className={clsx($["section"], $["open-source"])}>
+        <h1 className={$["subtitle"]}>Open Source</h1>
       </section> */}
 
-      <section className={clsx(styles.section, styles.projects)}>
-        <h1 className={styles.subtitle}>Projects</h1>
-        <div className={styles.projectsList}>
+      <section className={clsx($['section'], $['projects'])}>
+        <h1 className={$['subtitle']}>Projects</h1>
+        <div className={$['projects-list']}>
           {projects.map(({ name, description, href, Logo }) => {
             const anchorAttr = href.startsWith('http')
               ? { target: '_blank', rel: 'noreferrer' }
@@ -103,12 +103,12 @@ const Home: Page = () => {
             return (
               <div key={name}>
                 <CushionLink href={href} newWindow={href.startsWith('http')}>
-                  <div className={styles.projectItem}>
-                    <div className={styles.projectInfo}>
-                      <h2 className={styles.projectName}>
+                  <div className={$['project-item']}>
+                    <div className={$['project-info']}>
+                      <h2 className={$['project-name']}>
                         {name} <ArrowUpRight />
                       </h2>
-                      <p className={styles.projectDescription}>{description}</p>
+                      <p className={$['project-description']}>{description}</p>
                     </div>
                     {/* {Logo && <Logo />} */}
                   </div>
@@ -118,23 +118,6 @@ const Home: Page = () => {
           })}
         </div>
       </section>
-
-      <style jsx>{`
-        div :global(.apple-music) {
-          display: inline-flex;
-          align-items: baseline;
-        }
-
-        div :global(.apple-music-text) {
-          display: none;
-        }
-
-        div :global(.logo-apple) {
-          position: relative;
-          margin-left: -0.08em;
-          transform: translateY(0.074em);
-        }
-      `}</style>
     </div>
   )
 }

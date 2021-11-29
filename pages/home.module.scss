@@ -1,9 +1,31 @@
 @use '@/styles/jhm' as *;
 
+.wrapper {
+}
+
 .introduction {
   display: grid;
   grid-template-columns: 1fr 300px;
   gap: 40px;
+}
+
+.apple-music {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.apple-music-text {
+  display: none;
+}
+
+.logo-apple {
+  position: relative;
+  margin-left: -0.08em;
+  transform: translateY(0.074em);
+
+  .hello {
+    display: none;
+  }
 }
 
 .portrait {
@@ -64,7 +86,7 @@
   margin-top: 100px;
 }
 
-.educationAndWork {
+.education-and-work {
   display: flex;
 
   & > * {
@@ -85,18 +107,18 @@
   }
 }
 
-.sectionItem {
+.section-item {
   &:not(:first-child) {
     margin-top: 20px;
   }
 }
 
-.sectionItemTitle {
+.section-item-title {
   font-size: 18px;
   font-weight: 600;
 }
 
-.sectionItemDescription {
+.section-item-description {
   font-size: 16px;
   font-weight: 500;
   color: var(--jhm-secondary-text-color);
@@ -106,13 +128,13 @@
 .projects {
   display: grid;
 
-  .projectsList {
+  .projects-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 10px;
     margin: 0 #{-$inset};
 
-    .projectItem {
+    .project-item {
       letter-spacing: 0;
       // background-color: var(--jhm-tertiary-background-color);
       border-radius: var(--jhm-border-radius);
@@ -122,13 +144,13 @@
       align-items: center;
       padding: $inset;
 
-      .projectInfo {
+      .project-info {
         display: grid;
         grid-auto-rows: min-content;
         gap: 5px;
       }
 
-      .projectName {
+      .project-name {
         font-size: 16px;
         font-weight: 600;
         display: grid;
@@ -137,7 +159,7 @@
         gap: 6px;
       }
 
-      .projectDescription {
+      .project-description {
         color: var(--jhm-secondary-text-color);
         font-size: 16px;
         font-weight: 400;
