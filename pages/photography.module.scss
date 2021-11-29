@@ -1,6 +1,6 @@
 @use '@/styles/jhm' as *;
 
-.photosContainer {
+.photos-container {
   display: grid;
   gap: 100px;
 }
@@ -11,7 +11,7 @@
   align-items: center;
   text-align: center;
 
-  img {
+  .image {
     max-width: 100%;
     height: auto;
     border-radius: var(--jhm-border-radius);
@@ -26,13 +26,13 @@
     margin: 0 -25px;
   }
 
-  figcaption {
+  .caption {
     display: block;
     font-size: 16px;
     font-weight: 500;
     margin-top: 14px;
 
-    .photoTitle {
+    .photo-title {
       font-size: inherit;
     }
 
