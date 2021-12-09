@@ -36,6 +36,12 @@ const Home: Page = () => {
             <img
               src="/images/jhaemin_portrait.jpg"
               alt="Jang Haemin Portrait"
+              className="dark-mode"
+            />
+            <img
+              src="/images/jhaemin_woowacon.jpg"
+              alt="Jang Haemin Woowacon"
+              className={clsx('light-mode', $['light'])}
             />
           </div>
         </div>
