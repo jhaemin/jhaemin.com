@@ -43,7 +43,7 @@ export const projects: {
   {
     name: 'Advanced Utility Types',
     description: 'Use TypeScript like a pro.',
-    href: 'https://github.com/jhaemin/react-draggg',
+    href: 'https://github.com/jhaemin/advanced-utility-types',
   },
   {
     name: 'Framework7 Icons+',
