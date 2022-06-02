@@ -168,6 +168,19 @@
         font-weight: 400;
         line-height: 1.4;
       }
+
+      .project-links {
+        display: flex;
+        flex-direction: column;
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-size: 14px;
+          color: var(--jhm-point-color);
+        }
+      }
     }
   }
 }

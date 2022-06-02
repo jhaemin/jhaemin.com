@@ -4,7 +4,12 @@ import { Page } from '@/types/general'
 import { JhmGetServerSideProps } from '@/types/next'
 import { withSessionPage } from '@/utils/node/with-session'
 import clsx from 'clsx'
-import { ArrowUpRight, LogoApple } from 'framework7-icons-plus/react'
+import {
+  ArrowUpRight,
+  Link as LinkIcon,
+  LogoApple,
+} from 'framework7-icons-plus/react'
+import Link from 'next/link'
 import $ from './home.module.scss'
 
 const Home: Page = () => {
@@ -101,24 +106,47 @@ const Home: Page = () => {
       <section className={clsx($['section'], $['projects'])}>
         <h1 className={$['subtitle']}>Projects</h1>
         <div className={$['projects-list']}>
-          {projects.map(({ name, description, href, Logo }) => {
-            const anchorAttr = href.startsWith('http')
+          {projects.map(({ name, description, href, links }) => {
+            const hasSingleLink = !!href
+            const anchorAttr = href?.startsWith('http')
               ? { target: '_blank', rel: 'noreferrer' }
               : {}
 
             return (
               <div key={name}>
-                <CushionLink href={href} newWindow={href.startsWith('http')}>
+                {hasSingleLink ? (
+                  <CushionLink href={href} newWindow={href.startsWith('http')}>
+                    <div className={$['project-item']}>
+                      <div className={$['project-info']}>
+                        <h2 className={$['project-name']}>
+                          {name} <ArrowUpRight />
+                        </h2>
+                        <p className={$['project-description']}>
+                          {description}
+                        </p>
+                      </div>
+                    </div>
+                  </CushionLink>
+                ) : (
                   <div className={$['project-item']}>
                     <div className={$['project-info']}>
-                      <h2 className={$['project-name']}>
-                        {name} <ArrowUpRight />
-                      </h2>
+                      <h2 className={$['project-name']}>{name}</h2>
                       <p className={$['project-description']}>{description}</p>
+                      {links && links.length > 0 && (
+                        <div className={$['project-links']}>
+                          {links.map(({ url, title }) => (
+                            <Link key={url + title} href={url}>
+                              <a target="_blank" rel="noreferrer noopener">
+                                <LinkIcon />
+                                {title}
+                              </a>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    {/* {Logo && <Logo />} */}
                   </div>
-                </CushionLink>
+                )}
               </div>
             )
           })}

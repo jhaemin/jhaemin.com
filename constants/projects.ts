@@ -18,15 +18,25 @@ import { SVGComponent } from '@/types/general'
 export const projects: {
   name: string
   description: string
-  href: string
+  href?: string
   Logo?: SVGComponent
+  links?: { url: string; title: string }[]
 }[] = [
   {
     name: 'Mandao',
     description:
       'Create a website without writing codes. Developed at Woowa Brothers Corp.',
-    href: 'https://www.youtube.com/watch?v=XDC4QH-4Xms',
     Logo: mandaoLogo,
+    links: [
+      {
+        url: 'https://www.youtube.com/watch?v=BiLa7i81BcU',
+        title: 'WOOWACON 2021',
+      },
+      {
+        url: 'https://www.youtube.com/watch?v=XDC4QH-4Xms',
+        title: 'Woowa Tech Seminar',
+      },
+    ],
   },
   {
     name: 'Interop',
