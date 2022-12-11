@@ -5,6 +5,16 @@ export const photos: {
   caption: string
 }[] = [
   {
+    file: 'hyeopjae-beach-2022.jpeg',
+    title: 'Hyeopjae Beach',
+    caption: 'October 20, 2022 | iPhone 12 mini',
+  },
+  {
+    file: 'cat-2022.jpeg',
+    title: 'Cat in the Forest',
+    caption: 'October 29, 2022 | iPhone 12 mini',
+  },
+  {
     file: 'new-york-city.jpeg',
     // img: newYorkCity,
     title: 'New York City',
