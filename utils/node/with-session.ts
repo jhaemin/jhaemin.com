@@ -1,6 +1,6 @@
 import { error } from '@/constants/error'
 import prisma from '@/prisma'
-import { JhmApiRequest, JhmApiResponse } from '@/types/general'
+import { JhmApiRequest, JhmApiResponse, ResponsePayload } from '@/types/general'
 import {
   JhmGetServerSideProps,
   JhmGetServerSidePropsContext,
@@ -21,7 +21,7 @@ type JhmSessionOptions = {
   onlyAdmin?: boolean
 }
 
-export const withSessionApi = <Payload>(
+export const withSessionApi = <Payload extends ResponsePayload>(
   handler: Handler<JhmApiRequest, JhmApiResponse<Payload>>,
   /** Custom options */
   options?: JhmSessionOptions
