@@ -37,3 +37,6 @@ yarn-error.log*
 # Secure Enclave
 secure-enclave
 !secure-enclave/.keep
+
+# typescript
+tsconfig.tsbuildinfo
