@@ -18,7 +18,7 @@ const Home: Page = () => {
       <div className={$['introduction']}>
         <div className={$['manifesto']}>
           <p>Hello, my name is Jang Haemin.</p>
-          <p>I’m a frontend engineer.</p>
+          <p>I’m an expressive developer.</p>
           <p>
             I mostly spend time designing, developing and surfing the web while
             listening to{' '}
