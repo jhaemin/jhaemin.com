@@ -1,7 +1,11 @@
 import JhmLogo from '@/components/JhmLogo'
 import useUser from '@/hooks/use-user'
 import clsx from 'clsx'
-import { LogoGithub, LogoLinkedin } from 'framework7-icons-plus/react'
+import {
+  LogoGithub,
+  LogoInstagram,
+  LogoLinkedin,
+} from 'framework7-icons-plus/react'
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
 import $ from './default-layout.module.scss'
@@ -19,6 +23,10 @@ const sections: {
     name: 'About',
     href: '/',
   },
+  // {
+  //   name: 'Design',
+  //   href: '/design',
+  // },
   {
     name: 'Articles',
     href: 'https://blog.jhaemin.com',
@@ -64,6 +72,13 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
                 rel="noreferrer"
               >
                 <LogoLinkedin />
+              </a>
+              <a
+                href="https://www.instagram.com/_jhaemin/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LogoInstagram />
               </a>
             </div>
           </div>
