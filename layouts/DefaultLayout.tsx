@@ -124,7 +124,7 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
             open source
           </a>
         </p>
-        <p>Copyright © 2021 Jang Haemin</p>
+        <p>Copyright © 2022 Jang Haemin</p>
         {user ? (
           <>
             <p>Signed in as {user.email}</p>
