@@ -9,7 +9,7 @@
   --jhm-active-background-color: #fff;
   --jhm-primary-text-color: #222;
   --jhm-secondary-text-color: #808080;
-  --jhm-point-color: #0099ff;
+  --jhm-point-color: #017ee5;
 
   @include dark-mode {
     --jhm-primary-background-color: #111;
@@ -18,7 +18,7 @@
     --jhm-active-background-color: #333;
     --jhm-primary-text-color: #cccccc;
     --jhm-secondary-text-color: #979797;
-    --jhm-point-color: #1757ce;
+    --jhm-point-color: #f9a303;
   }
 }
 
