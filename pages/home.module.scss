@@ -137,6 +137,10 @@
     gap: 10px;
     margin: 0 #{-$inset};
 
+    @include smaller-than(500px) {
+      grid-template-columns: 1fr;
+    }
+
     .project-item {
       letter-spacing: 0;
       // background-color: var(--jhm-tertiary-background-color);
@@ -182,5 +186,37 @@
         }
       }
     }
+  }
+}
+
+.embeds {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+
+  @include smaller-than(500px) {
+    grid-template-columns: 1fr;
+  }
+
+  .embedded-video-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-bottom: 56.25%;
+    }
+  }
+
+  .embedded-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+
+    margin: -1px;
   }
 }

@@ -59,19 +59,19 @@ const Home: Page = () => {
           <div>
             <div className={$['section-item']}>
               <p className={$['section-item-title']}>Woowa Brothers Corp.</p>
-              <p className={$['section-item-description']}>2020-current</p>
+              <p className={$['section-item-description']}>2020 – current</p>
             </div>
 
             <div className={$['section-item']}>
               <p className={$['section-item-title']}>Woowahan Tech Camp 3rd</p>
-              <p className={$['section-item-description']}>2020</p>
+              <p className={$['section-item-description']}>Summer 2020</p>
             </div>
 
             <div className={$['section-item']}>
               <p className={$['section-item-title']}>
                 Carmore (TeamO2) Internship
               </p>
-              <p className={$['section-item-description']}>2019</p>
+              <p className={$['section-item-description']}>Summer 2019</p>
             </div>
           </div>
         </section>
@@ -85,7 +85,7 @@ const Home: Page = () => {
               <p className={$['section-item-description']}>
                 Bachelor’s degree, Computer Science
               </p>
-              <p className={$['section-item-description']}>2015-2021</p>
+              <p className={$['section-item-description']}>2015 – 2021</p>
             </div>
 
             <div className={$['section-item']}>
@@ -93,7 +93,7 @@ const Home: Page = () => {
               <p className={$['section-item-description']}>
                 K-SW Square Winter Program
               </p>
-              <p className={$['section-item-description']}>2020</p>
+              <p className={$['section-item-description']}>Winter 2020</p>
             </div>
           </div>
         </section>
@@ -150,6 +150,52 @@ const Home: Page = () => {
               </div>
             )
           })}
+        </div>
+      </section>
+
+      <section className={clsx($['section'])}>
+        <h1 className={$['subtitle']}>Featured</h1>
+        <div className={$['embeds']}>
+          <div className={$['embedded-video-wrapper']}>
+            <iframe
+              className={$['embedded-video']}
+              src="https://www.youtube.com/embed/BiLa7i81BcU"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className={$['embedded-video-wrapper']}>
+            <iframe
+              className={$['embedded-video']}
+              src="https://www.youtube.com/embed/B_sB_PJR_x8"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className={$['embedded-video-wrapper']}>
+            <iframe
+              className={$['embedded-video']}
+              src="https://www.youtube.com/embed/3H4umWD5bwI"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className={$['embedded-video-wrapper']}>
+            <iframe
+              className={$['embedded-video']}
+              src="https://www.youtube.com/embed/XDC4QH-4Xms"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       </section>
     </div>
