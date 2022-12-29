@@ -39,6 +39,12 @@ export const projects: {
     ],
   },
   {
+    name: 'Dynamic Island',
+    description:
+      'A web implementation of the Dymanic Island designed by Apple first introduced in iPhone 14 Pro.',
+    href: 'https://github.com/jhaemin/dynamic-island',
+  },
+  {
     name: 'Interop',
     description:
       'The Interop font family, a combination of Inter and Noto Sans KR that looks gorgeous together.',
