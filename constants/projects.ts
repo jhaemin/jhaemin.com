@@ -52,6 +52,16 @@ export const projects: {
     Logo: interopLogo,
   },
   {
+    name: 'Liar Game',
+    description: 'A game system for the popular Liar Game.',
+    href: 'https://liar-game.com',
+  },
+  {
+    name: 'Lucky Level Up',
+    description: 'A super simple game to level up. Rank #1 and earn ₩1,000,000',
+    href: 'https://lvup.app',
+  },
+  {
     name: 'React Draggg',
     description: 'Make your React elements draggable.',
     href: 'https://github.com/jhaemin/react-draggg',
