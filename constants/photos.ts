@@ -5,6 +5,26 @@ export const photos: {
   caption: string
 }[] = [
   {
+    file: 'reed-ocean-march-05-2023.jpeg',
+    title: 'Reed Ocean',
+    caption: 'March 5, 2023 | iPhone 12 mini',
+  },
+  {
+    file: 'honeymoon-house-stairs-march-05-2023.jpeg',
+    title: 'Honeymoon House Stairs',
+    caption: 'March 5, 2023 | iPhone 12 mini',
+  },
+  {
+    file: 'honeymoon-house-lobby-march-05-2023.jpeg',
+    title: 'Honeymoon House Lobby',
+    caption: 'March 5, 2023 | iPhone 12 mini',
+  },
+  {
+    file: 'glasses-on-the-table-march-02-2023.jpeg',
+    title: 'Glasses on the Table',
+    caption: 'March 2, 2023 | iPhone 12 mini',
+  },
+  {
     file: 'hyeopjae-beach-2022.jpeg',
     title: 'Hyeopjae Beach',
     caption: 'October 20, 2022 | iPhone 12 mini',
