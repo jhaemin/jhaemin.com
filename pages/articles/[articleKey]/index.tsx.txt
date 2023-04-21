@@ -27,9 +27,7 @@ const ArticlePage: Page<ArticlePageProps> = ({ article }) => {
         <OnlyAdmin>
           <div>
             <Link href={`/articles/editor?articleId=${article.id}`}>
-              <a>
-                <Button>Edit</Button>
-              </a>
+              <Button>Edit</Button>
             </Link>
           </div>
         </OnlyAdmin>

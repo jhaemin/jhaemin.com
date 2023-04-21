@@ -37,9 +37,7 @@ const ArticlesMainPage: Page<ArticlesMainPageProps> = ({ articles }) => {
 
       <OnlyAdmin>
         <Link href="/articles/editor">
-          <a>
-            <Button className={$.newButton}>New</Button>
-          </a>
+          <Button className={$.newButton}>New</Button>
         </Link>
       </OnlyAdmin>
 
