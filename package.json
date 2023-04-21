@@ -16,7 +16,7 @@
     "pm2:restart": "if pm2 show jhaemin.com ; then pm2 restart jhaemin.com ; else pnpm pm2:start ; fi",
     "pm2:stop": "if pm2 show jhaemin.com ; then pm2 stop jhaemin.com ; else echo 'No pm2 instance for jhaemin.com client' ; fi",
     "pm2:delete": "if pm2 show jhaemin.com ; then pm2 delete jhaemin.com ; else echo 'No pm2 instance for jhaemin.com client' ; fi",
-    "update": "git reset --hard && git pull && rm -rf node_modules && npm install && pnpm lint && next build && pnpm pm2:restart",
+    "update": "git reset --hard && git pull && rm -rf node_modules && pnpm install --frozen-lockfile && pnpm lint && next build && pnpm pm2:restart",
     "dbpush": "prisma db push",
     "prisma:introspect": "prisma introspect",
     "prisma:generate": "prisma generate"
