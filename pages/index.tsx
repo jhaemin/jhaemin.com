@@ -2,7 +2,6 @@ import CushionLink from '@/components/CushionLink'
 import { projects } from '@/constants/projects'
 import { Page } from '@/types/general'
 import { JhmGetServerSideProps } from '@/types/next'
-import { withSessionPage } from '@/utils/node/with-session'
 import clsx from 'clsx'
 import {
   ArrowUpRight,
@@ -135,11 +134,14 @@ const Home: Page = () => {
                       {links && links.length > 0 && (
                         <div className={$['project-links']}>
                           {links.map(({ url, title }) => (
-                            <Link key={url + title} href={url}>
-                              <a target="_blank" rel="noreferrer noopener">
-                                <LinkIcon />
-                                {title}
-                              </a>
+                            <Link
+                              key={url + title}
+                              href={url}
+                              target="_blank"
+                              rel="noreferrer noopener"
+                            >
+                              <LinkIcon />
+                              {title}
                             </Link>
                           ))}
                         </div>
@@ -203,10 +205,3 @@ const Home: Page = () => {
 }
 
 export default Home
-
-const handler: JhmGetServerSideProps = async ({ req, res }) => {
-  return {
-    props: {},
-  }
-}
-export const getServerSideProps = withSessionPage(handler)

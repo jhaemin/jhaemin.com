@@ -7,9 +7,6 @@ import Router, { useRouter } from 'next/router'
 import nProgress from 'nprogress'
 import { useEffect, useState } from 'react'
 import { SWRConfig } from 'swr'
-import 'tailwindcss/tailwind.css'
-// Import with relative path(..) instead of absolute path(@)
-// to keep the import order after the tailwindcss
 import '../components/ui/global/web-ui.scss'
 import '../styles/global-styles.scss'
 import '../styles/nprogress.scss'

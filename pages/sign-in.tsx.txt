@@ -18,9 +18,7 @@ const SignInPage: Page = () => {
     <>
       <div className="mb-4">
         <Link href="/join">
-          <a>
-            <Button>Join</Button>
-          </a>
+          <Button>Join</Button>
         </Link>
       </div>
       <div className={$.inputContainer}>

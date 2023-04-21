@@ -13,6 +13,7 @@
 
   .image {
     max-width: 100%;
+    width: auto;
     height: auto;
     border-radius: var(--jhm-border-radius);
     max-height: calc(100vh - 150px);
