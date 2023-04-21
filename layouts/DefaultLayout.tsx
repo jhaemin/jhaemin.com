@@ -51,11 +51,9 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
       <div className={$['content']}>
         <nav className={$['header']}>
           <div className={$['first-row']}>
-            {/* <Link href="/"> */}
-            <a href="/" className={$['logo-link']}>
+            <Link href="/" className={$['logo-link']}>
               <JhmLogo className={$['logo']} />
-            </a>
-            {/* </Link> */}
+            </Link>
 
             <div className={$['social-links']}>
               <a
