@@ -1,6 +1,7 @@
 import JhmLogo from '@/components/JhmLogo'
 import clsx from 'clsx'
 import {
+  Envelope,
   LogoGithub,
   LogoInstagram,
   LogoLinkedin,
@@ -54,8 +55,10 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
             <Link href="/" className={$['logo-link']}>
               <JhmLogo className={$['logo']} />
             </Link>
-
             <div className={$['social-links']}>
+              <a href="mailto:io@jhaemin.com">
+                <Envelope />
+              </a>
               <a
                 href="https://github.com/jhaemin"
                 target="_blank"
@@ -64,18 +67,18 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
                 <LogoGithub />
               </a>
               <a
-                href="https://www.linkedin.com/in/haemin-jang-b1038a1a0"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <LogoLinkedin />
-              </a>
-              <a
                 href="https://www.instagram.com/_jhaemin/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <LogoInstagram />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/haemin-jang-b1038a1a0"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LogoLinkedin />
               </a>
             </div>
           </div>
@@ -119,7 +122,7 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
             open source
           </a>
         </p>
-        <p>Copyright © 2022 Jang Haemin</p>
+        <p>Copyright © 2023 Jang Haemin</p>
         {/* {user ? (
           <>
             <p>Signed in as {user.email}</p>
