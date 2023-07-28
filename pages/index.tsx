@@ -16,8 +16,7 @@ const Home: Page = () => {
     <div className={$['wrapper']}>
       <div className={$['introduction']}>
         <div className={$['manifesto']}>
-          <p>Hello, my name is Jang Haemin.</p>
-          <p>I’m an expressive developer.</p>
+          <p>Hi, my name is Jang Haemin.</p>
           <p>
             I mostly spend time designing, developing and surfing the web while
             listening to{' '}
@@ -33,7 +32,6 @@ const Home: Page = () => {
             the ways express myself and improve our lives.
           </p>
           <p>I love my family, friends and Seoul.</p>
-          <p>Stay safe.</p>
         </div>
         <div>
           <div className={$['portrait']}>
