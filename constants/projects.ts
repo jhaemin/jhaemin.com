@@ -89,6 +89,11 @@ export const projects: {
     Logo: gol3dLogo,
   },
   {
+    name: 'Code Editor',
+    description: `A super simple code editor built with Tauri and Monaco Editor. Sorry I use VSCode.`,
+    href: 'https://github.com/jhaemin/code-editor',
+  },
+  {
     name: 'PAYW',
     description:
       'An open source group where talented developers are operating.',
