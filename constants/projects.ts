@@ -52,6 +52,12 @@ export const projects: {
     Logo: interopLogo,
   },
   {
+    name: 'freeyard',
+    description:
+      'A real-time communication canvas. Feel free to leave a message that anyone can see and reply.',
+    href: 'https://fy.jhaemin.com',
+  },
+  {
     name: 'Liar Game',
     description: 'A game system for the popular Liar Game.',
     href: 'https://liar-game.com',

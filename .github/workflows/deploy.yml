@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run_pull:
+    name: run pull
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd jhaemin/jhaemin.com-next
+            git reset --hard
+            git checkout main
+            git pull --rebase
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            pnpm install
+            pnpm build
+            pm2 start ecosystem.config.cjs
