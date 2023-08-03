@@ -52,6 +52,12 @@ export const projects: {
     Logo: interopLogo,
   },
   {
+    name: 'Planning Poker',
+    description:
+      'A simple yet powerful planning poker service. It is a part of Baemin Dev Center project.',
+    href: 'https://baemin.dev/planning-poker',
+  },
+  {
     name: 'freeyard',
     description:
       'A real-time communication canvas. Feel free to leave a message that anyone can see and reply.',
