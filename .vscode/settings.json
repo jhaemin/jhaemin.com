@@ -5,5 +5,9 @@
     "source.fixAll": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["clowd", "poltoday", "webglue", "webuffet", "whereland"]
+  "cSpell.words": ["clowd", "poltoday", "webglue", "webuffet", "whereland"],
+  "yaml.schemas": {
+    "file:///Users/jhm/.vscode/extensions/atlassian.atlascode-2.8.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml",
+    "https://json.schemastore.org/github-workflow.json": "file:///Users/jhm/Dev/jhaemin/jhaemin.com-next/.github/workflows/deploy.yml"
+  }
 }
