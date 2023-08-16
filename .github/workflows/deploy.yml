@@ -24,5 +24,14 @@ jobs:
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             pnpm install
-            pnpm build
-            pm2 start ecosystem.config.cjs
+            if pnpm typecheck; then
+              if pnpm build; then
+                pm2 start ecosystem.config.cjs
+              else
+                echo "Build failed"
+                exit 1
+              fi
+            else
+              echo "Type check failed"
+              exit 1
+            fi
