@@ -1,5 +1,6 @@
 import JhmLogo from '@/components/JhmLogo'
 import clsx from 'clsx'
+import dayjs from 'dayjs'
 import {
   Envelope,
   LogoGithub,
@@ -9,7 +10,7 @@ import {
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
-import $ from './default-layout.module.scss'
+import $ from './DefaultLayout.layout.module.scss'
 
 type DefaultLayoutProps = {
   children: ReactNode
@@ -122,7 +123,7 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
             open source
           </a>
         </p>
-        <p>Copyright © 2023 Jang Haemin</p>
+        <p>Copyright © {dayjs().format('YYYY')} Jang Haemin</p>
         {/* {user ? (
           <>
             <p>Signed in as {user.email}</p>

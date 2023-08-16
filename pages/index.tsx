@@ -9,7 +9,7 @@ import {
   LogoApple,
 } from 'framework7-icons-plus/react'
 import Link from 'next/link'
-import $ from './home.module.scss'
+import $ from './index.home.module.scss'
 
 const Home: Page = () => {
   return (
