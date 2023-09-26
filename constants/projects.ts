@@ -176,6 +176,7 @@ export const projects: {
     href: 'https://github.com/payw-org/cau-cafeteria-menus-scraper',
   },
   {
+    // TODO: GitHub repository
     name: 'Bmart',
     description:
       'A responsive web version of Bmart with a stunning thunder effect.',
