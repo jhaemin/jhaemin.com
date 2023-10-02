@@ -111,6 +111,7 @@ const Home: Page = () => {
           href="https://baemin.dev/planning-poker"
           className={clsx(s.latestWork, s.poker)}
           cottonClassName={s.container}
+          newWindow
         >
           <span className={s.label}>Latest Work</span>
           <h2 className={s.title}>
