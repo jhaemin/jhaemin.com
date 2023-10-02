@@ -7,11 +7,20 @@ import $ from './cushion-link.module.scss'
 export type CushionLinkProps = LinkProps &
   AnchorHTMLAttributes<HTMLAnchorElement> & {
     newWindow?: boolean
+    cottonClassName?: string
   }
 
 const CushionLink: React.FC<CushionLinkProps> = (props) => {
   const router = useRouter()
-  const { newWindow, href, as, className, children, ...restProps } = props
+  const {
+    newWindow,
+    href,
+    as,
+    className,
+    cottonClassName,
+    children,
+    ...restProps
+  } = props
   const additionalAnchorAttr: AnchorHTMLAttributes<HTMLAnchorElement> = {}
 
   if (props.newWindow) {
@@ -39,7 +48,9 @@ const CushionLink: React.FC<CushionLinkProps> = (props) => {
         }, 250)
       }}
     >
-      <div className={$['cushion-cotton']}>{children}</div>
+      <div className={clsx($['cushion-cotton'], cottonClassName)}>
+        {children}
+      </div>
     </a>
   )
 }

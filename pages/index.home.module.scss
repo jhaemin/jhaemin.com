@@ -51,6 +51,21 @@
       top: -10%;
     }
   }
+
+  .caption {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: rgba($color: #fff, $alpha: 0.7);
+    background-color: rgba($color: #000, $alpha: 0.2);
+    opacity: 0.8;
+    padding: 4px 8px;
+    border-radius: 6px;
+    backdrop-filter: blur(30px);
+  }
 }
 
 .subtitle {
@@ -130,6 +145,69 @@
 
 .projects {
   display: grid;
+
+  .latestWork {
+    margin-bottom: 25px;
+    position: relative;
+
+    .label {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.poker {
+      padding: 30px 20px 40px;
+
+      --background: radial-gradient(
+        125.75% 125.75% at 50% -2.2%,
+        #fff 0%,
+        #e5e5e5 100%
+      );
+      --label-text-color: #fff;
+
+      @include dark-mode {
+        --background: radial-gradient(
+          125.75% 125.75% at 50% -2.2%,
+          #434343 0%,
+          #1a1a1a 100%
+        );
+        --label-text-color: #e0e0e0;
+      }
+
+      background: var(--background);
+      border-radius: 20px;
+
+      .label {
+        background-color: #000;
+        color: var(--label-text-color);
+        padding: 8px 16px;
+        border-radius: 100px;
+        margin-bottom: 15px;
+        letter-spacing: 0.5px;
+      }
+
+      .title {
+        font-size: 32px;
+        font-weight: 600;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .pokerIcon {
+          width: auto;
+          height: 38px;
+        }
+      }
+    }
+  }
 
   .projects-list {
     display: grid;
