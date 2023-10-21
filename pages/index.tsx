@@ -113,7 +113,7 @@ const Home: Page = () => {
           cottonClassName={s.container}
           newWindow
         >
-          <span className={s.label}>Latest Work</span>
+          <span className={s.label}>Recent Work</span>
           <h2 className={s.title}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
