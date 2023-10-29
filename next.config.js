@@ -40,6 +40,15 @@ module.exports = {
   experimental: {
     scrollRestoration: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/interop',
+        destination: 'https://github.com/jhaemin/Interop',
+        permanent: false,
+      },
+    ]
+  },
   webpack: (config) => {
     const oneOf = config.module.rules.find(
       (rule) => typeof rule.oneOf === 'object'
