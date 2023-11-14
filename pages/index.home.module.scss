@@ -146,13 +146,19 @@
 .projects {
   display: grid;
 
-  .latestWork {
+  .recentWork {
     margin-bottom: 25px;
     position: relative;
+    border-radius: 20px;
+    padding: 30px 20px 40px;
 
     .label {
       font-size: 13px;
       font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 100px;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
     }
 
     .container {
@@ -163,8 +169,6 @@
     }
 
     &.poker {
-      padding: 30px 20px 40px;
-
       --background: radial-gradient(
         125.75% 125.75% at 50% -2.2%,
         #fff 0%,
@@ -182,15 +186,10 @@
       }
 
       background: var(--background);
-      border-radius: 20px;
 
       .label {
         background-color: #000;
         color: var(--label-text-color);
-        padding: 8px 16px;
-        border-radius: 100px;
-        margin-bottom: 15px;
-        letter-spacing: 0.5px;
       }
 
       .title {
@@ -205,6 +204,23 @@
           width: auto;
           height: 38px;
         }
+      }
+    }
+
+    &.everymoji {
+      background: linear-gradient(113deg, #c0deff 8.48%, #ada9f3 83.75%);
+      padding-bottom: 0px;
+
+      .label {
+        background-color: rgba(#4277ff, 0.5);
+        color: #fff;
+      }
+
+      img {
+        width: 100%;
+        max-width: 500px;
+        margin-top: -1%;
+        margin-bottom: -1p;
       }
     }
   }

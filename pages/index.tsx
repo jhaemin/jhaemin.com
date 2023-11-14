@@ -108,8 +108,18 @@ const Home: Page = () => {
         <h1 className={s['subtitle']}>Projects</h1>
 
         <CushionLink
+          href="https://everymoji.com"
+          className={clsx(s.recentWork, s.everymoji)}
+          cottonClassName={s.container}
+          newWindow
+        >
+          <span className={s.label}>Recent Work</span>
+          <img alt="everymoji" src="/images/everymoji.png" />
+        </CushionLink>
+
+        <CushionLink
           href="https://baemin.dev/planning-poker"
-          className={clsx(s.latestWork, s.poker)}
+          className={clsx(s.recentWork, s.poker)}
           cottonClassName={s.container}
           newWindow
         >
