@@ -107,6 +107,8 @@ const Home: Page = () => {
       <section className={clsx(s['section'], s['projects'])}>
         <h1 className={s['subtitle']}>Projects</h1>
 
+        {/* TODO: filter */}
+
         <div className={s.recentWorksContainer}>
           <CushionLink
             href="https://everymoji.com"
