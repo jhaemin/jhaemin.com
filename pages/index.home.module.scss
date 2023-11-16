@@ -146,19 +146,42 @@
 .projects {
   display: grid;
 
-  .recentWork {
+  .recentWorksContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
     margin-bottom: 25px;
+
+    @include smaller-than(720px) {
+      flex-direction: column;
+
+      .recentWork {
+        width: 100%;
+      }
+    }
+  }
+
+  .recentWork {
+    flex: 1;
     position: relative;
     border-radius: 20px;
     padding: 30px 20px 40px;
 
     .label {
-      font-size: 13px;
+      font-size: 10px;
       font-weight: 500;
-      padding: 8px 16px;
+      padding: 5px 12px;
       border-radius: 100px;
       margin-bottom: 15px;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.1px;
+    }
+
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+
+      display: flex;
+      align-items: center;
     }
 
     .container {
@@ -191,36 +214,35 @@
         background-color: #000;
         color: var(--label-text-color);
       }
-
-      .title {
-        font-size: 32px;
-        font-weight: 600;
-
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        .pokerIcon {
-          width: auto;
-          height: 38px;
-        }
-      }
     }
 
     &.everymoji {
-      background: linear-gradient(113deg, #c0deff 8.48%, #ada9f3 83.75%);
-      padding-bottom: 0px;
+      --background: linear-gradient(113deg, #c0deff 8.48%, #ada9f3 83.75%);
+      --label-text-color: #fff;
+      --label-background-color: #{rgba(#4277ff, 0.5)};
+      --title-text-color: #fff;
+
+      background: var(--background);
 
       .label {
-        background-color: rgba(#4277ff, 0.5);
-        color: #fff;
+        background-color: var(--label-background-color);
+        color: var(--label-text-color);
       }
 
-      img {
-        width: 100%;
-        max-width: 500px;
-        margin-top: -1%;
-        margin-bottom: -1p;
+      .title {
+        color: var(--title-text-color);
+        text-shadow: 0 2px 8px rgba(#000, 0.2);
+      }
+
+      @include dark-mode {
+        --background: linear-gradient(113deg, #2f69a8 8.48%, #361e92 83.75%);
+        --label-text-color: #d8d6de;
+        --label-background-color: rgb(19 32 65 / 50%);
+        --title-text-color: #d4d5dd;
+
+        .title {
+          text-shadow: none;
+        }
       }
     }
   }
