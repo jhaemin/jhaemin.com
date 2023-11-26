@@ -105,9 +105,31 @@ const Home: Page = () => {
       </section> */}
 
       <section className={clsx(s['section'], s['projects'])}>
-        <h1 className={s['subtitle']}>Projects</h1>
+        <h1 className={s['subtitle']}>Works</h1>
 
-        {/* TODO: filter */}
+        <CushionLink
+          href="https://woowacon.com"
+          className={s.woowacon23}
+          newWindow
+        >
+          <div className={s.container}>
+            <img
+              className={s.woowacon23Logo}
+              alt="WOOWACON 2023"
+              src="/images/woowacon23-white.png"
+            />
+            <picture className={s.baedalScience}>
+              <source
+                media="(max-width: 734px)"
+                srcSet="/images/baedal-science-portrait.png"
+              />
+              <img
+                alt="Baedal Science"
+                src="/images/baedal-science-landscape.png"
+              />
+            </picture>
+          </div>
+        </CushionLink>
 
         <div className={s.recentWorksContainer}>
           <CushionLink
@@ -130,6 +152,8 @@ const Home: Page = () => {
             <h2 className={s.title}>Planning Poker</h2>
           </CushionLink>
         </div>
+
+        {/* TODO: filter */}
 
         <div className={s['projects-list']}>
           {projects.map(({ name, description, href, links }) => {
