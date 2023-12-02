@@ -157,10 +157,18 @@
       justify-content: center;
       gap: 20px;
       padding: 32px 48px;
+
+      @include smaller-than(500px) {
+        padding: 32px;
+      }
     }
 
     .woowacon23Logo {
       width: 180px;
+
+      @include smaller-than(500px) {
+        width: 150px;
+      }
     }
 
     .baedalScience {
