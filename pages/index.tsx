@@ -54,7 +54,7 @@ const Home: Page = () => {
       </div>
 
       <div className={s['education-and-work']}>
-        <section className={clsx(s['section'], s['open-source'])}>
+        <section className={clsx(s['home-section'], s['open-source'])}>
           <h1 className={s['subtitle']}>Experience</h1>
 
           <div>
@@ -77,7 +77,7 @@ const Home: Page = () => {
           </div>
         </section>
 
-        <section className={clsx(s['section'], s['open-source'])}>
+        <section className={clsx(s['home-section'], s['open-source'])}>
           <h1 className={s['subtitle']}>Education</h1>
 
           <div>
@@ -104,7 +104,7 @@ const Home: Page = () => {
         <h1 className={$["subtitle"]}>Open Source</h1>
       </section> */}
 
-      <section className={clsx(s['section'], s['projects'])}>
+      <section className={clsx(s['home-section'], s['projects'])}>
         <h1 className={s['subtitle']}>Works</h1>
 
         <CushionLink
@@ -206,7 +206,7 @@ const Home: Page = () => {
         </div>
       </section>
 
-      <section className={clsx(s['section'])}>
+      <section className={clsx(s['home-section'])}>
         <h1 className={s['subtitle']}>Featured</h1>
         <div className={s['embeds']}>
           <div className={s['embedded-video-wrapper']}>

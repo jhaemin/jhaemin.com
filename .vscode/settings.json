@@ -1,8 +1,8 @@
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.sortImports": true,
-    "source.fixAll": true
+    "source.sortImports": "explicit",
+    "source.fixAll": "explicit"
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "cSpell.words": [

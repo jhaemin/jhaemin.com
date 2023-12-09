@@ -23,7 +23,8 @@ const localIdent = (loaderContext, localIdentName, localName, options) => {
   const realModuleName =
     moduleIndex === -1 ? fileName : dotSplit[moduleIndex - 1]
 
-  return `${paramCase(realModuleName)}-${paramCase(localName)}`
+  // return `${paramCase(realModuleName)}-${paramCase(localName)}`
+  return `${paramCase(localName)}`
 }
 
 function cssLoaderOptions(modules) {

@@ -1,4 +1,4 @@
-@use '@/styles/jhm' as  *;
+@use '@/styles/jhm' as *;
 
 .wrapper {
   max-width: var(--jhm-main-view-max-width);
@@ -34,7 +34,7 @@
   }
 }
 
-.first-row {
+.header-first-row {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -51,9 +51,12 @@
   flex-direction: row;
   align-items: center;
   font-size: 27px;
+  gap: 10px;
 
-  > *:not(:last-child) {
-    margin-right: 10px;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -80,7 +83,7 @@
   align-items: flex-start;
 }
 
-.section {
+.header-section {
   font-size: 30px;
   line-height: 1;
   font-weight: 800;

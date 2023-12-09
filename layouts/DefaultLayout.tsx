@@ -52,7 +52,7 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
     <div className={clsx($['wrapper'])}>
       <div className={$['content']}>
         <nav className={$['header']}>
-          <div className={$['first-row']}>
+          <div className={$['header-first-row']}>
             <Link href="/" className={$['logo-link']}>
               <JhmLogo className={$['logo']} />
             </Link>
@@ -95,7 +95,7 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
                 <Link
                   key={section.name}
                   href={section.href}
-                  className={clsx($['section'], {
+                  className={clsx($['header-section'], {
                     [$['defocus']]: !matched,
                     [$['active']]: matched,
                   })}
