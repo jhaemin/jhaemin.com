@@ -23,6 +23,17 @@ export const projects: {
   links?: { url: string; title: string }[]
 }[] = [
   {
+    name: 'Woowa Web Toolkit',
+    description:
+      'A universal browser extension for Woowa Brothers Corp. that enhances overall web experience.',
+    links: [
+      {
+        url: 'https://www.youtube.com/watch?v=YtrIAqgSDp8',
+        title: 'WOOWACON 2023',
+      },
+    ],
+  },
+  {
     name: 'Mandao',
     description:
       'Create a website without writing codes. Developed at Woowa Brothers Corp.',
@@ -31,6 +42,10 @@ export const projects: {
       {
         url: 'https://www.youtube.com/watch?v=BiLa7i81BcU',
         title: 'WOOWACON 2021',
+      },
+      {
+        url: 'https://techblog.woowahan.com/2719',
+        title: 'Woowa Tech Blog',
       },
       {
         url: 'https://www.youtube.com/watch?v=XDC4QH-4Xms',

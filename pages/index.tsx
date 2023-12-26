@@ -209,6 +209,21 @@ const Home: Page = () => {
       <section className={clsx(s['home-section'])}>
         <h1 className={s['subtitle']}>Featured</h1>
         <div className={s['embeds']}>
+          <div
+            className={s['embedded-video-wrapper']}
+            style={{
+              gridColumn: '1 / -1',
+            }}
+          >
+            <iframe
+              className={s['embedded-video']}
+              src="https://www.youtube.com/embed/YtrIAqgSDp8?si=9sIA5VdwQn82LyiT"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
           <div className={s['embedded-video-wrapper']}>
             <iframe
               className={s['embedded-video']}
