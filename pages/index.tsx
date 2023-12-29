@@ -345,7 +345,7 @@ const Home: Page = () => {
               })
             }}
           >
-            See all projects
+            See all works
           </button>
         )}
       </section>
