@@ -26,7 +26,6 @@ export enum ProjectCategory {
   Organization = 'Organization',
   BrowserExtensions = 'Browser Extensions',
   Experiments = 'Experiments',
-  Experience = 'Experience',
   WBCorp = 'Woowa Brothers Corp.',
   PurdueUniversity = 'Purdue University',
   CAU = 'CAU',
