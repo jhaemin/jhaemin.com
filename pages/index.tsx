@@ -43,7 +43,9 @@ const Home: Page = () => {
   }
 
   useEffect(() => {
-    onScrollCategories()
+    setTimeout(() => {
+      onScrollCategories()
+    }, 0)
   }, [])
 
   return (
