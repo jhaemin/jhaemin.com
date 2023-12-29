@@ -285,7 +285,7 @@
     margin-bottom: 20px;
     overflow: hidden;
 
-    height: 29px;
+    height: 31px;
 
     position: relative;
 
@@ -374,8 +374,10 @@
     }
 
     .scrollTo {
+      width: 20px;
+      height: 20px;
       position: absolute;
-      top: 50%;
+      top: calc(50% - 2px);
       transform: translateY(-50%);
       cursor: pointer;
       backdrop-filter: blur(30px);
