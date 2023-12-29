@@ -9,7 +9,7 @@ import {
   LogoApple,
 } from 'framework7-icons-plus/react'
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import s from './index.home.module.scss'
 
 const Home: Page = () => {
@@ -19,6 +19,32 @@ const Home: Page = () => {
   const leftShaderRef = useRef<HTMLDivElement>(null!)
   const rightShaderRef = useRef<HTMLDivElement>(null!)
   const [filter, setFilter] = useState<ProjectCategory | null>(null)
+
+  const onScrollCategories = () => {
+    if (scrollContainerRef.current.scrollLeft <= 0) {
+      chevronLeftRef.current.classList.remove(s.visible)
+      leftShaderRef.current.classList.remove(s.visible)
+    } else {
+      chevronLeftRef.current.classList.add(s.visible)
+      leftShaderRef.current.classList.add(s.visible)
+    }
+
+    if (
+      scrollContainerRef.current.scrollLeft +
+        scrollContainerRef.current.getBoundingClientRect().width >=
+      scrollContainerRef.current.scrollWidth
+    ) {
+      chevronRightRef.current.classList.remove(s.visible)
+      rightShaderRef.current.classList.remove(s.visible)
+    } else {
+      chevronRightRef.current.classList.add(s.visible)
+      rightShaderRef.current.classList.add(s.visible)
+    }
+  }
+
+  useEffect(() => {
+    onScrollCategories()
+  }, [])
 
   return (
     <div className={s['wrapper']}>
@@ -167,27 +193,7 @@ const Home: Page = () => {
           <div
             ref={scrollContainerRef}
             className={s.scrollContainer}
-            onScroll={() => {
-              if (scrollContainerRef.current.scrollLeft === 0) {
-                chevronLeftRef.current.classList.remove(s.visible)
-                leftShaderRef.current.classList.remove(s.visible)
-              } else {
-                chevronLeftRef.current.classList.add(s.visible)
-                leftShaderRef.current.classList.add(s.visible)
-              }
-
-              if (
-                scrollContainerRef.current.scrollLeft +
-                  scrollContainerRef.current.getBoundingClientRect().width >=
-                scrollContainerRef.current.scrollWidth
-              ) {
-                chevronRightRef.current.classList.remove(s.visible)
-                rightShaderRef.current.classList.remove(s.visible)
-              } else {
-                chevronRightRef.current.classList.add(s.visible)
-                rightShaderRef.current.classList.add(s.visible)
-              }
-            }}
+            onScroll={onScrollCategories}
           >
             <div
               className={clsx(s.filter, {
