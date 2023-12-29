@@ -457,6 +457,21 @@
       }
     }
   }
+
+  .seeAllProjects {
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    color: var(--jhm-point-color);
+    margin-top: 20px;
+    cursor: pointer;
+
+    transition: opacity 150ms ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 }
 
 .embeds {

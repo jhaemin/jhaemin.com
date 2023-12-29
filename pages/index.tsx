@@ -333,6 +333,21 @@ const Home: Page = () => {
               )
             })}
         </div>
+
+        {filter && (
+          <button
+            className={s.seeAllProjects}
+            onClick={() => {
+              setFilter(null)
+              scrollContainerRef.current.scrollTo({
+                left: 0,
+                behavior: 'smooth',
+              })
+            }}
+          >
+            See all projects
+          </button>
+        )}
       </section>
 
       <section className={clsx(s['home-section'])}>
