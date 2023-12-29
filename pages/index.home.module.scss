@@ -281,6 +281,125 @@
     }
   }
 
+  .filters {
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    height: 29px;
+
+    position: relative;
+
+    .scrollContainer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 2px;
+
+      overflow-x: auto;
+
+      padding-bottom: 17px;
+
+      // border-top: 1px solid var(--jhm-secondary-background-color);
+
+      .filter {
+        flex: none;
+        cursor: default;
+        border-radius: 4px;
+        font-size: 14px;
+        padding: 6px 12px;
+
+        color: var(--jhm-secondary-text-color);
+
+        transition: background-color 0.2s ease, transform 100ms ease;
+        will-change: transform;
+
+        &:hover {
+          color: var(--jhm-primary-text-color);
+          background-color: var(--jhm-tertiary-background-color);
+        }
+
+        &:active {
+          transform: scaleY(0.94);
+        }
+
+        &.selected {
+          color: var(--jhm-primary-text-color);
+          background-color: var(--jhm-secondary-background-color);
+        }
+      }
+    }
+
+    .shader {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 60px;
+      pointer-events: none;
+
+      opacity: 0;
+
+      transition: opacity 200ms ease;
+
+      &.visible {
+        opacity: 1;
+      }
+
+      --shader-color-start: rgba(255, 255, 255, 1);
+      --shader-color-end: rgba(255, 255, 255, 0);
+
+      @include dark-mode {
+        --shader-color-start: rgba(17, 17, 17, 1);
+        --shader-color-end: rgba(17, 17, 17, 0);
+      }
+
+      &.left {
+        left: 0;
+        background: linear-gradient(
+          to right,
+          var(--shader-color-start) 0%,
+          var(--shader-color-end) 100%
+        );
+      }
+
+      &.right {
+        right: 0;
+        background: linear-gradient(
+          to left,
+          var(--shader-color-start) 0%,
+          var(--shader-color-end) 100%
+        );
+      }
+    }
+
+    .scrollTo {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      backdrop-filter: blur(30px);
+
+      opacity: 0;
+      pointer-events: none;
+
+      transition: opacity 200ms ease;
+
+      &.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+    }
+  }
+
   .projects-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -326,6 +445,7 @@
       .project-links {
         display: flex;
         flex-direction: column;
+        gap: 2px;
 
         a {
           display: flex;

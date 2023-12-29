@@ -1,5 +1,5 @@
 import CushionLink from '@/components/CushionLink'
-import { projects } from '@/constants/projects'
+import { ProjectCategory, projects } from '@/constants/projects'
 import { Page } from '@/types/general'
 import { JhmGetServerSideProps } from '@/types/next'
 import clsx from 'clsx'
@@ -9,9 +9,17 @@ import {
   LogoApple,
 } from 'framework7-icons-plus/react'
 import Link from 'next/link'
+import { useRef, useState } from 'react'
 import s from './index.home.module.scss'
 
 const Home: Page = () => {
+  const chevronLeftRef = useRef<SVGSVGElement>(null!)
+  const chevronRightRef = useRef<SVGSVGElement>(null!)
+  const scrollContainerRef = useRef<HTMLDivElement>(null!)
+  const leftShaderRef = useRef<HTMLDivElement>(null!)
+  const rightShaderRef = useRef<HTMLDivElement>(null!)
+  const [filter, setFilter] = useState<ProjectCategory | null>(null)
+
   return (
     <div className={s['wrapper']}>
       <div className={s['introduction']}>
@@ -155,54 +163,169 @@ const Home: Page = () => {
 
         {/* TODO: filter */}
 
-        <div className={s['projects-list']}>
-          {projects.map(({ name, description, href, links }) => {
-            const hasSingleLink = !!href
-            const anchorAttr = href?.startsWith('http')
-              ? { target: '_blank', rel: 'noreferrer' }
-              : {}
+        <div className={s.filters}>
+          <div
+            ref={scrollContainerRef}
+            className={s.scrollContainer}
+            onScroll={() => {
+              if (scrollContainerRef.current.scrollLeft === 0) {
+                chevronLeftRef.current.classList.remove(s.visible)
+                leftShaderRef.current.classList.remove(s.visible)
+              } else {
+                chevronLeftRef.current.classList.add(s.visible)
+                leftShaderRef.current.classList.add(s.visible)
+              }
 
-            return (
-              <div key={name}>
-                {hasSingleLink ? (
-                  <CushionLink href={href} newWindow={href.startsWith('http')}>
+              if (
+                scrollContainerRef.current.scrollLeft +
+                  scrollContainerRef.current.getBoundingClientRect().width >=
+                scrollContainerRef.current.scrollWidth
+              ) {
+                chevronRightRef.current.classList.remove(s.visible)
+                rightShaderRef.current.classList.remove(s.visible)
+              } else {
+                chevronRightRef.current.classList.add(s.visible)
+                rightShaderRef.current.classList.add(s.visible)
+              }
+            }}
+          >
+            <div
+              className={clsx(s.filter, {
+                [s.selected]: filter === null,
+              })}
+              onClick={() => {
+                setFilter(null)
+              }}
+            >
+              All
+            </div>
+            {Object.values(ProjectCategory).map((category) => {
+              return (
+                <div
+                  key={category}
+                  className={clsx(s.filter, {
+                    [s.selected]: filter === category,
+                  })}
+                  onClick={() => {
+                    setFilter(category as ProjectCategory)
+                  }}
+                >
+                  {category}
+                </div>
+              )
+            })}
+          </div>
+
+          <div ref={leftShaderRef} className={clsx(s.shader, s.left)} />
+          <div ref={rightShaderRef} className={clsx(s.shader, s.right)} />
+
+          <svg
+            ref={chevronLeftRef}
+            className={clsx(s.scrollTo, s.left)}
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            width="20.2832"
+            height="19.9316"
+            onClick={() => {
+              scrollContainerRef.current.scrollTo({
+                left: scrollContainerRef.current.scrollLeft - 200,
+                behavior: 'smooth',
+              })
+            }}
+          >
+            <g>
+              <rect height="19.9316" opacity="0" width="20.2832" x="0" y="0" />
+              <path
+                d="M19.9219 9.96094C19.9219 15.4004 15.4102 19.9219 9.96094 19.9219C4.52148 19.9219 0 15.4004 0 9.96094C0 4.51172 4.51172 0 9.95117 0C15.4004 0 19.9219 4.51172 19.9219 9.96094ZM10.8594 5.17578L6.79688 9.01367C6.24023 9.52148 6.24023 10.4199 6.79688 10.9277L10.8594 14.7656C11.1328 15.0195 11.6406 15.0391 11.8945 14.7949C12.1973 14.4922 12.1875 14.0234 11.9043 13.75L7.89062 9.96094L11.9043 6.19141C12.1973 5.91797 12.1875 5.42969 11.8848 5.14648C11.6113 4.88281 11.1621 4.89258 10.8594 5.17578Z"
+                fill="var(--jhm-primary-text-color)"
+                fillOpacity="1"
+              />
+            </g>
+          </svg>
+
+          <svg
+            ref={chevronRightRef}
+            className={clsx(s.scrollTo, s.right)}
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            width="20.2832"
+            height="19.9316"
+            onClick={() => {
+              scrollContainerRef.current.scrollTo({
+                left: scrollContainerRef.current.scrollLeft + 200,
+                behavior: 'smooth',
+              })
+            }}
+          >
+            <g>
+              <path
+                d="M19.9219 9.96094C19.9219 15.4004 15.4102 19.9219 9.96094 19.9219C4.52148 19.9219 0 15.4004 0 9.96094C0 4.51172 4.51172 0 9.95117 0C15.4004 0 19.9219 4.51172 19.9219 9.96094ZM7.65625 5C7.34375 5.29297 7.33398 5.79102 7.64648 6.08398L11.7871 9.9707L7.64648 13.8672C7.34375 14.1504 7.34375 14.6387 7.64648 14.9512C7.91992 15.2051 8.44727 15.1855 8.73047 14.9121L12.9199 10.9668C13.4863 10.4395 13.4961 9.51172 12.9199 8.97461L8.73047 5.03906C8.41797 4.74609 7.94922 4.7168 7.65625 5Z"
+                fill="var(--jhm-primary-text-color)"
+                fillOpacity="1"
+              />
+            </g>
+          </svg>
+        </div>
+
+        <div className={s['projects-list']}>
+          {projects
+            .filter((project) =>
+              filter === null ? true : project.categories.includes(filter)
+            )
+            .map(({ name, description, href, links }) => {
+              const hasSingleLink = !!href
+              const anchorAttr = href?.startsWith('http')
+                ? { target: '_blank', rel: 'noreferrer' }
+                : {}
+
+              return (
+                <div key={name}>
+                  {hasSingleLink ? (
+                    <CushionLink
+                      href={href}
+                      newWindow={href.startsWith('http')}
+                    >
+                      <div className={s['project-item']}>
+                        <div className={s['project-info']}>
+                          <h2 className={s['project-name']}>
+                            {name} <ArrowUpRight />
+                          </h2>
+                          <p className={s['project-description']}>
+                            {description}
+                          </p>
+                        </div>
+                      </div>
+                    </CushionLink>
+                  ) : (
                     <div className={s['project-item']}>
                       <div className={s['project-info']}>
-                        <h2 className={s['project-name']}>
-                          {name} <ArrowUpRight />
-                        </h2>
+                        <h2 className={s['project-name']}>{name}</h2>
                         <p className={s['project-description']}>
                           {description}
                         </p>
+                        {links && links.length > 0 && (
+                          <div className={s['project-links']}>
+                            {links.map(({ url, title }) => (
+                              <Link
+                                key={url + title}
+                                href={url}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                              >
+                                <LinkIcon />
+                                {title}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
-                  </CushionLink>
-                ) : (
-                  <div className={s['project-item']}>
-                    <div className={s['project-info']}>
-                      <h2 className={s['project-name']}>{name}</h2>
-                      <p className={s['project-description']}>{description}</p>
-                      {links && links.length > 0 && (
-                        <div className={s['project-links']}>
-                          {links.map(({ url, title }) => (
-                            <Link
-                              key={url + title}
-                              href={url}
-                              target="_blank"
-                              rel="noreferrer noopener"
-                            >
-                              <LinkIcon />
-                              {title}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </div>
-            )
-          })}
+                  )}
+                </div>
+              )
+            })}
         </div>
       </section>
 
