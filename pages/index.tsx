@@ -30,9 +30,10 @@ const Home: Page = () => {
     }
 
     if (
-      scrollContainerRef.current.scrollLeft +
-        scrollContainerRef.current.getBoundingClientRect().width >=
-      scrollContainerRef.current.scrollWidth
+      Math.round(
+        scrollContainerRef.current.scrollLeft +
+          scrollContainerRef.current.getBoundingClientRect().width
+      ) >= scrollContainerRef.current.scrollWidth
     ) {
       chevronRightRef.current.classList.remove(s.visible)
       rightShaderRef.current.classList.remove(s.visible)
