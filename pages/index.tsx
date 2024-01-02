@@ -1,7 +1,6 @@
 import CushionLink from '@/components/CushionLink'
 import { ProjectCategory, projects } from '@/constants/projects'
 import { Page } from '@/types/general'
-import { JhmGetServerSideProps } from '@/types/next'
 import clsx from 'clsx'
 import {
   ArrowUpRight,
