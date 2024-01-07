@@ -111,6 +111,13 @@ export const projects: Project[] = [
     categories: [ProjectCategory.WebService, ProjectCategory.Design],
   },
   {
+    name: 'YouTube Space bar Fix',
+    description:
+      'Play or pause YouTube video with space bar even when the video is not focused.',
+    href: 'https://github.com/jhaemin/youtube-spacebar-fix',
+    categories: [ProjectCategory.BrowserExtensions],
+  },
+  {
     name: 'freeyard',
     description:
       'A real-time communication canvas. Feel free to leave a message that anyone can see and reply.',
