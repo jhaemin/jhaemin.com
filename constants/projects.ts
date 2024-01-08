@@ -112,6 +112,17 @@ export const projects: Project[] = [
     categories: [ProjectCategory.WebService, ProjectCategory.Design],
   },
   {
+    name: 'Robot Fantasia',
+    description:
+      'An interactive website for enjoying the Robot Fantasia, a Baemin music.',
+    href: 'https://robotfantasia.com',
+    categories: [
+      ProjectCategory.Experiments,
+      ProjectCategory.Design,
+      ProjectCategory.WebService,
+    ],
+  },
+  {
     name: 'YouTube Space bar Fix',
     description:
       'Play or pause YouTube video with space bar even when the video is not focused.',
