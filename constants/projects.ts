@@ -101,6 +101,7 @@ export const projects: Project[] = [
   {
     name: 'everymoji',
     description: 'Create animated text emojis for Slack quickly and easily.',
+    href: 'https://everymoji.com',
     categories: [ProjectCategory.WebService, ProjectCategory.Design],
   },
   {
@@ -114,7 +115,7 @@ export const projects: Project[] = [
     name: 'YouTube Space bar Fix',
     description:
       'Play or pause YouTube video with space bar even when the video is not focused.',
-    href: 'https://github.com/jhaemin/youtube-spacebar-fix',
+    href: 'https://chromewebstore.google.com/detail/youtube-space-bar-fix/hnoggpcpecjklffkjahhkkhhkdagheoa',
     categories: [ProjectCategory.BrowserExtensions],
   },
   {
