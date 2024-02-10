@@ -5,7 +5,8 @@
 
 .introduction {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  // grid-template-columns: 300px 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
 }
 
@@ -37,7 +38,8 @@
   &::before {
     content: '';
     display: block;
-    padding-bottom: 100%;
+    // padding-bottom: 100%;
+    padding-bottom: 50%;
   }
 
   img {
@@ -45,11 +47,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 
-    &.light {
-      top: -10%;
-    }
+    // &.light {
+    //   top: -10%;
+    // }
   }
 
   .caption {

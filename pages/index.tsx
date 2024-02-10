@@ -51,6 +51,24 @@ const Home: Page = () => {
   return (
     <div className={s['wrapper']}>
       <div className={s['introduction']}>
+        <div>
+          <figure className={s['portrait']}>
+            {/* <img
+              src="/images/jhaemin_portrait.jpg"
+              alt="Jang Haemin Portrait"
+              className="dark-mode"
+            /> */}
+            <img
+              src="/images/jhaemin-wwc23-wide.jpg"
+              alt="Jang Haemin Woowacon"
+              // className={clsx('light-mode', s['light'])}
+            />
+
+            {/* <figcaption className={clsx('dark-mode', s.caption)}>
+              Photo by 김명중
+            </figcaption> */}
+          </figure>
+        </div>
         <div className={s['manifesto']}>
           <p>Hi, my name is Jang Haemin.</p>
           <p>
@@ -68,24 +86,6 @@ const Home: Page = () => {
             the ways express myself and improve our lives.
           </p>
           <p>I love my family, friends and Seoul.</p>
-        </div>
-        <div>
-          <figure className={s['portrait']}>
-            <img
-              src="/images/jhaemin_portrait.jpg"
-              alt="Jang Haemin Portrait"
-              className="dark-mode"
-            />
-            <img
-              src="/images/jhaemin_woowacon.jpg"
-              alt="Jang Haemin Woowacon"
-              className={clsx('light-mode', s['light'])}
-            />
-
-            <figcaption className={clsx('dark-mode', s.caption)}>
-              Photo by 김명중
-            </figcaption>
-          </figure>
         </div>
       </div>
 
