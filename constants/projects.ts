@@ -25,6 +25,7 @@ export enum ProjectCategory {
   Utilities = 'Utilities',
   Organization = 'Organization',
   BrowserExtensions = 'Browser Extensions',
+  // TODO: rename to Experiment
   Experiments = 'Experiments',
   WBCorp = 'Woowa Brothers Corp.',
   PurdueUniversity = 'Purdue University',
@@ -81,6 +82,17 @@ export const projects: Project[] = [
       ProjectCategory.WBCorp,
       ProjectCategory.WebService,
       ProjectCategory.Design,
+    ],
+  },
+  {
+    name: '쓰면글림체',
+    description: `배달이친구들을 이리저리 늘리고 꼬아 만든 한글 그림글자 '배민 글림체'를 사용하는 새로운 방법.`,
+    href: 'https://geullim.com',
+    categories: [
+      ProjectCategory.WebService,
+      ProjectCategory.Design,
+      ProjectCategory.Fonts,
+      ProjectCategory.WBCorp,
     ],
   },
   {

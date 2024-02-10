@@ -146,6 +146,50 @@
 .projects {
   display: grid;
 
+  .geullim {
+    --geullim-theme: #b2ebe9;
+
+    @include dark-mode {
+      --geullim-theme: #53c0c8;
+    }
+
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 30px;
+
+    .geullimBorder {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: calc(100% - 12px);
+      height: calc(100% - 12px);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 48px 48px;
+
+      @include smaller-than(500px) {
+        padding: 32px;
+      }
+    }
+
+    .geullimThumb {
+      display: flex;
+      width: 100%;
+
+      max-width: 450px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
   .woowacon23 {
     margin-bottom: 20px;
     background-color: #000;

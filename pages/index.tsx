@@ -143,6 +143,35 @@ const Home: Page = () => {
       <section className={clsx(s['home-section'], s['projects'])}>
         <h1 className={s['subtitle']}>Works</h1>
 
+        <CushionLink href="https://geullim.com" className={s.geullim} newWindow>
+          <div className={s.container}>
+            <svg
+              width="100%"
+              height="100%"
+              xmlns="http://www.w3.org/2000/svg"
+              overflow="visible"
+              radius="50%"
+              className={s.geullimBorder}
+            >
+              <rect
+                width="100%"
+                height="100%"
+                fill="none"
+                stroke="var(--geullim-theme)"
+                stroke-width="12"
+                stroke-dasharray="32, 32"
+                stroke-dashoffset="0"
+                stroke-linecap="round"
+                rx="30px"
+                ry="30px"
+              />
+            </svg>
+            <picture className={s.geullimThumb}>
+              <img alt="쓰면글림체" src="/images/geullim.png" />
+            </picture>
+          </div>
+        </CushionLink>
+
         <CushionLink
           href="https://woowacon.com"
           className={s.woowacon23}
@@ -188,8 +217,6 @@ const Home: Page = () => {
             <h2 className={s.title}>Planning Poker</h2>
           </CushionLink>
         </div>
-
-        {/* TODO: filter */}
 
         <div className={s.filters}>
           <div
