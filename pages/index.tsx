@@ -154,6 +154,7 @@ const Home: Page = () => {
               className={s.geullimBorder}
             >
               <rect
+                className={s.geullimRect}
                 width="100%"
                 height="100%"
                 fill="none"

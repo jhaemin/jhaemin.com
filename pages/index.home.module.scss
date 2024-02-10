@@ -157,12 +157,25 @@
     margin-bottom: 20px;
     border-radius: 30px;
 
+    @include smaller-than(500px) {
+      border-radius: 20px;
+    }
+
     .geullimBorder {
       position: absolute;
       top: 6px;
       left: 6px;
       width: calc(100% - 12px);
       height: calc(100% - 12px);
+
+      .geullimRect {
+        @include smaller-than(500px) {
+          stroke-width: 8;
+          stroke-dasharray: 20 20;
+          rx: 20px;
+          ry: 20px;
+        }
+      }
     }
 
     .container {
