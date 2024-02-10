@@ -40,6 +40,10 @@
     display: block;
     // padding-bottom: 100%;
     padding-bottom: 50%;
+
+    @include smaller-than(500px) {
+      padding-bottom: 100%;
+    }
   }
 
   img {
