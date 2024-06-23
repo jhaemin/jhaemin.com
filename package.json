@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm next:dev",
+    "dev": "bun next:dev",
     "dev:legacy": "npm-run-all --parallel gen next:dev",
     "next:dev": "next dev --port 311",
     "gen": "npm-run-all gen:apipaths",
     "gen:apipaths": "node scripts/generate-api-paths.mjs",
-    "build": "pnpm typecheck && next build",
+    "build": "bun typecheck && next build",
     "start": "next start --port 7000",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "pm2:start": "if pm2 show jhaemin.com ; then pnpm pm2:stop && pnpm pm2:delete && pnpm pm2:start ; else pm2 start npm --name 'jhaemin.com' -- run start ; fi",
-    "pm2:restart": "if pm2 show jhaemin.com ; then pm2 restart jhaemin.com ; else pnpm pm2:start ; fi",
+    "pm2:start": "if pm2 show jhaemin.com ; then bun pm2:stop && bun pm2:delete && bun pm2:start ; else pm2 start npm --name 'jhaemin.com' -- run start ; fi",
+    "pm2:restart": "if pm2 show jhaemin.com ; then pm2 restart jhaemin.com ; else bun pm2:start ; fi",
     "pm2:stop": "if pm2 show jhaemin.com ; then pm2 stop jhaemin.com ; else echo 'No pm2 instance for jhaemin.com client' ; fi",
     "pm2:delete": "if pm2 show jhaemin.com ; then pm2 delete jhaemin.com ; else echo 'No pm2 instance for jhaemin.com client' ; fi",
-    "update": "git reset --hard && git pull && rm -rf node_modules && pnpm install --frozen-lockfile && pnpm lint && next build && pnpm pm2:restart",
+    "update": "git reset --hard && git pull && rm -rf node_modules && bun install --frozen-lockfile && bun lint && next build && bun pm2:restart",
     "dbpush": "prisma db push",
     "prisma:introspect": "prisma introspect",
     "prisma:generate": "prisma generate"
@@ -28,6 +28,7 @@
     "clsx": "^2.0.0",
     "dayjs": "^1.11.10",
     "framework7-icons-plus": "^1.7.0",
+    "google-auth-library": "^9.11.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "marked": "^3.0.7",
@@ -59,5 +60,6 @@
     "prismap": "^1.2.0",
     "sass": "^1.68.0",
     "typescript": "^5.2.2"
-  }
+  },
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }

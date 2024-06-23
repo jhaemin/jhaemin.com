@@ -20,11 +20,11 @@ type Handler<Payload extends ResponsePayload> = (
 ) => void
 
 export const makeApiHandler = <Payload extends ResponsePayload = undefined>(
-  handler: Handler<Payload>,
-  method: HttpMethod = HttpMethod.POST
+  method: HttpMethod = HttpMethod.POST,
+  handler: Handler<Payload>
 ) => {
   return (req: JhmApiRequest, res: JhmApiResponse<Payload>) => {
-    if (req.method === ((method as unknown) as string)) {
+    if (req.method === (method as unknown as string)) {
       return handler(req, res)
     } else {
       res.status(HttpStatus.NOT_FOUND).send(null)

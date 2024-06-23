@@ -23,9 +23,11 @@ jobs:
             git pull --rebase
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            pnpm install
-            if pnpm typecheck; then
-              if pnpm build; then
+            export BUN_INSTALL=~/.bun
+            export PATH=$BUN_INSTALL/bin:$PATH
+            bun install
+            if bun run typecheck; then
+              if bun run build; then
                 pm2 start ecosystem.config.cjs
               else
                 echo "Build failed"

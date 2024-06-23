@@ -1,8 +1,10 @@
 import { ReactNode } from 'react'
 import DefaultLayout from './DefaultLayout'
+import EmptyLayout from './EmptyLayout'
 
 const layouts = {
   default: DefaultLayout,
+  empty: EmptyLayout,
 }
 
 export type LayoutName = keyof typeof layouts
