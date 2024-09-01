@@ -497,8 +497,12 @@
         font-weight: 600;
         display: grid;
         grid-template-columns: auto 1fr;
-        align-items: center;
+        align-items: start;
         gap: 6px;
+
+        .arrow {
+          transform: translateY(2px);
+        }
       }
 
       .project-description {

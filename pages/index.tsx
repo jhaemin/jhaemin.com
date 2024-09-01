@@ -326,7 +326,7 @@ const Home: Page = () => {
                       <div className={s['project-item']}>
                         <div className={s['project-info']}>
                           <h2 className={s['project-name']}>
-                            {name} <ArrowUpRight />
+                            {name} <ArrowUpRight className={s['arrow']} />
                           </h2>
                           <p className={s['project-description']}>
                             {description}
