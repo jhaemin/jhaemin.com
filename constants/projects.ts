@@ -48,9 +48,9 @@ interface Project {
 
 export const projects: Project[] = [
   {
-    name: 'Woowa Web Toolkit',
+    name: 'Web Toolkit',
     description:
-      'A universal browser extension for Woowa Brothers Corp. that enhances overall web experience.',
+      'An all-in-one browser extension for Woowa Brothers Corp. that enhances overall web experience.',
     links: [
       {
         url: 'https://www.youtube.com/watch?v=YtrIAqgSDp8',
@@ -85,6 +85,26 @@ export const projects: Project[] = [
     ],
   },
   {
+    name: 'Pantheon',
+    description:
+      'A WYSIWYG web application builder with real-time interaction and code generation.',
+    categories: [ProjectCategory.WebServer, ProjectCategory.Design],
+    href: 'https://github.com/jhaemin/Pantheon',
+    links: [
+      {
+        title: 'Demo',
+        url: 'https://pantheon.sh',
+      },
+    ],
+  },
+  {
+    name: 'Korea Financial Account Number Detector',
+    description:
+      'Detect Korea financial account numbers based on the rules by KFTC.',
+    href: 'https://github.com/jhaemin/korean-financial-account-number-detector',
+    categories: [ProjectCategory.Libraries],
+  },
+  {
     name: '쓰면글림체',
     description: `배달이친구들을 이리저리 늘리고 꼬아 만든 한글 그림글자 '배민 글림체'를 사용하는 새로운 방법.`,
     href: 'https://geullim.com',
@@ -93,6 +113,18 @@ export const projects: Project[] = [
       ProjectCategory.Design,
       ProjectCategory.Fonts,
       ProjectCategory.WBCorp,
+    ],
+  },
+  {
+    name: 'everymoji',
+    description: 'Create animated text emojis for Slack quickly and easily.',
+    href: 'https://everymoji.com',
+    categories: [ProjectCategory.WebService, ProjectCategory.Design],
+    links: [
+      {
+        title: 'Woowa Tech Blog',
+        url: 'https://techblog.woowahan.com/16158/',
+      },
     ],
   },
   {
@@ -111,17 +143,17 @@ export const projects: Project[] = [
     categories: [ProjectCategory.Fonts, ProjectCategory.Design],
   },
   {
-    name: 'everymoji',
-    description: 'Create animated text emojis for Slack quickly and easily.',
-    href: 'https://everymoji.com',
-    categories: [ProjectCategory.WebService, ProjectCategory.Design],
-  },
-  {
-    name: 'Planning Poker',
+    name: 'Planning Poker (pp.land)',
     description:
       'A simple yet powerful planning poker service. It is a part of Baemin Dev Center project.',
-    href: 'https://baemin.dev/planning-poker',
+    href: 'https://pp.land',
     categories: [ProjectCategory.WebService, ProjectCategory.Design],
+    links: [
+      {
+        title: 'GitHub',
+        url: 'https://github.com/jhaemin/planning-poker',
+      },
+    ],
   },
   {
     name: 'Robot Fantasia',
@@ -132,6 +164,12 @@ export const projects: Project[] = [
       ProjectCategory.Experiments,
       ProjectCategory.Design,
       ProjectCategory.WebService,
+    ],
+    links: [
+      {
+        title: 'GitHub',
+        url: 'https://github.com/jhaemin/robot-fantasia',
+      },
     ],
   },
   {
@@ -153,6 +191,12 @@ export const projects: Project[] = [
     description: 'A game system for the popular Liar Game.',
     href: 'https://liar-game.com',
     categories: [ProjectCategory.WebService, ProjectCategory.Design],
+    links: [
+      {
+        title: 'GitHub',
+        url: 'https://github.com/jhaemin/liar-game',
+      },
+    ],
   },
   {
     name: 'Lucky Level Up',
