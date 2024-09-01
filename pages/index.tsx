@@ -331,6 +331,24 @@ const Home: Page = () => {
                           <p className={s['project-description']}>
                             {description}
                           </p>
+                          {links && links.length > 0 && (
+                            <div className={s['project-links']}>
+                              {links.map(({ url, title }) => (
+                                <Link
+                                  key={url + title}
+                                  href={url}
+                                  target="_blank"
+                                  rel="noreferrer noopener"
+                                  onClick={(e) => {
+                                    e.stopPropagation()
+                                  }}
+                                >
+                                  <LinkIcon />
+                                  {title}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </CushionLink>
