@@ -21,6 +21,7 @@ export enum ProjectCategory {
   Fonts = 'Fonts',
   Design = 'Design',
   DesktopApps = 'Desktop Apps',
+  Flutter = 'Flutter',
   Libraries = 'Libraries',
   Utilities = 'Utilities',
   Organization = 'Organization',
@@ -47,6 +48,25 @@ interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    name: 'Browser Home',
+    description: `A Chrome extension that replaces your new tab page.`,
+    categories: [ProjectCategory.BrowserExtensions],
+    href: 'https://github.com/jhaemin/browser-home',
+  },
+  {
+    name: 'Pop the Lock',
+    description: 'An implementation of the game Pop the Lock using Flutter.',
+    categories: [ProjectCategory.Games, ProjectCategory.Flutter],
+    href: 'https://github.com/jhaemin/pop-the-lock',
+  },
+  {
+    name: 'Korea Financial Account Number Detector',
+    description:
+      'Detect Korea financial account numbers based on the rules by KFTC.',
+    href: 'https://github.com/jhaemin/korean-financial-account-number-detector',
+    categories: [ProjectCategory.Libraries],
+  },
   {
     name: 'Web Toolkit',
     description:
@@ -96,13 +116,6 @@ export const projects: Project[] = [
         url: 'https://pantheon.sh',
       },
     ],
-  },
-  {
-    name: 'Korea Financial Account Number Detector',
-    description:
-      'Detect Korea financial account numbers based on the rules by KFTC.',
-    href: 'https://github.com/jhaemin/korean-financial-account-number-detector',
-    categories: [ProjectCategory.Libraries],
   },
   {
     name: '쓰면글림체',

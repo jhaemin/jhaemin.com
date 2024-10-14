@@ -174,7 +174,7 @@ const Home: Page = () => {
         </CushionLink>
 
         <CushionLink
-          href="https://woowacon.com"
+          href="https://2023.woowacon.com"
           className={s.woowacon23}
           newWindow
         >
@@ -209,7 +209,7 @@ const Home: Page = () => {
           </CushionLink>
 
           <CushionLink
-            href="https://baemin.dev/planning-poker"
+            href="https://pp.land"
             className={clsx(s.recentWork, s.poker)}
             cottonClassName={s.container}
             newWindow
