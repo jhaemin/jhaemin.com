@@ -49,6 +49,19 @@ interface Project {
 
 export const projects: Project[] = [
   {
+    name: 'Speller Web Extension',
+    description:
+      'A browser extension that easily checks Korean spelling of selected text.',
+    categories: [ProjectCategory.BrowserExtensions],
+    href: 'https://github.com/jhaemin/speller-web-extension',
+  },
+  {
+    name: 'Speller API',
+    description: 'A Bun web server for Korean spell checking.',
+    categories: [ProjectCategory.WebServer],
+    href: 'https://github.com/jhaemin/speller-api',
+  },
+  {
     name: 'Browser Home',
     description: `A Chrome extension that replaces your new tab page.`,
     categories: [ProjectCategory.BrowserExtensions],
@@ -118,7 +131,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: '쓰면글림체',
+    name: '쓰면글림체 (geullim.com)',
     description: `배달이친구들을 이리저리 늘리고 꼬아 만든 한글 그림글자 '배민 글림체'를 사용하는 새로운 방법.`,
     href: 'https://geullim.com',
     categories: [
