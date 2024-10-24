@@ -122,8 +122,11 @@ export const projects: Project[] = [
     description:
       'A WYSIWYG web application builder with real-time interaction and code generation.',
     categories: [ProjectCategory.WebServer, ProjectCategory.Design],
-    href: 'https://github.com/jhaemin/Pantheon',
     links: [
+      {
+        title: 'GitHub',
+        url: 'https://github.com/jhaemin/Pantheon',
+      },
       {
         title: 'Demo',
         url: 'https://pantheon.sh',
@@ -144,9 +147,12 @@ export const projects: Project[] = [
   {
     name: 'everymoji',
     description: 'Create animated text emojis for Slack quickly and easily.',
-    href: 'https://everymoji.com',
     categories: [ProjectCategory.WebService, ProjectCategory.Design],
     links: [
+      {
+        title: 'everymoji.com',
+        url: 'https://everymoji.com',
+      },
       {
         title: 'Woowa Tech Blog',
         url: 'https://techblog.woowahan.com/16158/',
@@ -169,12 +175,15 @@ export const projects: Project[] = [
     categories: [ProjectCategory.Fonts, ProjectCategory.Design],
   },
   {
-    name: 'Planning Poker (pp.land)',
+    name: 'Planning Poker',
     description:
       'A simple yet powerful planning poker service. It is a part of Baemin Dev Center project.',
-    href: 'https://pp.land',
     categories: [ProjectCategory.WebService, ProjectCategory.Design],
     links: [
+      {
+        title: 'pp.land',
+        url: 'https://pp.land',
+      },
       {
         title: 'GitHub',
         url: 'https://github.com/jhaemin/planning-poker',
@@ -185,13 +194,16 @@ export const projects: Project[] = [
     name: 'Robot Fantasia',
     description:
       'An interactive website for enjoying the Robot Fantasia, a Baemin music.',
-    href: 'https://robotfantasia.com',
     categories: [
       ProjectCategory.Experiments,
       ProjectCategory.Design,
       ProjectCategory.WebService,
     ],
     links: [
+      {
+        title: 'robotfantasia.com',
+        url: 'https://robotfantasia.com',
+      },
       {
         title: 'GitHub',
         url: 'https://github.com/jhaemin/robot-fantasia',
@@ -215,9 +227,12 @@ export const projects: Project[] = [
   {
     name: 'Liar Game',
     description: 'A game system for the popular Liar Game.',
-    href: 'https://liar-game.com',
     categories: [ProjectCategory.WebService, ProjectCategory.Design],
     links: [
+      {
+        title: 'liar-game.com',
+        url: 'https://liar-game.com',
+      },
       {
         title: 'GitHub',
         url: 'https://github.com/jhaemin/liar-game',
