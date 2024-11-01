@@ -1,6 +1,7 @@
 import PageInfo from '@/components/PageInfo'
 import LayoutWrapper from '@/layouts/LayoutWrapper'
 import axiom from '@/utils/web/axiom'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Router, { useRouter } from 'next/router'
@@ -94,6 +95,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </LayoutWrapper>
       </SWRConfig>
+
+      <GoogleAnalytics gaId="G-V9L5QT4QDF" />
     </>
   )
 }

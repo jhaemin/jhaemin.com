@@ -7,7 +7,7 @@ module.exports = {
     return [
       {
         source: '/interop',
-        destination: 'https://github.com/jhaemin/Interop',
+        destination: 'https://interop.design',
         permanent: false,
       },
     ]
