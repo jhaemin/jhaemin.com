@@ -30,6 +30,7 @@
     "dayjs": "^1.11.10",
     "framework7-icons-plus": "^1.7.0",
     "google-auth-library": "^9.15.0",
+    "googleapis": "^144.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "marked": "^3.0.7",
